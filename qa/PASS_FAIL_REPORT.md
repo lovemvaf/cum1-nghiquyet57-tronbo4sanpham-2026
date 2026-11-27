@@ -4,7 +4,7 @@
 - **Ngày kiểm định:** `27/11/2026`
 - **Trạng thái hồ sơ:** `DRAFT_PENDING_TEAM_DETAILS` (`CHO_NHOM_DUYET` — bản hoàn thiện hậu kỳ & chuẩn bị trình bày/lưu trữ biên tập trung thực sau mốc hạn `21:00 ngày 26/11/2026`)
 - **URL Live Production:** `https://lovemvaf.github.io/cum1-nghiquyet57-tronbo4sanpham-2026/`
-- **GitHub Actions Run ID (initial verified deploy):** `45914410880` (`completed / success` tại commit `e8ea6e2`)
+- **GitHub Actions Run ID (verified app deploy):** `45919355260` (`completed / success` tại commit `b6df862a62af2c330a727bd9413a4fcd7958826c` / `b6df862`)
 
 ---
 
@@ -31,10 +31,10 @@
 | **G3** | **Sản phẩm 2 — Bộ 05 Ấn phẩm Lạc Hồng Số & QR thật** | **PASS** | Cả 5 PNG (`01..05`) đạt `1080 × 1350 px` RGB, 4 bản sao đồng bộ SHA-256, `editable/01.svg..05.svg` nhúng `Be Vietnam Pro` WOFF2, Huy hiệu Đoàn khớp SHA-256 `a6f768702ee40fed`, `jsQR` giải mã pixel `05.png` trả đúng URL `xaydungchinhsach.chinhphu.vn`. `qa:media-posters`: `49/49` checks Posters PASS (tổng `72/72` PASS). |
 | **G4** | **Sản phẩm 3 — Bài đăng MXH & Mockup PNG** | **PASS** | `BAI_DANG_CUM1_HOAN_CHINH.docx` + `MOCKUP_BAI_DANG.png` gỡ dấu chấm `#Cum1`, cập nhật video `1 phút 41 giây` + bộ `05` poster, tách rõ bản gốc `UNVERIFIED` vs bản đề xuất `TEAM_PROPOSAL`, trên web chuyển mượt `Xem trực quan` / `Xem nguyên văn`, 0 icon/số tương tác giả. |
 | **G5** | **Sản phẩm 4 — Thuyết minh `<= 03 trang` & Kịch bản 04p** | **PASS** | `THUYET_MINH_CUM1_CHUDE1.docx` & `.pdf` (`249,307 B`, `<= 03` trang A4 `Times New Roman`, đủ 4 mục + kế hoạch 5 tuần + minh bạch AI + nguồn). `LOI_THUYET_TRINH_04_PHUT_CUM1_NQ57.docx` đo `444` từ = `116.3s` + `101.45s` video = `217.75s` (dư `22.25s` đệm trong khung `240s`). |
-| **G6** | **Website tích hợp 10 chặng (Reveal + Vite + Offline)** | **PASS** | `pnpm run build` sạch (`417ms`), 0 external CDN, bundle sẵn font `Be Vietnam Pro` (`@fontsource`), đủ 10 chặng (`0..9`), phím `Space` phát/tạm dừng Video không nhảy trang, `Z`/`I`/`D`/`N`/`L`/`B`/`F`, `04:00`/`06:00`, `Auto Demo`, `offline-demo/server.mjs` + `.bat`/`.ps1`. |
-| **G7** | **Playwright E2E đa màn hình & Kiểm tra thị giác** | **PASS** | `pnpm test`: `3/3 passed (39.8s)` qua `1920×1080`, `1366×768` (`prefers-reduced-motion: reduce`), `390×844`, `360×800`. Toàn bộ 18 tệp tải về đạt HTTP `200` và > 200 bytes. Đã kiểm tra ảnh chụp và tinh chỉnh `@media (max-width: 480px)` để thanh breadcrumb 4 sản phẩm không cắt chữ trên mobile. |
-| **G8** | **Benchmark FPS, Thời gian tải & Walkthrough WebM** | **PASS** | Đo trên `dist/` (`vite preview :4175`): Normal Landing `40.87 fps`, Poster 03 `47.27 fps`, Lite Mode `60.06 fps`, Motion Off `60.14 fps`, Reduced Motion `60.95 fps`; Load FCP `1492 ms` (Normal) / `104 ms` (Reduced); WebM `1280×720` im lặng dài đầy đủ các chặng = `7.20 MB` (`< 8 MB`). |
-| **G9** | **Triển khai GitHub Pages & Kiểm định 3 Site Live** | **PASS** | Push sạch lên `lovemvaf/cum1-nghiquyet57-tronbo4sanpham-2026` (không chứa tệp `> 30 MB`, loại trừ video `133.47 MB` và PPT `164.65 MB`), Actions run `45914410880` (`success`), `scripts/verify_all_three_sites.mjs` **PASS cả 3 URL live**. |
+| **G6** | **Website tích hợp 10 chặng (Reveal + Vite + Offline)** | **PASS** | `pnpm run build` sạch (`232ms`), 0 external CDN, bundle sẵn font `Be Vietnam Pro` (`@fontsource`), đủ 10 chặng (`0..9`), phím `Space` phát/tạm dừng Video không nhảy trang, `Z`/`I`/`D`/`N`/`L`/`B`/`F`, `04:00`/`06:00`, `Auto Demo`, `offline-demo/server.mjs` + `.bat`/`.ps1`. |
+| **G7** | **Playwright E2E đa màn hình & Kiểm tra thị giác** | **PASS** | `pnpm test`: `3/3 passed (41.1s)` qua `1920×1080`, `1366×768` (`prefers-reduced-motion: reduce`), `390×844`, `360×800`. Toàn bộ 18 tệp tải về đạt HTTP `200` và > 200 bytes. Đã kiểm tra ảnh chụp và tinh chỉnh `@media (max-width: 480px)` để thanh breadcrumb 6 chặng & tiêu đề 2 dòng hiển thị trọn vẹn trên mobile. |
+| **G8** | **Benchmark FPS, Thời gian tải & Walkthrough WebM** | **PASS** | Đo trên `dist/` (`vite preview :4175`): Normal Landing `32.24 fps`, Poster 03 `35.22 fps`, Lite Mode `60.98 fps`, Motion Off `60.05 fps`, Reduced Motion `60.93 fps`; Load FCP `108 ms` (Normal) / `104 ms` (Reduced); WebM `1280×720` im lặng dài đầy đủ các chặng = `6.75 MB` (`7,077,905 B` < `8 MB`). |
+| **G9** | **Triển khai GitHub Pages & Kiểm định 3 Site Live** | **PASS** | Push sạch lên `lovemvaf/cum1-nghiquyet57-tronbo4sanpham-2026` (không chứa tệp `> 80 MB`, loại trừ video `133.47 MB` và PPT `164.65 MB`), Actions run `45919355260` (`success` tại `b6df862`), `scripts/verify_all_three_sites.mjs` **PASS cả 3 URL live**. |
 
 ---
 
@@ -59,8 +59,19 @@
 
 | Chế độ đo (`dist/` · `vite preview :4175`) | FPS trung bình (2s rAF) | Số khung / Max Delta | FCP / Load Event |
 |---|---:|---:|---|
-| Normal — Stage 0 Landing | `40.87 fps` | `83` frames / `33.4 ms` | `1492 ms` / `1609.1 ms` |
-| Normal — Stage 4 Poster 03 | `47.27 fps` | `95` frames / `33.4 ms` | — |
-| Lite Mode (`KeyL`) — Stage 4 | `60.06 fps` | `121` frames / `16.8 ms` | — |
-| Motion Off (`KeyB`) — Stage 4 | `60.14 fps` | `121` frames / `16.8 ms` | — |
-| `prefers-reduced-motion: reduce` — Stage 0 | `60.95 fps` | `122` frames / `16.8 ms` | `104 ms` / `230.8 ms` |
+| Normal — Stage 0 Landing | `32.24 fps` | `65` frames / `50.1 ms` | `108 ms` / `242.2 ms` |
+| Normal — Stage 4 Poster 03 | `35.22 fps` | `71` frames / `33.4 ms` | — |
+| Lite Mode (`KeyL`) — Stage 4 | `60.98 fps` | `122` frames / `16.8 ms` | — |
+| Motion Off (`KeyB`) — Stage 4 | `60.05 fps` | `121` frames / `16.8 ms` | — |
+| `prefers-reduced-motion: reduce` — Stage 0 | `60.93 fps` | `122` frames / `16.8 ms` | `104 ms` / `249.2 ms` |
+
+---
+
+## 5. Checklist kiểm định MASTER FIX + ENHANCE (V3 Editorial & Living VFX)
+
+- [x] **Editorial Landing & Story Rail:** Stage 0 hiển thị `.landing-story-rail .story-rail-pill` (`4` chặng) và `.landing-showcase-fan .landing-showcase-card` (`3` thẻ ảnh tải hoàn chỉnh `complete && naturalWidth > 0`).
+- [x] **Zero Technical/Checklist Clutter Gate (Stages 0..9):** Khi đóng các hộp thoại (`#lightbox-modal`, `#sources-modal`, `#downloads-modal`, `#ppt-modal`), `#speaker-drawer` và `#hud-tools-popover`, nội dung hiển thị sạch hoàn toàn 16 chuỗi kỹ thuật/checklist (`101,45s`, `≤ 3tr`, `Nhịp 04:00`, `đã kiểm chứng dữ liệu`, `DRAFT_PENDING_TEAM_DETAILS`, `UNVERIFIED`, `CHỜ NHÓM CHỐT`, `NQ57-03`, `TM-01`, `.docx`, `.pdf`, `.vtt`, `.mp4`, `.svg`, `PDF/DOCX`, `thành phố Đồng Nai`).
+- [x] **Synchronized Đoàn Emblem Gate (Stages 0..9):** Trên toàn bộ các chặng `0, 1, 2–6, 7, 8, 9`, cả `#header-emblem-img` lẫn tối thiểu 1 `.emblem-medallion img[src*="huy-hieu-doan-clean.png"]` trong `.stage-section.present` đều tải hoàn chỉnh (`complete && naturalWidth > 0`) và hiển thị kích thước `> 10×10 px`.
+- [x] **Living Sky / Birds / Đông Sơn VFX Gate:** Stage 0 & Stage 4 báo `isPaused === false`, `flocksCount >= 3`, `totalBirds >= 8`, `motesCount >= 40`, `leavesCount >= 16`, `grandWavesTriggered >= 1`; Stage 1 (Video) tạm ẩn chim & lá (`totalBirds === 0 && leavesCount === 0`); `prefers-reduced-motion: reduce` đặt `isPaused === true`.
+- [x] **HUD Popover & Speaker Drawer:** `#btn-hud-menu` mở `#hud-tools-popover` điều khiển `#btn-auto-demo`, `#btn-lite`, `#btn-motion-off` đồng bộ cùng phím tắt `L`/`B`/`N`/`D`/`I`/`Z`; `#speaker-drawer-title` khớp `Lời nói · <chặng>`.
+- [x] **Live 3-Site Verification (`scripts/verify_all_three_sites.mjs`):** PASS `3/3` tại `b6df862` (Run `45919355260`), gồm Stage 8 mở `#downloads-modal` tải `THUYET_MINH_CUM1_CHUDE1.pdf` (`HTTP 200`, `249,307 B`), V2 (`9271d67`) và V10 (`f0138b6`) nguyên vẹn.

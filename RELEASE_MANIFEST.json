@@ -9,8 +9,8 @@
   "git": {
     "repositoryUrl": "https://github.com/lovemvaf/cum1-nghiquyet57-tronbo4sanpham-2026",
     "branch": "main",
-    "verifiedAppCommitSha": "e8ea6e2",
-    "deployWorkflowRunId": 45914410880
+    "verifiedAppCommitSha": "b6df862a62af2c330a727bd9413a4fcd7958826c",
+    "deployWorkflowRunId": 45919355260
   },
   "liveUrls": {
     "v3IntegratedShowcase": "https://lovemvaf.github.io/cum1-nghiquyet57-tronbo4sanpham-2026/",
@@ -27,14 +27,21 @@
   },
   "qaSummary": {
     "qaMediaPosters": "72 passed, 0 failed",
-    "playwrightE2E": "3 passed (1920x1080, 1366x768 reduced-motion, 390x844, 360x800)",
-    "fpsNormalLanding": 40.87,
-    "fpsNormalPoster03": 47.27,
-    "fpsLiteMode": 60.06,
-    "fpsMotionOff": 60.14,
-    "fpsReducedMotion": 60.95,
-    "walkthroughWebmBytes": 7544533,
-    "threeSiteLiveVerification": "PASS 3/3"
+    "playwrightE2E": "3 passed (41.1s: 1920x1080, 1366x768 reduced-motion, 390x844, 360x800)",
+    "fpsNormalLanding": 32.24,
+    "fpsNormalPoster03": 35.22,
+    "fpsLiteMode": 60.98,
+    "fpsMotionOff": 60.05,
+    "fpsReducedMotion": 60.93,
+    "loadFcpNormalMs": 108,
+    "loadFcpReducedMs": 104,
+    "walkthroughWebmBytes": 7077905,
+    "threeSiteLiveVerification": "PASS 3/3",
+    "masterFixAndEnhanceGates": {
+      "zeroTechnicalChecklistClutter": "PASS (Stages 0..9)",
+      "synchronizedDoanEmblem": "PASS (#header-emblem-img + .stage-section.present .emblem-medallion img)",
+      "livingSkyBirdsDongSonVfx": "PASS (Stage 0/4 active >=8 birds, >=3 flocks, >=40 motes, >=16 leaves, >=1 grand wave; Stage 1 focus paused; reduced-motion paused)"
+    }
   },
   "deliverables": {
     "deliverables/01_Video/1_Doi1_ChuDe1_GOC.mp4": {
@@ -124,8 +131,8 @@
       "gitTracked": true
     },
     "qa/VIDEO_SCREEN_RECORDINGS/cum1_4sanpham_walkthrough.webm": {
-      "bytes": 7544533,
-      "sha256": "69a788f71bf8cdf691084a902d30b8684e7c8eab3788f793cc988501eb8578e9",
+      "bytes": 7077905,
+      "sha256": "344ebd9f742fd7c332669d74d3612db7db30333fc12c1b4aa348e586e0fc9024",
       "gitTracked": true
     }
   }
