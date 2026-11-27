@@ -1,5 +1,5 @@
 /**
- * LẠC HỒNG SỐ — Single Source of Truth Data Loader (V3 Integrated 04-Product Web)
+ * LẠC HỒNG SỐ — Single Source of Truth Data Loader (V3 Editorial Flagship)
  * Imports directly from ./content-master.json and normalizes all asset paths
  * to relative `./assets/...` so GitHub Pages subpath, localhost, and offline preview
  * all resolve cleanly without root-slash breakage.
@@ -47,12 +47,42 @@ export const EMBLEM_ASSET = {
 
 export const LANDING_DATA = {
   ...masterData.landing,
+  eyebrow: 'CỤM 1 · CHỦ ĐỀ 1 · TRẠI THANH NIÊN SỐ ĐỒNG NAI 2026',
+  headlineGold: 'NGHỊ QUYẾT 57',
+  headlineCream: 'ĐẾN GẦN THANH NIÊN',
   headline: 'NGHỊ QUYẾT 57 ĐẾN GẦN THANH NIÊN',
-  subtitle: masterData.landing.eyebrow,
+  subtitle: 'CỤM 1 · CHỦ ĐỀ 1 · TRẠI THANH NIÊN SỐ ĐỒNG NAI 2026',
+  introSummary:
+    'Hành trình đưa tinh thần đột phá khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số vào từng việc làm gần gũi của tuổi trẻ Cụm 1.',
+  startButtonLabel: 'Bắt đầu hành trình Cụm 1',
+  sourceLine: 'Nghị quyết số 57-NQ/TW (22/12/2024) của Bộ Chính trị · Tuổi trẻ Cụm 1',
 };
 
 export const VIDEO_DATA = {
   ...masterData.video,
+  title: 'Chuyển đổi số – Bắt đầu từ những điều gần gũi nhất',
+  pullQuote:
+    '“Trong thời đại hiện đại ngày nay, chúng ta không nên chỉ là người chứng kiến sự thay đổi, mà phải là người kiến tạo sự thay đổi đó.”',
+  narrativeMoments: [
+    {
+      index: '01',
+      title: 'Từ thói quen thường ngày',
+      summary:
+        'Tình huống gần gũi của hai nữ đoàn viên khi thao tác ứng dụng và quét mã QR để giải quyết công việc nhanh gọn, thuận tiện hơn.',
+    },
+    {
+      index: '02',
+      title: 'Nhận thức đúng tinh thần Nghị quyết',
+      summary:
+        'Đẩy mạnh số hóa, đồng bộ dữ liệu và đơn giản hóa thủ tục hành chính để công nghệ phục vụ thiết thực đời sống Nhân dân.',
+    },
+    {
+      index: '03',
+      title: 'Khát vọng tuổi trẻ tiên phong',
+      summary:
+        'Khẩu hiệu hành động của đoàn viên Cụm 1: làm chủ công nghệ, giữ gìn truyền thống tốt đẹp và chung tay kiến tạo tương lai.',
+    },
+  ],
   webOptimizedPath: normalizeAssetPath(masterData.video.webOptimizedPath),
   subtitlesVttPath: normalizeAssetPath(masterData.video.subtitlesVttPath),
   fixedThumbPath: normalizeAssetPath(masterData.video.fixedThumbPath),
@@ -61,12 +91,57 @@ export const VIDEO_DATA = {
 
 export const SOCIAL_POST_DATA = {
   ...masterData.socialPost,
+  channelDisplay: 'Tuổi trẻ Cụm 1 · Trại Thanh niên số Đồng Nai 2026',
+  topicDisplay: 'Chuyên đề Nghị quyết 57-NQ/TW · Hiểu đúng – Làm thật – Lan tỏa',
+  highlights: [
+    {
+      title: 'Khởi đầu từ nhận thức',
+      summary:
+        'Biến thói quen dùng điện thoại mỗi ngày thành năng lực làm chủ công nghệ, kiểm chứng thông tin và bảo vệ dữ liệu cá nhân.',
+    },
+    {
+      title: 'Phần việc thiết thực',
+      summary:
+        'Gợi mở hướng hỗ trợ kỹ năng số cho người dân và nghiên cứu phương án số hóa thông tin về các địa chỉ đỏ tại địa phương, trên cơ sở có tư liệu và quyền sử dụng phù hợp.',
+    },
+    {
+      title: 'Kết nối đồng bộ',
+      summary:
+        'Gắn kết câu chuyện video, bộ ấn phẩm trực quan và lời mời hành động để mỗi đoàn viên dễ đọc, dễ nhớ và dễ thực hành ngay.',
+    },
+  ],
   downloadPath: normalizeAssetPath(masterData.socialPost.downloadPath),
   mockupImagePath: normalizeAssetPath(masterData.socialPost.mockupImagePath),
 };
 
 export const PRESENTATION_DOC_DATA = {
   ...masterData.presentationDoc,
+  storyCards: [
+    {
+      iconKey: 'spark',
+      title: '1. Trăn trở từ thực tiễn',
+      summary:
+        'Đoàn viên, thanh niên Cụm 1 tiếp xúc với điện thoại thông minh, mạng xã hội và AI mỗi ngày nhưng dễ ngại tiếp cận văn kiện dài — khớp với nhận định tại Phần Mở đầu Nghị quyết 57-NQ/TW ngày 22/12/2024 của Bộ Chính trị.',
+    },
+    {
+      iconKey: 'story',
+      title: '2. Mạch chuyện thống nhất',
+      summary:
+        'Trọn bộ sản phẩm kết nối liền mạch từ câu chuyện gợi mở trong video, hệ thống quan điểm và tầm nhìn 2030–2045 qua bộ ấn phẩm đến lời mời hành động trên không gian số quanh thông điệp “Hiểu đúng – Làm thật – Lan tỏa”.',
+    },
+    {
+      iconKey: 'roadmap',
+      title: '3. Lộ trình đồng hành tại cơ sở',
+      summary:
+        'Đề xuất chuỗi sinh hoạt 5 tuần vừa sức tại chi đoàn Cụm 1: học tập số, hỗ trợ dịch vụ công trực tuyến, số hóa công tác Đoàn, giữ an toàn thông tin và nghiên cứu phương án số hóa thông tin về các địa chỉ đỏ tại địa phương, trên cơ sở có tư liệu và quyền sử dụng phù hợp.',
+    },
+    {
+      iconKey: 'shield',
+      title: '4. Chuẩn mực & Minh bạch',
+      summary:
+        'Tách bạch rõ các chỉ tiêu năm 2030 và tầm nhìn năm 2045 là mục tiêu định hướng trong văn kiện (không phải kết quả hiện tại), tôn trọng nguyên mẫu Huy hiệu Đoàn và dẫn chiếu trực tiếp Cổng TTĐT Chính phủ cùng Bộ Khoa học và Công nghệ.',
+    },
+  ],
   downloadDocxPath: normalizeAssetPath(masterData.presentationDoc.downloadDocxPath),
   downloadPdfPath: normalizeAssetPath(masterData.presentationDoc.downloadPdfPath),
   speechDownloadPath: normalizeAssetPath(masterData.presentationDoc.speechDownloadPath),
@@ -76,6 +151,12 @@ export const RUN_OF_SHOW = masterData.runOfShow;
 
 export const FINALE_DATA = {
   ...masterData.finale,
+  eyebrow: 'CỤM 1 · CHỦ ĐỀ 1 · TRẠI THANH NIÊN SỐ ĐỒNG NAI 2026',
+  heading: 'HIỂU ĐÚNG – LÀM THẬT – LAN TỎA',
+  summary:
+    'Từ một câu hỏi nhỏ đến những hành động cụ thể tại cơ sở, tuổi trẻ Cụm 1 mong muốn đưa tinh thần Nghị quyết 57-NQ/TW trở thành thói quen số hữu ích, an toàn và bền bỉ mỗi ngày.',
+  sourceCredit:
+    'Nguồn văn kiện: Nghị quyết số 57-NQ/TW ngày 22/12/2024 của Bộ Chính trị · Cổng TTĐT Chính phủ & Bộ KH&CN.',
 };
 
 /**
@@ -198,46 +279,81 @@ export const MOTIF_SVGS = {
   `,
 };
 
+export const PRES_CARD_ICONS = {
+  spark: `
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3L14.5 8.5L20 11L14.5 13.5L12 19L9.5 13.5L4 11L9.5 8.5L12 3Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+    </svg>
+  `,
+  story: `
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="3.5" y="5" width="17" height="14" rx="3" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M7.5 10H16.5M7.5 14H13.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  `,
+  roadmap: `
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <circle cx="6" cy="17" r="2.5" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/>
+      <circle cx="18" cy="6" r="2.5" stroke="currentColor" stroke-width="1.8"/>
+      <path d="M8 15L10.3 12M14 8.5L16 7.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  `,
+  shield: `
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3.5L19 6.5V11.8C19 16 15.9 19.3 12 20.5C8.1 19.3 5 16 5 11.8V6.5L12 3.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+      <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `,
+};
+
 const POSTER_UI_EXTENSIONS = {
   'NQ57-01': {
+    shortChapterLabel: '01 Khởi nguồn',
     highlightKeyword: '22/12/2024',
     editorialSummary:
-      'Mở đầu bằng câu hỏi gần gũi của người trẻ: dùng smartphone, AI mỗi ngày nhưng dễ ngại văn bản dài — gắn ngay Nghị quyết 57-NQ/TW (Bộ Chính trị, 22/12/2024) vào học tập và dịch vụ công.',
+      'Mở đầu bằng câu hỏi gần gũi của người trẻ: dùng điện thoại thông minh và AI mỗi ngày nhưng dễ ngại văn bản dài — kết nối ngay Nghị quyết 57-NQ/TW (Bộ Chính trị, 22/12/2024) vào học tập và dịch vụ công.',
     motifTitle: 'Sổ tay tri thức & câu hỏi mở',
     motifSvgKey: 'question-spark',
-    domainPills: ['Phần Mở đầu NQ57', '22/12/2024 · Bộ Chính trị', 'Đời sống số'],
+    domainPills: ['Phần Mở đầu', 'Bộ Chính trị · 22/12/2024', 'Đời sống số'],
   },
   'NQ57-02': {
+    shortChapterLabel: '02 Quan điểm',
     highlightKeyword: 'con người và doanh nghiệp',
     editorialSummary:
       'Chắt lọc Mục I Nghị quyết 57-NQ/TW thành 4 điểm định hướng cốt lõi quanh nguyên tắc lấy con người và doanh nghiệp làm trung tâm, đồng thời giữ an toàn không gian mạng xuyên suốt.',
-    motifTitle: 'Trọng tâm con người & 4 định hướng',
+    motifTitle: 'Trọng tâm con người & định hướng cốt lõi',
     motifSvgKey: 'core-pillars',
-    domainPills: ['Mục I.1–I.5 NQ57', '5 nền tảng cốt lõi', 'An toàn số'],
+    domainPills: ['Mục I.1 – I.5', 'Năm nền tảng cốt lõi', 'An toàn số'],
+    cleanPillar4Note:
+      'Mục I.4: Phát triển nhanh, bền vững, từng bước tự chủ về công nghệ, nhất là công nghệ chiến lược.',
   },
   'NQ57-03': {
+    shortChapterLabel: '03 Tầm nhìn',
     highlightKeyword: '2030 → 2045',
     editorialSummary:
-      'Hệ thống hóa chỉ tiêu 2030 → 2045 theo Mục II.1–II.2 (rõ nhãn mục tiêu văn kiện, không phải kết quả hiện tại), tách bạch > 80% dịch vụ công trực tuyến với 80% giao dịch không dùng tiền mặt.',
+      'Hệ thống hóa chỉ tiêu đến năm 2030 và tầm nhìn 2045 theo Mục II.1–II.2 Nghị quyết 57-NQ/TW, phân định rõ hơn 80% sử dụng dịch vụ công trực tuyến với 80% giao dịch không dùng tiền mặt.',
     motifTitle: 'Lộ trình 2030 → 2045 & khát vọng Việt Nam',
     motifSvgKey: 'vision-2030-2045',
-    domainPills: ['Mục II.1 & II.2', '7 nhóm nhiệm vụ', 'Mục tiêu định hướng'],
+    domainPills: ['Mục II.1 & II.2', 'Mục tiêu đến 2030', 'Tầm nhìn 2045'],
   },
   'NQ57-04': {
+    shortChapterLabel: '04 Hành động',
     highlightKeyword: 'đề xuất phần việc',
     editorialSummary:
-      'Tổng hợp 5 đề xuất phần việc vừa sức cho đoàn viên Cụm 1 tại cơ sở (chưa phải thống kê hoạt động đã diễn ra): từ học tập số, hỗ trợ dịch vụ công đến giữ an toàn thông tin.',
+      'Gợi mở 5 đề xuất phần việc vừa sức dành cho đoàn viên Cụm 1 tại cơ sở: từ học tập số, hỗ trợ dịch vụ công trực tuyến đến số hóa công tác Đoàn và giữ an toàn thông tin.',
     motifTitle: 'Cầu nối số & 5 phần việc đề xuất',
     motifSvgKey: 'community-action',
     domainPills: ['Đề xuất Cụm 1', 'Học tập số', 'An toàn thông tin'],
   },
   'NQ57-05': {
+    shortChapterLabel: '05 Lan tỏa',
     highlightKeyword: 'một việc nhỏ hôm nay',
     editorialSummary:
       'Khép lại bộ ấn phẩm bằng lời mời bắt đầu từ một việc nhỏ hôm nay để lan tỏa trong chi đoàn và khu dân cư Cụm 1, kèm mã QR dẫn thẳng toàn văn trên Cổng TTĐT Chính phủ.',
     motifTitle: 'Lan tỏa cộng đồng & mã QR xác thực',
     motifSvgKey: 'community-ripple',
-    domainPills: ['Hiểu đúng · Làm thật', 'Việc nhỏ hôm nay', 'QR chinhphu.vn'],
+    domainPills: ['Hiểu đúng · Làm thật', 'Việc nhỏ hôm nay', 'Cổng TTĐT Chính phủ'],
   },
 };
 
@@ -251,6 +367,7 @@ export const POSTERS = masterData.posters.map((poster, index) => {
     stage,
     posterNumber: poster.id,
     badgeLabel: poster.index.replace('/', ' / '),
+    shortChapterLabel: ui.shortChapterLabel || poster.chapterTitle,
     posterPath: webPath,
     aliasPath: normalizeAssetPath(poster.canonicalAlias),
     filename,
@@ -259,6 +376,7 @@ export const POSTERS = masterData.posters.map((poster, index) => {
     motifTitle: ui.motifTitle || poster.chapterTitle,
     motifSvgKey: ui.motifSvgKey || 'question-spark',
     domainPills: ui.domainPills || [],
+    pillar4Note: ui.cleanPillar4Note || poster.pillar4Note,
   };
 });
 
@@ -273,36 +391,36 @@ export function getPosterByNumber(posterId) {
 export const SPEAKER_CUES_BY_STAGE = {
   0: {
     timeRange: '00:00 – 00:08',
-    actionCue: 'Giữ giao diện LẠC HỒNG SỐ; sau lời chào bấm "Bắt đầu trình chiếu 04 phút →" hoặc Space để sang Video.',
+    actionCue: 'Giữ giao diện LẠC HỒNG SỐ; sau lời chào bấm "Bắt đầu hành trình Cụm 1 →" hoặc Space để sang Video.',
     spokenText:
-      'Kính chào Ban Giám khảo. Cụm 1 thực hiện bộ bốn sản phẩm đưa Nghị quyết 57 đến gần thanh niên mang tên Lạc Hồng Số. Trước tiên, mời Ban Giám khảo theo dõi video dài một phút bốn mươi mốt giây.',
+      'Kính chào Ban Giám khảo. Cụm 1 thực hiện bộ bốn sản phẩm đưa Nghị quyết 57 đến gần thanh niên mang tên Lạc Hồng Số. Trước tiên, mời Ban Giám khảo theo dõi video mở đầu.',
     extendedTip: null,
   },
   1: {
     timeRange: '00:08 – 01:50',
-    actionCue: 'Bật phát Video 9:16 (101,45 giây) kèm phụ đề tiếng Việt. Diễn giả IM LẶNG hoàn toàn; hết video chuyển sang 01/05.',
+    actionCue: 'Bật phát Video kèm phụ đề tiếng Việt. Diễn giả IM LẶNG hoàn toàn; hết video chuyển sang Bộ ấn phẩm.',
     spokenText:
-      '[DIỄN GIẢ IM LẶNG trong 101,45 giây để Ban Giám khảo theo dõi trọn video tình huống 2 đoàn viên quét QR, thông điệp Nghị quyết 57 và khẩu hiệu tập thể.]',
+      '[DIỄN GIẢ IM LẶNG để Ban Giám khảo theo dõi trọn vẹn video tình huống 2 đoàn viên quét QR, thông điệp Nghị quyết 57 và khẩu hiệu tập thể.]',
     extendedTip:
-      'Mở rộng (+20s sau video): Nêu việc sửa lỗi dấu thanh "NGỒI" trên ảnh bìa mà giữ nguyên ảnh chụp thật, tạo phụ đề rời subtitles_vi.vtt và nén bản web mượt.',
+      'Mở rộng (+20s sau video): Nêu việc chuẩn hóa dấu thanh tiếng Việt trên ảnh bìa mà giữ nguyên ảnh chụp thật, đồng thời bổ sung phụ đề tiếng Việt đồng bộ.',
   },
   2: {
     timeRange: '01:50 – 01:56',
-    actionCue: 'Dừng ngắn tại Ấn phẩm 01/05 (Đặt vấn đề) rồi nhấn ArrowRight sang 02/05.',
+    actionCue: 'Dừng ngắn tại Ấn phẩm 01 / 05 (Khởi nguồn) rồi nhấn ArrowRight sang 02 / 05.',
     spokenText:
       'Sau câu hỏi gợi mở từ video và ấn phẩm một, mời Ban Giám khảo cùng nhìn vào các quan điểm cốt lõi của Nghị quyết 57-NQ/TW tại ấn phẩm hai.',
     extendedTip: null,
   },
   3: {
     timeRange: '01:56 – 02:10',
-    actionCue: 'Tại Ấn phẩm 02/05 (Quan điểm cốt lõi): khẳng định Bộ Chính trị (22/12/2024) và 4+1 quan điểm Mục I, rồi nhấn ArrowRight.',
+    actionCue: 'Tại Ấn phẩm 02 / 05 (Quan điểm cốt lõi): khẳng định Bộ Chính trị (22/12/2024) và 5 quan điểm Mục I, rồi nhấn ArrowRight.',
     spokenText:
-      'Ấn phẩm hai tóm tắt Nghị quyết 57-NQ/TW ngày hai mươi hai tháng mười hai năm hai nghìn không trăm hai mươi bốn của Bộ Chính trị: khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số là đột phá hàng đầu; người dân và doanh nghiệp là trung tâm; dựa trên năm nền tảng thể chế, nhân lực, hạ tầng, dữ liệu, công nghệ chiến lược và an toàn không gian mạng.',
+      'Ấn phẩm hai tóm tắt Nghị quyết 57-NQ/TW ngày hai mươi hai tháng mười hai năm hai nghìn không trăm hai bốn của Bộ Chính trị: khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số là đột phá hàng đầu; người dân và doanh nghiệp là trung tâm; dựa trên năm nền tảng thể chế, nhân lực, hạ tầng, dữ liệu, công nghệ chiến lược và an toàn không gian mạng.',
     extendedTip: null,
   },
   4: {
     timeRange: '02:10 – 02:32',
-    actionCue: 'Tại Ấn phẩm 03/05 (2030 → 2045): chỉ vào 2 khung chỉ tiêu, nhấn mạnh ĐÂY LÀ MỤC TIÊU VĂN KIỆN (không phải kết quả hiện tại).',
+    actionCue: 'Tại Ấn phẩm 03 / 05 (2030 → 2045): chỉ vào 2 khung chỉ tiêu, nhấn mạnh ĐÂY LÀ MỤC TIÊU VĂN KIỆN (không phải kết quả hiện tại).',
     spokenText:
       'Sang ấn phẩm ba, đây là mục tiêu văn kiện chứ không phải kết quả hiện tại: đến năm hai nghìn không trăm ba mươi, kinh tế số tối thiểu ba mươi phần trăm GDP, trên tám mươi phần trăm dùng dịch vụ công trực tuyến, vào nhóm ba Đông Nam Á và năm mươi thế giới về năng lực cạnh tranh số, Chính phủ điện tử, nhóm ba Đông Nam Á nghiên cứu trí tuệ nhân tạo, chi R&D đạt hai phần trăm GDP. Tầm nhìn hai nghìn không trăm bốn mươi lăm trở thành nước phát triển thu nhập cao, kinh tế số tối thiểu năm mươi phần trăm GDP, thuộc nhóm ba mươi thế giới, thực hiện qua bảy nhóm nhiệm vụ.',
     extendedTip:
@@ -310,36 +428,36 @@ export const SPEAKER_CUES_BY_STAGE = {
   },
   5: {
     timeRange: '02:32 – 02:42',
-    actionCue: 'Tại Ấn phẩm 04/05: giới thiệu 5 đề xuất phần việc thanh niên Cụm 1, nhấn ArrowRight sang 05/05.',
+    actionCue: 'Tại Ấn phẩm 04 / 05: giới thiệu 5 đề xuất phần việc thanh niên Cụm 1, nhấn ArrowRight sang 05 / 05.',
     spokenText:
       'Ấn phẩm bốn đề xuất năm phần việc cho thanh niên Cụm 1: học tập số, hỗ trợ dịch vụ công, số hóa công tác Đoàn, sáng kiến cơ sở và an toàn thông tin.',
     extendedTip: null,
   },
   6: {
     timeRange: '02:42 – 02:50',
-    actionCue: 'Tại Ấn phẩm 05/05: chốt thông điệp & QR chinhphu.vn, nhấn ArrowRight sang Bài đăng.',
+    actionCue: 'Tại Ấn phẩm 05 / 05: chốt thông điệp & QR chinhphu.vn, nhấn ArrowRight sang Bài đăng.',
     spokenText:
       'Ấn phẩm năm chốt thông điệp Hiểu đúng, Làm thật, Lan tỏa cùng mã QR tới toàn văn trên Cổng Thông tin Chính phủ.',
     extendedTip: null,
   },
   7: {
     timeRange: '02:50 – 03:08',
-    actionCue: 'Tại Mục 3 (Bài đăng MXH & Mockup): có thể chuyển Xem trực quan / Xem nguyên văn hoặc mở Mockup PNG.',
+    actionCue: 'Tại Bài đăng lan tỏa: có thể chuyển Xem trực quan / Xem nguyên văn hoặc mở bản trình bày bài đăng.',
     spokenText:
-      'Ở bài đăng mạng xã hội, nhóm giữ mạch Chuyển đổi số bắt đầu từ chính mình, sửa ý số hóa địa chỉ đỏ thành đề xuất khi đủ tư liệu phù hợp, chuẩn hóa hashtag, dự kiến đăng lúc mười bảy giờ ba mươi khi nhóm chốt kênh.',
+      'Ở bài đăng mạng xã hội, nhóm giữ mạch Chuyển đổi số bắt đầu từ chính mình, diễn đạt cẩn trọng phương án nghiên cứu số hóa thông tin địa chỉ đỏ trên cơ sở có tư liệu và quyền sử dụng phù hợp, đồng bộ cùng bộ ấn phẩm.',
     extendedTip: null,
   },
   8: {
     timeRange: '03:08 – 03:46',
-    actionCue: 'Tại Mục 4 (Thuyết minh 03 trang): giới thiệu 4 thẻ cốt lõi, kế hoạch 5 tuần và nút tải PDF/Word.',
+    actionCue: 'Tại Thuyết minh & Hành trình: giới thiệu 4 thẻ câu chuyện cốt lõi, lộ trình 5 tuần và Kho tư liệu.',
     spokenText:
-      'Bản thuyết minh gói trong ba trang nêu rõ lộ trình năm tuần tại Cụm 1 và chỉ số theo dõi đề xuất. Nhóm cam kết minh bạch: tranh minh họa có hỗ trợ AI là giả lập truyền thông, giữ nguyên Huy hiệu Đoàn và đối chiếu nguồn Chính phủ cùng Bộ Khoa học và Công nghệ.',
+      'Bản thuyết minh nêu rõ lộ trình năm tuần tại Cụm 1 và cách đo lường đề xuất. Nhóm giữ chuẩn mực minh bạch: tách bạch mục tiêu văn kiện với kết quả hiện tại, giữ nguyên Huy hiệu Đoàn và đối chiếu nguồn Chính phủ cùng Bộ Khoa học và Công nghệ.',
     extendedTip:
-      'Mở rộng (+25s): Giải thích lý do chuyển câu "số hóa địa chỉ đỏ" thành đề xuất có điều kiện tư liệu/quyền sử dụng hợp lệ và tách bạch 57-NQ/TW khỏi 03/NQ-CP, 71/NQ-CP.',
+      'Mở rộng (+25s): Giải thích lý do diễn đạt đề xuất số hóa địa chỉ đỏ theo điều kiện tư liệu/quyền sử dụng phù hợp và tách bạch 57-NQ/TW khỏi 03/NQ-CP, 71/NQ-CP.',
   },
   9: {
     timeRange: '03:46 – 04:00',
-    actionCue: 'Giữ Màn hình Tổng kết + mã QR (≥ 5 giây đệm) để chuyển sang 04 phút phản biện.',
+    actionCue: 'Giữ Màn hình Lan tỏa + mã QR (≥ 5 giây đệm) để chuyển sang 04 phút phản biện.',
     spokenText:
       'Với tinh thần Hiểu đúng, Làm thật, Lan tỏa, Cụm 1 xin cảm ơn và sẵn sàng lắng nghe phản biện của Ban Giám khảo.',
     extendedTip: null,
@@ -348,7 +466,7 @@ export const SPEAKER_CUES_BY_STAGE = {
 
 export const STAGE_DEFINITIONS = [
   { stage: 0, id: 'stage-landing', label: 'Mở đầu', shortLabel: 'Mở đầu', productKey: 'overview', revealIdx: 0, autoSeconds: 8 },
-  { stage: 1, id: 'stage-video', label: 'Video 9:16', shortLabel: 'Video', productKey: 'video', revealIdx: 1, autoSeconds: 102 },
+  { stage: 1, id: 'stage-video', label: 'Video', shortLabel: 'Video', productKey: 'video', revealIdx: 1, autoSeconds: 102 },
   { stage: 2, id: 'stage-posters', label: '01 / 05', shortLabel: '01/05', productKey: 'posters', revealIdx: 2, autoSeconds: 8 },
   { stage: 3, id: 'stage-posters', label: '02 / 05', shortLabel: '02/05', productKey: 'posters', revealIdx: 2, autoSeconds: 12 },
   { stage: 4, id: 'stage-posters', label: '03 / 05', shortLabel: '03/05', productKey: 'posters', revealIdx: 2, autoSeconds: 20 },
@@ -356,7 +474,7 @@ export const STAGE_DEFINITIONS = [
   { stage: 6, id: 'stage-posters', label: '05 / 05', shortLabel: '05/05', productKey: 'posters', revealIdx: 2, autoSeconds: 8 },
   { stage: 7, id: 'stage-social', label: 'Bài đăng', shortLabel: 'Bài đăng', productKey: 'social', revealIdx: 3, autoSeconds: 18 },
   { stage: 8, id: 'stage-presentation', label: 'Thuyết minh', shortLabel: 'Thuyết minh', productKey: 'presentation', revealIdx: 4, autoSeconds: 38 },
-  { stage: 9, id: 'stage-finale', label: 'Tổng kết', shortLabel: 'Tổng kết', productKey: 'finale', revealIdx: 5, autoSeconds: 16 },
+  { stage: 9, id: 'stage-finale', label: 'Lan tỏa', shortLabel: 'Lan tỏa', productKey: 'finale', revealIdx: 5, autoSeconds: 16 },
 ];
 
 export function getStageMeta(stage) {

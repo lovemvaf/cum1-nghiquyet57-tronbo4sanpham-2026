@@ -1,15 +1,15 @@
 /**
- * LẠC HỒNG SỐ — V3 10-Stage Integrated 04-Product Deck Controller
+ * LẠC HỒNG SỐ — V3 10-Stage Integrated Editorial Deck Controller
  * Manages Reveal.js layout-free view switching across stages 0..9,
- * live Video 9:16 playback & VTT captions, 05 posters + Zoom Lightbox,
- * Social Post dual view, Thuyết minh 4 cards + PPT summary modal,
- * synchronized 04:00 / 06:00 speaker drawer, Resource Hub, and pausable Auto Demo.
+ * live Video playback & Vietnamese captions, 05 posters + Zoom Lightbox,
+ * Social Post dual view, Thuyết minh 4 story cards + PPT summary modal,
+ * synchronized 04:00 / 06:00 speaker drawer, Resource Hub, HUD popover,
+ * and pausable Auto Demo + interactive VFX pointer & grand waves.
  */
 
 import Reveal from 'reveal.js';
 import QRCode from 'qrcode';
 import {
-  CAMPAIGN_META,
   CONCEPT_NOTICE,
   EMBLEM_ASSET,
   EVALUATION_QUESTIONS,
@@ -19,9 +19,9 @@ import {
   OFFICIAL_RESOLUTION_URL,
   POSTERS,
   PRESENTATION_DOC_DATA,
+  PRES_CARD_ICONS,
   RELATED_IMPLEMENTATION_DOCS,
   RESOURCE_HUB_GROUPS,
-  RUN_OF_SHOW,
   SECONDARY_OFFICIAL_URL,
   SEVEN_TASKS_GROUPED,
   SOCIAL_POST_DATA,
@@ -185,8 +185,8 @@ function renderPosterDetailBlocks(poster) {
   if (poster.id === 2 && poster.fourPillBadges?.length) {
     return `
       <div class="fact-chips-head">
-        <span class="fact-chips-title">4 trụ định hướng trên Poster 02 (Mục I)</span>
-        <span class="fact-chips-note">Văn kiện 57-NQ/TW</span>
+        <span class="fact-chips-title">4 trụ định hướng cốt lõi (Mục I)</span>
+        <span class="fact-chips-note">Nghị quyết 57-NQ/TW</span>
       </div>
       <div class="fact-chips-grid">
         ${poster.fourPillBadges
@@ -210,7 +210,7 @@ function renderPosterDetailBlocks(poster) {
     return `
       <div class="fact-chips-head">
         <span class="fact-chips-title">5 đề xuất phần việc thanh niên Cụm 1</span>
-        <span class="fact-chips-note">Đề xuất Cụm 1 (chưa phải thống kê)</span>
+        <span class="fact-chips-note">Định hướng tại cơ sở</span>
       </div>
       <div class="fact-chips-grid fact-chips-grid-5">
         ${poster.fiveYouthActions
@@ -303,9 +303,44 @@ function buildSourcesModalMarkup() {
       <div class="sources-qa-grid">${questionsHtml}</div>
     </section>
 
+    <section class="sources-section" aria-labelledby="sec-editorial-audit">
+      <div class="sources-section-head">
+        <h4 id="sec-editorial-audit">3. Đối chiếu hiệu đính dữ liệu &amp; ghi chú kỹ thuật</h4>
+      </div>
+      <div class="sources-audit-grid">
+        <div class="audit-diff-card audit-diff-old">
+          <div class="audit-diff-head">
+            <span class="diff-badge-red">BẢN GỐC · UNVERIFIED</span>
+            <span class="diff-file-name">3_BAI_DANG_GOC_DOI1.docx</span>
+          </div>
+          <p class="audit-diff-text">"${escapeHtml(SOCIAL_POST_DATA.originalExcerpt?.text || '')}"</p>
+          <p class="audit-diff-note">Lý do: ${escapeHtml(SOCIAL_POST_DATA.originalExcerpt?.reason || '')}</p>
+        </div>
+
+        <div class="audit-diff-card audit-diff-new">
+          <div class="audit-diff-head">
+            <span class="diff-badge-green">BẢN HOÀN CHỈNH · ĐỀ XUẤT NHÓM</span>
+            <span class="diff-badge-warn">CHỜ NHÓM DUYỆT</span>
+          </div>
+          <p class="audit-diff-text">"${escapeHtml(SOCIAL_POST_DATA.revisedSafeProposal?.text || '')}"</p>
+          <p class="audit-diff-note">${escapeHtml(SOCIAL_POST_DATA.hashtagFixNote || '')} · Kênh dự kiến: ${escapeHtml(SOCIAL_POST_DATA.channelPendingNote || '')}</p>
+        </div>
+
+        <div class="sources-audit-note-card">
+          <div class="sources-task-top">
+            <span class="sources-task-badge">Chuẩn hóa Video &amp; Thumbnail</span>
+            <span class="sources-task-ref">101,45 giây · 9:16</span>
+          </div>
+          <p class="sources-task-text">${escapeHtml(VIDEO_DATA.thumbFixNote || '')}</p>
+          <p class="sources-task-text">${escapeHtml(VIDEO_DATA.speechAuditNote || '')}</p>
+          <p class="sources-task-ref">${escapeHtml(VIDEO_DATA.musicAndAiLicensing?.note || '')}</p>
+        </div>
+      </div>
+    </section>
+
     <section class="sources-section" aria-labelledby="sec-official-links">
       <div class="sources-section-head">
-        <h4 id="sec-official-links">3. Nguồn chính thống &amp; Ghi chú minh bạch</h4>
+        <h4 id="sec-official-links">4. Nguồn chính thống &amp; Ghi chú minh bạch</h4>
       </div>
       <div class="sources-links-box">
         <div class="sources-primary-links">
@@ -380,7 +415,7 @@ function buildPptModalMarkup() {
       </div>
       <div class="sources-concept-notice">
         <p>${escapeHtml(LANDING_DATA.aiDisclosure)}</p>
-        <p class="sources-status-note">Huy hiệu Đoàn TNCS Hồ Chí Minh: dùng nguyên mẫu huy-hieu-doan-clean.png (941 × 1042 px), không vẽ lại bằng AI và không bịa Logo Hội Sinh viên.</p>
+        <p class="sources-status-note">Huy hiệu Đoàn TNCS Hồ Chí Minh: dùng nguyên mẫu huy-hieu-doan-clean.png (941 × 1042 px), không vẽ lại bằng AI và không tự tạo Logo Hội Sinh viên.</p>
         <p class="sources-status-note">Phông chữ &amp; Mã nguồn mở: Be Vietnam Pro (OFL-1.1), Times New Roman, Reveal.js, Vite, GSAP, qrcode (MIT), jsQR, Python-docx.</p>
       </div>
     </section>
@@ -407,6 +442,7 @@ export async function initIntegratedDeck() {
     isSixMinMode: false,
     isAutoDemo: false,
     isNotesOpen: false,
+    isHudMenuOpen: false,
     isLightboxOpen: false,
     isSourcesOpen: false,
     isDownloadsOpen: false,
@@ -420,7 +456,6 @@ export async function initIntegratedDeck() {
     document.body.classList.add('lite-mode');
   }
 
-  // 1. Hydrate static views directly from Single Source of Truth JSON
   const setText = (id, val) => {
     const el = document.getElementById(id);
     if (el && typeof val === 'string') el.textContent = val;
@@ -436,15 +471,15 @@ export async function initIntegratedDeck() {
     headerEmblem.alt = EMBLEM_ASSET.alt;
   }
 
-  setText('landing-eyebrow', LANDING_DATA.subtitle);
-  setText('landing-title', LANDING_DATA.headline);
+  // Hydrate Landing Stage (Stage 0)
+  setText('landing-eyebrow', LANDING_DATA.eyebrow);
   setText('landing-concept-pill', LANDING_DATA.conceptTitle);
   setText('landing-tagline-text', LANDING_DATA.tagline.toUpperCase());
   setText('landing-intro', LANDING_DATA.introSummary);
   setText('btn-start-label', LANDING_DATA.startButtonLabel);
-  setText('landing-ai-disclosure', LANDING_DATA.aiDisclosure);
+  setText('landing-source-line', LANDING_DATA.sourceLine);
 
-  // Hydrate Video Stage
+  // Hydrate Video Stage (Stage 1)
   const videoEl = document.getElementById('campaign-video');
   const videoSource = videoEl?.querySelector('source');
   const videoTrack = document.getElementById('video-vtt-track');
@@ -454,65 +489,46 @@ export async function initIntegratedDeck() {
   videoEl?.load();
 
   setText('video-title', VIDEO_DATA.title);
-  setText('video-duration-val', '101,45 giây');
-  setText('video-thumb-fix-note', VIDEO_DATA.thumbFixNote);
-  setText('video-speech-audit-note', VIDEO_DATA.speechAuditNote);
-  setText('video-licensing-note', VIDEO_DATA.musicAndAiLicensing?.note || '');
-  setHref('btn-download-video', VIDEO_DATA.webOptimizedPath);
-  setHref('btn-download-vtt', VIDEO_DATA.subtitlesVttPath);
+  setText('video-pull-quote', VIDEO_DATA.pullQuote);
 
   const speechLogEl = document.getElementById('video-speech-log');
   if (speechLogEl) {
-    speechLogEl.innerHTML = (VIDEO_DATA.speechLog || [])
+    speechLogEl.innerHTML = (VIDEO_DATA.narrativeMoments || [])
       .map(
-        (seg) => `
-        <li class="speech-log-item">
-          <span class="speech-log-time">${escapeHtml(seg.timeRange)}</span>
-          <div class="speech-log-copy">
-            <strong>${escapeHtml(seg.segment)}</strong>
-            <span>${escapeHtml(seg.summary)}</span>
+        (moment) => `
+        <li class="video-narrative-item">
+          <span class="narrative-index">${escapeHtml(moment.index)}</span>
+          <div class="narrative-copy">
+            <strong>${escapeHtml(moment.title)}</strong>
+            <span>${escapeHtml(moment.summary)}</span>
           </div>
         </li>`
       )
       .join('');
   }
 
-  // Hydrate Poster Mini Pills (01..05)
+  // Hydrate Poster Chapter Pills (Stages 2..6)
   const posterMiniPills = document.getElementById('poster-mini-pills');
   if (posterMiniPills) {
     posterMiniPills.innerHTML = POSTERS.map(
       (p) =>
-        `<button type="button" class="stage-pill" data-jump-stage="${p.stage}" aria-label="Ấn phẩm ${escapeHtml(p.index)}">${escapeHtml(p.index)}</button>`
+        `<button type="button" class="stage-pill" data-jump-stage="${p.stage}" aria-label="Ấn phẩm ${escapeHtml(p.badgeLabel)} – ${escapeHtml(p.chapterTitle)}">${escapeHtml(p.shortChapterLabel)}</button>`
     ).join('');
   }
 
   // Hydrate Social Post Stage (Stage 7)
   setText('social-headline', SOCIAL_POST_DATA.title);
-  setText('social-channel-note', SOCIAL_POST_DATA.channelPendingNote);
-  setText('social-schedule-note', `Dự kiến đăng: ${SOCIAL_POST_DATA.scheduledTimeNote}`);
-  setText('social-original-excerpt', `"${SOCIAL_POST_DATA.originalExcerpt?.text || ''}"`);
-  setText('social-original-reason', `Lý do: ${SOCIAL_POST_DATA.originalExcerpt?.reason || ''}`);
-  setText('social-revised-proposal', `"${SOCIAL_POST_DATA.revisedSafeProposal?.text || ''}"`);
-  setText(
-    'social-fix-summary',
-    `${SOCIAL_POST_DATA.hashtagFixNote} Đính kèm: ${SOCIAL_POST_DATA.attachedDeliverablesNote}.`
-  );
-  setHref('btn-download-social-docx', SOCIAL_POST_DATA.downloadPath);
-  setHref('btn-download-mockup', SOCIAL_POST_DATA.mockupImagePath);
+  setText('social-channel-note', SOCIAL_POST_DATA.channelDisplay);
+  setText('social-schedule-note', SOCIAL_POST_DATA.topicDisplay);
 
   const socialParagraphsEl = document.getElementById('social-visual-paragraphs');
   if (socialParagraphsEl) {
     const paras = SOCIAL_POST_DATA.fullPostParagraphs || [];
-    const proposalText = SOCIAL_POST_DATA.revisedSafeProposal?.text || '';
     socialParagraphsEl.innerHTML = paras
       .slice(1)
       .map((p) => {
-        if (proposalText && p.includes('nghiên cứu phương án số hóa thông tin về các địa chỉ đỏ')) {
-          return `
-            <p class="editorial-para editorial-para-proposal">
-              <span class="proposal-inline-badge">ĐỀ XUẤT MỚI (CHỜ DUYỆT)</span>
-              ${escapeHtml(p)}
-            </p>`;
+        if (p.includes('nghiên cứu phương án số hóa thông tin về các địa chỉ đỏ')) {
+          return `<p class="editorial-para editorial-para-proposal">${escapeHtml(p)}</p>`;
         }
         return `<p class="editorial-para">${escapeHtml(p)}</p>`;
       })
@@ -532,23 +548,32 @@ export async function initIntegratedDeck() {
       ...(SOCIAL_POST_DATA.fullPostParagraphs || []),
       '',
       (SOCIAL_POST_DATA.hashtags || []).join(' '),
-      '',
-      `[Giờ dự kiến] ${SOCIAL_POST_DATA.scheduledTimeNote}`,
-      `[Kênh dự kiến] ${SOCIAL_POST_DATA.channelPendingNote}`,
-      `[Ấn phẩm đi kèm] ${SOCIAL_POST_DATA.attachedDeliverablesNote}`,
     ];
     socialRawPre.textContent = rawLines.join('\n');
   }
 
-  // Hydrate Presentation Doc Stage (Stage 8)
+  const socialHighlightsEl = document.getElementById('social-highlights-list');
+  if (socialHighlightsEl) {
+    socialHighlightsEl.innerHTML = (SOCIAL_POST_DATA.highlights || [])
+      .map(
+        (item) => `
+        <li class="social-highlight-item">
+          <strong>${escapeHtml(item.title)}</strong>
+          <p>${escapeHtml(item.summary)}</p>
+        </li>`
+      )
+      .join('');
+  }
+
+  // Hydrate Presentation Story Cards (Stage 8)
   const presCardsGrid = document.getElementById('pres-cards-grid');
   if (presCardsGrid) {
-    presCardsGrid.innerHTML = (PRESENTATION_DOC_DATA.cards || [])
+    presCardsGrid.innerHTML = (PRESENTATION_DOC_DATA.storyCards || [])
       .map(
         (card) => `
         <article class="pres-card">
           <div class="pres-card-head">
-            <span class="pres-card-id">${escapeHtml(card.cardId)}</span>
+            <span class="pres-card-icon" aria-hidden="true">${PRES_CARD_ICONS[card.iconKey] || PRES_CARD_ICONS.spark}</span>
             <h3 class="pres-card-title">${escapeHtml(card.title)}</h3>
           </div>
           <p class="pres-card-summary">${escapeHtml(card.summary)}</p>
@@ -556,9 +581,6 @@ export async function initIntegratedDeck() {
       )
       .join('');
   }
-  setHref('btn-download-tm-pdf', PRESENTATION_DOC_DATA.downloadPdfPath);
-  setHref('btn-download-tm-docx', PRESENTATION_DOC_DATA.downloadDocxPath);
-  setHref('btn-download-speech-docx', PRESENTATION_DOC_DATA.speechDownloadPath);
 
   // Hydrate Finale Stage (Stage 9)
   setText('finale-badge', FINALE_DATA.eyebrow);
@@ -566,8 +588,6 @@ export async function initIntegratedDeck() {
   setText('finale-summary', FINALE_DATA.summary);
   setText('btn-finale-official-label', FINALE_DATA.officialButtonLabel);
   setText('finale-source-credit', FINALE_DATA.sourceCredit);
-  setText('finale-ai-disclosure', FINALE_DATA.aiDisclosure);
-  setText('finale-team-notice', FINALE_DATA.teamMetadataNotice);
   setHref('btn-finale-official', FINALE_DATA.officialUrl);
   setHref('btn-finale-secondary-official', FINALE_DATA.secondaryOfficialUrl);
 
@@ -579,7 +599,7 @@ export async function initIntegratedDeck() {
         <div class="finale-thumb-img-wrap">
           <img src="${escapeHtml(p.posterPath)}" alt="Ấn phẩm ${escapeHtml(p.index)} – ${escapeHtml(p.title)}" />
         </div>
-        <span class="finale-thumb-idx">${escapeHtml(p.index)}</span>
+        <span class="finale-thumb-idx">${escapeHtml(p.badgeLabel)}</span>
         <span class="finale-thumb-role">${escapeHtml(p.chapterTitle)}</span>
       </button>`
     ).join('');
@@ -651,6 +671,9 @@ export async function initIntegratedDeck() {
   const btnPrev = document.getElementById('btn-prev');
   const btnNext = document.getElementById('btn-next');
   const hudProgress = document.getElementById('hud-progress');
+  const btnHudMenu = document.getElementById('btn-hud-menu');
+  const hudToolsPopover = document.getElementById('hud-tools-popover');
+
   const btnNotes = document.getElementById('btn-notes');
   const btnHudSources = document.getElementById('btn-hud-sources');
   const btnDownloads = document.getElementById('btn-downloads');
@@ -660,7 +683,6 @@ export async function initIntegratedDeck() {
   const btnFullscreen = document.getElementById('btn-fullscreen');
   const btnTimingMode = document.getElementById('btn-timing-mode');
   const timingModeLabel = document.getElementById('timing-mode-label');
-  const crumbPosterSub = document.getElementById('crumb-poster-sub');
 
   const btnVideoOverlayPlay = document.getElementById('btn-video-overlay-play');
   const btnVideoCaptions = document.getElementById('btn-video-captions');
@@ -704,9 +726,8 @@ export async function initIntegratedDeck() {
       return;
     }
     const meta = getStageMeta(state.stage);
-    // On Video stage, wait until video ends or fallback timeout if video isn't playing
     if (state.stage === 1 && videoEl && !videoEl.ended) {
-      if (!videoEl.paused) return; // video 'ended' listener will advance
+      if (!videoEl.paused) return;
     }
     autoDemoTimer = window.setTimeout(() => {
       if (state.isAutoDemo && state.stage < 9) {
@@ -720,12 +741,22 @@ export async function initIntegratedDeck() {
     if (btnAutoDemo) {
       btnAutoDemo.setAttribute('aria-pressed', String(state.isAutoDemo));
       btnAutoDemo.classList.toggle('is-active', state.isAutoDemo);
-      btnAutoDemo.textContent = state.isAutoDemo ? 'Tạm dừng Demo' : 'Auto Demo';
+      const labelSpan = btnAutoDemo.querySelector('span');
+      if (labelSpan) labelSpan.textContent = state.isAutoDemo ? 'Tạm dừng tự động' : 'Tự động trình chiếu';
     }
     if (state.isAutoDemo) {
       scheduleNextAutoDemoBeat();
     } else {
       clearAutoDemoTimer();
+    }
+  }
+
+  function setHudPopover(open) {
+    state.isHudMenuOpen = Boolean(open);
+    if (hudToolsPopover) hudToolsPopover.hidden = !state.isHudMenuOpen;
+    if (btnHudMenu) {
+      btnHudMenu.setAttribute('aria-expanded', String(state.isHudMenuOpen));
+      btnHudMenu.classList.toggle('is-active', state.isHudMenuOpen);
     }
   }
 
@@ -739,7 +770,7 @@ export async function initIntegratedDeck() {
     speakerDrawer.hidden = !state.isNotesOpen;
     if (state.isNotesOpen) {
       if (speakerDrawerTime) speakerDrawerTime.textContent = meta.cue.timeRange;
-      if (speakerDrawerTitle) speakerDrawerTitle.textContent = `Lời nói 4p · ${meta.label}`;
+      if (speakerDrawerTitle) speakerDrawerTitle.textContent = `Lời nói · ${meta.label}`;
       if (speakerDrawerCue) speakerDrawerCue.textContent = `Thao tác: ${meta.cue.actionCue}`;
       if (speakerDrawerText) speakerDrawerText.textContent = meta.cue.spokenText;
       if (speakerDrawerExtended) {
@@ -760,20 +791,13 @@ export async function initIntegratedDeck() {
     if (btnPrev) btnPrev.disabled = state.stage <= 0;
     if (btnNext) btnNext.disabled = state.stage >= 9;
 
-    // 4-Product Breadcrumb active highlight
+    // 6-Step Story Rail active highlight
     document.querySelectorAll('#product-breadcrumb .crumb-btn').forEach((btn) => {
       const prod = btn.getAttribute('data-crumb-product');
       const active = prod === meta.productKey;
       btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-current', active ? 'step' : 'false');
     });
-
-    if (crumbPosterSub) {
-      crumbPosterSub.textContent =
-        state.stage >= 2 && state.stage <= 6 && meta.poster
-          ? `(${meta.poster.index})`
-          : '(01–05)';
-    }
 
     if (btnTimingMode && timingModeLabel) {
       btnTimingMode.setAttribute('aria-pressed', String(state.isSixMinMode));
@@ -818,22 +842,14 @@ export async function initIntegratedDeck() {
     if (sectionPoster) sectionPoster.setAttribute('data-stage', String(stage));
 
     const posterStageImg = document.getElementById('poster-stage-img');
-    const posterFilenameChip = document.getElementById('poster-filename-chip');
-    const btnDownloadPoster = document.getElementById('btn-download-poster');
-
     if (posterStageImg) {
       posterStageImg.src = poster.posterPath;
       posterStageImg.alt = `Ấn phẩm ${poster.index} – ${poster.title}`;
     }
-    if (posterFilenameChip) posterFilenameChip.textContent = poster.filename;
-    if (btnDownloadPoster) {
-      btnDownloadPoster.href = poster.posterPath;
-      btnDownloadPoster.setAttribute('download', poster.filename);
-    }
 
+    setText('poster-chapter-indicator', `Chặng ${poster.badgeLabel} · ${poster.chapterTitle}`);
     setText('stage-badge', poster.badgeLabel);
     setText('panel-role', poster.chapterTitle.toUpperCase());
-    setText('panel-poster-id', poster.posterId);
     setText('panel-title', poster.title);
     setText('panel-subtitle', poster.subtitle);
 
@@ -906,7 +922,6 @@ export async function initIntegratedDeck() {
     const prevStage = state.stage;
     state.stage = targetStage;
 
-    // Pause video cleanly when navigating away from Stage 1
     if (prevStage === 1 && targetStage !== 1 && videoEl && !videoEl.paused) {
       videoEl.pause();
     }
@@ -921,6 +936,10 @@ export async function initIntegratedDeck() {
     }
 
     heritageCanvas.setStage(targetStage);
+    if (!state.isLiteMode && !state.isMotionOff && (targetStage === 0 || targetStage === 4 || targetStage === 9)) {
+      heritageCanvas.triggerGrandWave?.(`stage-${targetStage}`);
+    }
+
     syncHeaderAndHud();
 
     if (window.innerWidth <= 1024) {
@@ -938,6 +957,7 @@ export async function initIntegratedDeck() {
     const targetStage = Math.max(0, Math.min(9, Number(rawTarget)));
     if (Number.isNaN(targetStage)) return;
 
+    setHudPopover(false);
     closeAllModals();
 
     if (targetStage === state.stage && !state.isTransitioning) {
@@ -998,7 +1018,6 @@ export async function initIntegratedDeck() {
     if (state.isPptOpen) closePptModal();
   }
 
-  // Lightbox (supports Posters 1..5 AND single asset previews like Mockup / Video Thumbnail)
   function renderLightboxAsset(item) {
     state.lightboxItem = item;
     if (item.type === 'asset') {
@@ -1034,6 +1053,7 @@ export async function initIntegratedDeck() {
   }
 
   function openPosterLightbox(posterId) {
+    setHudPopover(false);
     closeAllModals();
     const defaultId =
       state.stage >= 2 && state.stage <= 6 ? getPosterByStage(state.stage)?.id || 1 : 1;
@@ -1044,6 +1064,7 @@ export async function initIntegratedDeck() {
   }
 
   function openCustomAssetLightbox({ src, filename, title, badge }) {
+    setHudPopover(false);
     closeAllModals();
     renderLightboxAsset({ type: 'asset', src, filename, title, badge });
     state.isLightboxOpen = true;
@@ -1057,6 +1078,7 @@ export async function initIntegratedDeck() {
   }
 
   function openSourcesModal() {
+    setHudPopover(false);
     closeAllModals();
     state.isSourcesOpen = true;
     if (sourcesModal) sourcesModal.hidden = false;
@@ -1071,6 +1093,7 @@ export async function initIntegratedDeck() {
   }
 
   function openDownloadsModal() {
+    setHudPopover(false);
     closeAllModals();
     state.isDownloadsOpen = true;
     if (downloadsModal) downloadsModal.hidden = false;
@@ -1085,6 +1108,7 @@ export async function initIntegratedDeck() {
   }
 
   function openPptModal() {
+    setHudPopover(false);
     closeAllModals();
     state.isPptOpen = true;
     if (pptModal) pptModal.hidden = false;
@@ -1147,16 +1171,7 @@ export async function initIntegratedDeck() {
     track.mode = nextShowing ? 'showing' : 'hidden';
     btnVideoCaptions.classList.toggle('is-active', nextShowing);
     btnVideoCaptions.setAttribute('aria-pressed', String(nextShowing));
-    btnVideoCaptions.textContent = nextShowing ? 'Phụ đề VTT: Bật' : 'Phụ đề VTT: Tắt';
-  });
-
-  document.getElementById('btn-view-fixed-thumb')?.addEventListener('click', () => {
-    openCustomAssetLightbox({
-      src: VIDEO_DATA.fixedThumb1080Path,
-      filename: 'thumbnail-chu-dung-1080x1920.png',
-      title: 'Thumbnail Video 9:16 đã sửa dấu NGỒI (1080×1920 PNG)',
-      badge: 'THUMBNAIL VIDEO',
-    });
+    btnVideoCaptions.textContent = nextShowing ? 'Phụ đề tiếng Việt: Bật' : 'Phụ đề tiếng Việt: Tắt';
   });
 
   // Social Post View Toggle & Copy
@@ -1201,8 +1216,8 @@ export async function initIntegratedDeck() {
     openCustomAssetLightbox({
       src: VIDEO_DATA.fixedThumb1080Path,
       filename: 'thumbnail-chu-dung-1080x1920.png',
-      title: 'Thumbnail Video 9:16 đính kèm bài đăng',
-      badge: 'VIDEO COVER',
+      title: 'Ảnh bìa Video tuyên truyền đính kèm bài đăng',
+      badge: 'ẢNH BÌA VIDEO',
     });
   });
 
@@ -1210,8 +1225,8 @@ export async function initIntegratedDeck() {
     openCustomAssetLightbox({
       src: SOCIAL_POST_DATA.mockupImagePath,
       filename: 'MOCKUP_BAI_DANG.png',
-      title: 'Ảnh xem trước Mockup Bài đăng mạng xã hội',
-      badge: 'MOCKUP PNG',
+      title: 'Bản trình bày bài đăng mạng xã hội',
+      badge: 'BẢN TRÌNH BÀY',
     });
   });
 
@@ -1254,6 +1269,7 @@ export async function initIntegratedDeck() {
 
   document.querySelectorAll('[data-open-sources="true"]').forEach((btn) => {
     btn.addEventListener('click', () => {
+      setHudPopover(false);
       if (state.isSourcesOpen) closeSourcesModal();
       else openSourcesModal();
     });
@@ -1261,12 +1277,14 @@ export async function initIntegratedDeck() {
 
   document.querySelectorAll('[data-open-downloads="true"]').forEach((btn) => {
     btn.addEventListener('click', () => {
+      setHudPopover(false);
       if (state.isDownloadsOpen) closeDownloadsModal();
       else openDownloadsModal();
     });
   });
 
   document.getElementById('btn-open-ppt-ref')?.addEventListener('click', () => {
+    setHudPopover(false);
     if (state.isPptOpen) closePptModal();
     else openPptModal();
   });
@@ -1284,12 +1302,40 @@ export async function initIntegratedDeck() {
     setAutoDemo(false);
     nextStage();
   });
-  btnNotes?.addEventListener('click', () => toggleNotes());
+
+  btnHudMenu?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setHudPopover(!state.isHudMenuOpen);
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!state.isHudMenuOpen) return;
+    const target = e.target;
+    if (hudToolsPopover?.contains(target) || btnHudMenu?.contains(target)) return;
+    setHudPopover(false);
+  });
+
+  btnNotes?.addEventListener('click', () => {
+    setHudPopover(false);
+    toggleNotes();
+  });
   document.getElementById('btn-drawer-close')?.addEventListener('click', () => toggleNotes(false));
-  btnAutoDemo?.addEventListener('click', () => setAutoDemo(!state.isAutoDemo));
-  btnLite?.addEventListener('click', () => toggleLiteMode());
-  btnMotionOff?.addEventListener('click', () => toggleMotionOff());
-  btnFullscreen?.addEventListener('click', () => toggleFullscreen());
+  btnAutoDemo?.addEventListener('click', () => {
+    setHudPopover(false);
+    setAutoDemo(!state.isAutoDemo);
+  });
+  btnLite?.addEventListener('click', () => {
+    setHudPopover(false);
+    toggleLiteMode();
+  });
+  btnMotionOff?.addEventListener('click', () => {
+    setHudPopover(false);
+    toggleMotionOff();
+  });
+  btnFullscreen?.addEventListener('click', () => {
+    setHudPopover(false);
+    toggleFullscreen();
+  });
 
   document.addEventListener('fullscreenchange', () => {
     const active = Boolean(document.fullscreenElement);
@@ -1298,6 +1344,20 @@ export async function initIntegratedDeck() {
       btnFullscreen.classList.toggle('is-active', active);
     }
   });
+
+  // Desktop subtle pointer parallax for heritage sky canvas
+  if (window.matchMedia?.('(pointer: fine)').matches) {
+    window.addEventListener(
+      'pointermove',
+      (e) => {
+        if (state.isLiteMode || state.isMotionOff) return;
+        const nx = (e.clientX / Math.max(1, window.innerWidth)) * 2 - 1;
+        const ny = (e.clientY / Math.max(1, window.innerHeight)) * 2 - 1;
+        heritageCanvas.setPointer?.(nx, ny);
+      },
+      { passive: true }
+    );
+  }
 
   // Modal Close Events
   document.getElementById('btn-lightbox-close')?.addEventListener('click', closeLightbox);
@@ -1338,6 +1398,9 @@ export async function initIntegratedDeck() {
       if (state.isSourcesOpen || state.isDownloadsOpen || state.isPptOpen || state.isLightboxOpen) {
         e.preventDefault();
         closeAllModals();
+      } else if (state.isHudMenuOpen) {
+        e.preventDefault();
+        setHudPopover(false);
       } else if (state.isNotesOpen) {
         e.preventDefault();
         toggleNotes(false);
@@ -1419,6 +1482,7 @@ export async function initIntegratedDeck() {
         break;
       case 'KeyN':
         e.preventDefault();
+        setHudPopover(false);
         toggleNotes();
         break;
       case 'KeyL':
@@ -1458,6 +1522,7 @@ export async function initIntegratedDeck() {
         isSixMinMode: state.isSixMinMode,
         isAutoDemo: state.isAutoDemo,
         isNotesOpen: state.isNotesOpen,
+        isHudMenuOpen: state.isHudMenuOpen,
         isLightboxOpen: state.isLightboxOpen,
         isSourcesOpen: state.isSourcesOpen,
         isDownloadsOpen: state.isDownloadsOpen,
@@ -1473,6 +1538,7 @@ export async function initIntegratedDeck() {
     closeSourcesModal,
     openDownloadsModal,
     closeDownloadsModal,
+    getVfxMetrics: () => heritageCanvas.getMetrics?.(),
     destroyCanvas: () => heritageCanvas.destroy(),
   };
 }

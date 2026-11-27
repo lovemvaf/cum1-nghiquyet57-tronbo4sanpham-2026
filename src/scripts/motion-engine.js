@@ -1,13 +1,15 @@
 /**
  * LẠC HỒNG SỐ — GSAP Motion & Stage Transition Engine
- * Smooth non-strobing 0.45–0.75s stage transitions across all 10 stages (0..9).
+ * Coordinates smooth non-strobing 0.55–0.85s stage transitions across stages 0..9
+ * (golden radial light veil, Đông Sơn solar pulse, soaring Chim Lạc arc, cross-depth entrance).
  * Instant clean snap when Lite Mode, Motion Off, or prefers-reduced-motion is active.
  */
 
 import gsap from 'gsap';
 
 export function createMotionEngine() {
-  let prefersReduced = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches || false;
+  const reducedMotionQuery = window.matchMedia?.('(prefers-reduced-motion: reduce)');
+  let prefersReduced = reducedMotionQuery?.matches || false;
   let liteMode = prefersReduced;
   let motionOff = false;
   let transitionTimeline = null;
@@ -21,7 +23,7 @@ export function createMotionEngine() {
   function pickTransitionCue(fromStage, toStage) {
     if (fromStage === 0 && toStage === 1) return 'dongson-ripple';
     if (toStage === 9) return 'finale-bloom';
-    if (toStage === 4 || (fromStage === 4 && toStage === 3)) return 'chimlac-flight';
+    if (toStage === 4 || toStage === 6 || (fromStage === 4 && toStage === 3)) return 'chimlac-flight';
     if (toStage >= 2 && toStage <= 6) return 'soft-parallax';
     return 'light-sweep';
   }
@@ -36,8 +38,12 @@ export function createMotionEngine() {
     if (overlay) gsap.set(overlay, { autoAlpha: 0 });
     if (veil) gsap.set(veil, { autoAlpha: 0 });
     if (sweep) gsap.set(sweep, { autoAlpha: 0, xPercent: -45 });
-    if (ripple) gsap.set(ripple, { autoAlpha: 0, scale: 0.75 });
-    if (flight) gsap.set(flight, { autoAlpha: 0, xPercent: -20, yPercent: 8 });
+    if (ripple) gsap.set(ripple, { autoAlpha: 0, scale: 0.78 });
+    if (flight) gsap.set(flight, { autoAlpha: 0, xPercent: -22, yPercent: 10 });
+  }
+
+  function queryVisible(selectors) {
+    return Array.from(document.querySelectorAll(selectors)).filter((el) => !el.hidden);
   }
 
   function playStageTransition(fromStage, toStage, onMidpoint) {
@@ -91,63 +97,86 @@ export function createMotionEngine() {
       gsap.set(overlay, { autoAlpha: 1 });
 
       if (cue === 'dongson-ripple') {
-        tl.to(veil, { autoAlpha: 0.32, duration: 0.22, ease: 'power2.out' }, 0)
-          .fromTo(
+        // 0.68s Đông Sơn solar pulse + soft golden radial veil
+        if (veil) tl.to(veil, { autoAlpha: 0.28, duration: 0.24, ease: 'power2.out' }, 0);
+        if (ripple) {
+          tl.fromTo(
             ripple,
-            { autoAlpha: 0.55, scale: 0.76 },
-            { autoAlpha: 0, scale: 1.22, duration: 0.64, ease: 'power2.out' },
+            { autoAlpha: 0.62, scale: 0.76 },
+            { autoAlpha: 0, scale: 1.24, duration: 0.66, ease: 'power2.out' },
             0.02
-          )
-          .call(triggerMidpoint, null, 0.2)
-          .to(veil, { autoAlpha: 0, duration: 0.36, ease: 'power2.out' }, 0.24);
+          );
+        }
+        tl.call(triggerMidpoint, null, 0.24);
+        if (veil) tl.to(veil, { autoAlpha: 0, duration: 0.42, ease: 'power2.out' }, 0.26);
       } else if (cue === 'chimlac-flight') {
-        tl.to(veil, { autoAlpha: 0.28, duration: 0.2, ease: 'power2.out' }, 0)
-          .fromTo(
-            flight,
-            { autoAlpha: 0, xPercent: -20, yPercent: 10 },
-            { autoAlpha: 0.85, xPercent: 18, yPercent: -10, duration: 0.36, ease: 'power2.out' },
-            0.03
-          )
-          .call(triggerMidpoint, null, 0.2)
-          .to(flight, { autoAlpha: 0, xPercent: 46, yPercent: -22, duration: 0.32, ease: 'power2.in' }, 0.36)
-          .to(veil, { autoAlpha: 0, duration: 0.34, ease: 'power2.out' }, 0.28);
-      } else if (cue === 'finale-bloom') {
-        tl.to(veil, { autoAlpha: 0.4, duration: 0.24, ease: 'power2.out' }, 0)
-          .fromTo(
+        // 0.72s soaring Chim Lạc arc + gentle radial veil & solar pulse
+        if (veil) tl.to(veil, { autoAlpha: 0.24, duration: 0.22, ease: 'power2.out' }, 0);
+        if (ripple) {
+          tl.fromTo(
             ripple,
-            { autoAlpha: 0.58, scale: 0.8 },
-            { autoAlpha: 0, scale: 1.28, duration: 0.68, ease: 'power2.out' },
-            0.03
-          )
-          .fromTo(
+            { autoAlpha: 0.34, scale: 0.84 },
+            { autoAlpha: 0, scale: 1.18, duration: 0.62, ease: 'power2.out' },
+            0.04
+          );
+        }
+        if (flight) {
+          tl.fromTo(
             flight,
-            { autoAlpha: 0, xPercent: -16, yPercent: 8 },
-            { autoAlpha: 0.8, xPercent: 32, yPercent: -16, duration: 0.64, ease: 'power2.out' },
+            { autoAlpha: 0, xPercent: -24, yPercent: 12 },
+            { autoAlpha: 0.88, xPercent: 16, yPercent: -10, duration: 0.36, ease: 'power2.out' },
+            0.03
+          ).to(flight, { autoAlpha: 0, xPercent: 48, yPercent: -24, duration: 0.34, ease: 'power2.in' }, 0.38);
+        }
+        tl.call(triggerMidpoint, null, 0.24);
+        if (veil) tl.to(veil, { autoAlpha: 0, duration: 0.42, ease: 'power2.out' }, 0.28);
+      } else if (cue === 'finale-bloom') {
+        // 0.82s ceremonial Finale bloom: radial light veil + Đông Sơn pulse + soaring Chim Lạc arc
+        if (veil) tl.to(veil, { autoAlpha: 0.34, duration: 0.26, ease: 'power2.out' }, 0);
+        if (ripple) {
+          tl.fromTo(
+            ripple,
+            { autoAlpha: 0.64, scale: 0.78 },
+            { autoAlpha: 0, scale: 1.32, duration: 0.78, ease: 'power2.out' },
+            0.03
+          );
+        }
+        if (flight) {
+          tl.fromTo(
+            flight,
+            { autoAlpha: 0, xPercent: -18, yPercent: 10 },
+            { autoAlpha: 0.84, xPercent: 34, yPercent: -18, duration: 0.74, ease: 'power2.out' },
             0.06
-          )
-          .call(triggerMidpoint, null, 0.24)
-          .to(veil, { autoAlpha: 0, duration: 0.38, ease: 'power2.out' }, 0.3);
+          );
+        }
+        tl.call(triggerMidpoint, null, 0.28);
+        if (veil) tl.to(veil, { autoAlpha: 0, duration: 0.50, ease: 'power2.out' }, 0.32);
       } else if (cue === 'soft-parallax') {
-        tl.to(veil, { autoAlpha: 0.22, duration: 0.16, ease: 'power2.out' }, 0)
-          .fromTo(
-            sweep,
-            { autoAlpha: 0, xPercent: -40 },
-            { autoAlpha: 0.45, xPercent: 18, duration: 0.3, ease: 'power2.out' },
-            0.02
-          )
-          .call(triggerMidpoint, null, 0.18)
-          .to(sweep, { autoAlpha: 0, xPercent: 52, duration: 0.28, ease: 'power2.in' }, 0.3)
-          .to(veil, { autoAlpha: 0, duration: 0.28, ease: 'power2.out' }, 0.22);
-      } else {
-        tl.to(veil, { autoAlpha: 0.24, duration: 0.18, ease: 'power2.out' }, 0)
-          .fromTo(
+        // 0.60s smooth cross-depth sweep across poster stages
+        if (veil) tl.to(veil, { autoAlpha: 0.20, duration: 0.18, ease: 'power2.out' }, 0);
+        if (sweep) {
+          tl.fromTo(
             sweep,
             { autoAlpha: 0, xPercent: -42 },
-            { autoAlpha: 0.5, xPercent: 42, duration: 0.52, ease: 'power2.inOut' },
+            { autoAlpha: 0.46, xPercent: 16, duration: 0.30, ease: 'power2.out' },
             0.02
-          )
-          .call(triggerMidpoint, null, 0.2)
-          .to(veil, { autoAlpha: 0, duration: 0.3, ease: 'power2.out' }, 0.24);
+          ).to(sweep, { autoAlpha: 0, xPercent: 52, duration: 0.28, ease: 'power2.in' }, 0.32);
+        }
+        tl.call(triggerMidpoint, null, 0.22);
+        if (veil) tl.to(veil, { autoAlpha: 0, duration: 0.36, ease: 'power2.out' }, 0.24);
+      } else {
+        // 0.62s radiant diagonal light sweep
+        if (veil) tl.to(veil, { autoAlpha: 0.22, duration: 0.20, ease: 'power2.out' }, 0);
+        if (sweep) {
+          tl.fromTo(
+            sweep,
+            { autoAlpha: 0, xPercent: -44 },
+            { autoAlpha: 0.50, xPercent: 44, duration: 0.56, ease: 'power2.inOut' },
+            0.02
+          );
+        }
+        tl.call(triggerMidpoint, null, 0.22);
+        if (veil) tl.to(veil, { autoAlpha: 0, duration: 0.38, ease: 'power2.out' }, 0.24);
       }
     });
   }
@@ -164,80 +193,186 @@ export function createMotionEngine() {
     stageTimeline = tl;
 
     if (stage === 0) {
-      const items = document.querySelectorAll(
-        '#stage-landing .landing-hero-copy > *, #stage-landing .product-overview-card, #stage-landing .landing-actions'
+      const heroItems = queryVisible('#stage-landing .landing-hero-col > *');
+      const storyPills = queryVisible('#stage-landing .story-rail-pill');
+      const showcaseCards = queryVisible('#stage-landing .landing-showcase-card');
+
+      if (heroItems.length) {
+        tl.fromTo(
+          heroItems,
+          { autoAlpha: 0, y: 14 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.56,
+            stagger: 0.045,
+            ease: 'power2.out',
+            clearProps: 'transform,opacity,visibility',
+          },
+          0.02
+        );
+      } else {
+        // Fallback for legacy landing DOM structure
+        const legacyItems = queryVisible(
+          '#stage-landing .landing-hero-copy > *, #stage-landing .product-overview-card, #stage-landing .landing-actions'
+        );
+        if (legacyItems.length) {
+          tl.fromTo(
+            legacyItems,
+            { autoAlpha: 0, y: 12 },
+            {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.55,
+              stagger: 0.045,
+              ease: 'power2.out',
+              clearProps: 'transform,opacity,visibility',
+            },
+            0.02
+          );
+        }
+      }
+
+      if (storyPills.length) {
+        tl.fromTo(
+          storyPills,
+          { autoAlpha: 0, y: 10 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.48,
+            stagger: 0.04,
+            ease: 'power2.out',
+            clearProps: 'transform,opacity,visibility',
+          },
+          0.14
+        );
+      }
+
+      if (showcaseCards.length) {
+        tl.fromTo(
+          showcaseCards,
+          { autoAlpha: 0, y: 18, scale: 0.96 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.62,
+            stagger: 0.06,
+            ease: 'power3.out',
+            clearProps: 'transform,opacity,visibility',
+          },
+          0.08
+        );
+      }
+    } else if (stage === 1) {
+      const items = queryVisible(
+        '#stage-video .video-frame-shell, #stage-video .video-controls-caption, #stage-video .video-insight-card'
       );
       if (items.length) {
         tl.fromTo(
           items,
-          { autoAlpha: 0, y: 10 },
-          { autoAlpha: 1, y: 0, duration: 0.34, stagger: 0.04, ease: 'power2.out', clearProps: 'transform,opacity,visibility' },
-          0.02
-        );
-      }
-    } else if (stage === 1) {
-      const items = document.querySelectorAll('#stage-video .video-frame-shell, #stage-video .video-insight-card');
-      if (items.length) {
-        tl.fromTo(
-          items,
-          { autoAlpha: 0, y: 10 },
-          { autoAlpha: 1, y: 0, duration: 0.34, stagger: 0.06, ease: 'power2.out', clearProps: 'transform,opacity,visibility' },
+          { autoAlpha: 0, y: 12 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.56,
+            stagger: 0.055,
+            ease: 'power2.out',
+            clearProps: 'transform,opacity,visibility',
+          },
           0.02
         );
       }
     } else if (stage >= 2 && stage <= 6) {
       const posterFrame = document.querySelector('#stage-posters .poster-frame-btn');
-      const panelItems = Array.from(
-        document.querySelectorAll(
-          '#stage-posters .panel-story-head, #stage-posters .panel-summary, #stage-posters .panel-policy-highlights, #stage-posters .panel-fact-chips, #stage-posters .motif-card, #stage-posters .panel-official-wrap'
-        )
-      ).filter((el) => !el.hidden);
+      const panelItems = queryVisible(
+        '#stage-posters .panel-header-row, #stage-posters .poster-mini-pills, #stage-posters .panel-story-head, #stage-posters .panel-summary, #stage-posters .panel-policy-highlights, #stage-posters .panel-fact-chips, #stage-posters .motif-card, #stage-posters .panel-official-wrap'
+      );
 
-      if (posterFrame) {
+      if (posterFrame && !posterFrame.hidden) {
         tl.fromTo(
           posterFrame,
-          { autoAlpha: 0.5, scale: 0.99 },
-          { autoAlpha: 1, scale: 1, duration: 0.36, ease: 'power2.out', clearProps: 'transform,opacity,visibility' },
+          { autoAlpha: 0.48, scale: 0.98 },
+          {
+            autoAlpha: 1,
+            scale: 1,
+            duration: 0.58,
+            ease: 'power3.out',
+            clearProps: 'transform,opacity,visibility',
+          },
           0
         );
       }
       if (panelItems.length) {
         tl.fromTo(
           panelItems,
-          { autoAlpha: 0, y: 7 },
-          { autoAlpha: 1, y: 0, duration: 0.3, stagger: 0.035, ease: 'power2.out', clearProps: 'transform,opacity,visibility' },
-          0.03
+          { autoAlpha: 0, y: 10 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.52,
+            stagger: 0.038,
+            ease: 'power2.out',
+            clearProps: 'transform,opacity,visibility',
+          },
+          0.04
         );
       }
     } else if (stage === 7) {
-      const items = document.querySelectorAll('#stage-social .social-card-shell, #stage-social .social-side-panel');
-      if (items.length) {
-        tl.fromTo(
-          items,
-          { autoAlpha: 0, y: 10 },
-          { autoAlpha: 1, y: 0, duration: 0.34, stagger: 0.05, ease: 'power2.out', clearProps: 'transform,opacity,visibility' },
-          0.02
-        );
-      }
-    } else if (stage === 8) {
-      const cards = document.querySelectorAll('#stage-presentation .pres-card, #stage-presentation .pres-actions-bar');
-      if (cards.length) {
-        tl.fromTo(
-          cards,
-          { autoAlpha: 0, y: 10 },
-          { autoAlpha: 1, y: 0, duration: 0.32, stagger: 0.04, ease: 'power2.out', clearProps: 'transform,opacity,visibility' },
-          0.02
-        );
-      }
-    } else if (stage === 9) {
-      const items = document.querySelectorAll(
-        '#stage-finale .finale-heading, #stage-finale .finale-product-chip, #stage-finale .finale-thumb-card, #stage-finale .finale-action-panel'
+      const items = queryVisible(
+        '#stage-social .social-card-shell, #stage-social .social-side-panel'
       );
       if (items.length) {
         tl.fromTo(
           items,
-          { autoAlpha: 0, y: 10 },
-          { autoAlpha: 1, y: 0, duration: 0.34, stagger: 0.035, ease: 'power2.out', clearProps: 'transform,opacity,visibility' },
+          { autoAlpha: 0, y: 12 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.56,
+            stagger: 0.06,
+            ease: 'power2.out',
+            clearProps: 'transform,opacity,visibility',
+          },
+          0.02
+        );
+      }
+    } else if (stage === 8) {
+      const cards = queryVisible(
+        '#stage-presentation .pres-header-card, #stage-presentation .pres-card, #stage-presentation .pres-actions-bar'
+      );
+      if (cards.length) {
+        tl.fromTo(
+          cards,
+          { autoAlpha: 0, y: 12 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.55,
+            stagger: 0.045,
+            ease: 'power2.out',
+            clearProps: 'transform,opacity,visibility',
+          },
+          0.02
+        );
+      }
+    } else if (stage === 9) {
+      const items = queryVisible(
+        '#stage-finale .finale-crest-wrap, #stage-finale .finale-top-row, #stage-finale .finale-heading, #stage-finale .finale-summary, #stage-finale .finale-product-chip, #stage-finale .finale-thumb-card, #stage-finale .finale-action-panel'
+      );
+      if (items.length) {
+        tl.fromTo(
+          items,
+          { autoAlpha: 0, y: 12 },
+          {
+            autoAlpha: 1,
+            y: 0,
+            duration: 0.58,
+            stagger: 0.04,
+            ease: 'power2.out',
+            clearProps: 'transform,opacity,visibility',
+          },
           0.02
         );
       }
@@ -258,6 +393,13 @@ export function createMotionEngine() {
     }
   }
 
+  const onReducedMotionChange = (e) => {
+    prefersReduced = e.matches;
+    killTimelinesIfStatic();
+  };
+
+  reducedMotionQuery?.addEventListener?.('change', onReducedMotionChange);
+
   return {
     playStageTransition,
     animateStageEntrance,
@@ -268,6 +410,17 @@ export function createMotionEngine() {
     setMotionOff(enabled) {
       motionOff = Boolean(enabled);
       killTimelinesIfStatic();
+    },
+    destroy() {
+      if (transitionTimeline) {
+        transitionTimeline.kill();
+        transitionTimeline = null;
+      }
+      if (stageTimeline) {
+        stageTimeline.kill();
+        stageTimeline = null;
+      }
+      reducedMotionQuery?.removeEventListener?.('change', onReducedMotionChange);
     },
   };
 }

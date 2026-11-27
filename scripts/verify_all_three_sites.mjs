@@ -19,6 +19,25 @@ const BANNED_20_11 = [
   'DNTU',
 ];
 
+const CLUTTER_TOKENS = [
+  '101,45s',
+  '≤ 3tr',
+  'Nhịp 04:00',
+  'đã kiểm chứng dữ liệu',
+  'DRAFT_PENDING_TEAM_DETAILS',
+  'UNVERIFIED',
+  'CHỜ NHÓM CHỐT',
+  'NQ57-03',
+  'TM-01',
+  '.docx',
+  '.pdf',
+  '.vtt',
+  '.mp4',
+  '.svg',
+  'PDF/DOCX',
+  'thành phố Đồng Nai',
+];
+
 const V2_POSTERS = [
   '01_dat_cau_hoi_1080x1350.png',
   '02_quan_diem_cot_loi_1080x1350.png',
@@ -84,29 +103,52 @@ async function verifyV3Site(browser) {
   await page.evaluate(() => document.fonts.ready);
   await waitForStage(page, 0);
 
-  const landing = await page.evaluate((banned) => {
+  const landing = await page.evaluate(({ banned, clutter }) => {
     const emblem = document.getElementById('header-emblem-img');
     const title = document.getElementById('landing-title')?.textContent || '';
-    const cards = document.querySelectorAll('#landing-products-grid .product-overview-card').length;
+    const railPills = document.querySelectorAll('.landing-story-rail .story-rail-pill').length;
+    const fanCards = Array.from(document.querySelectorAll('.landing-showcase-fan .landing-showcase-card'));
+    const fanCardsOk =
+      fanCards.length === 3 &&
+      fanCards.every((card) => {
+        const img = card.querySelector('img');
+        return Boolean(img && img.complete && img.naturalWidth > 0);
+      });
     const debugCount = document.querySelectorAll('[id*="vfx"], [id*="debug"], [id*="showcase"]').length;
     const audioCount = document.querySelectorAll('audio').length;
     const text = document.body.innerText || '';
     const bannedHits = banned.filter((t) => text.toLowerCase().includes(t.toLowerCase()));
+    const clutterHits = clutter.filter((t) => text.toLowerCase().includes(t.toLowerCase()));
+    const vfx = window.__LHS_DECK__?.getVfxMetrics?.() || null;
     return {
       title,
-      cards,
+      railPills,
+      fanCardsCount: fanCards.length,
+      fanCardsOk,
       emblemOk: Boolean(emblem && emblem.complete && emblem.naturalWidth > 0),
       debugCount,
       audioCount,
       bannedHits,
+      clutterHits,
+      vfx,
     };
-  }, BANNED_20_11);
+  }, { banned: BANNED_20_11, clutter: CLUTTER_TOKENS });
 
   assert(landing.title.includes('NGHỊ QUYẾT 57'), `V3 landing title unexpected: ${landing.title}`);
-  assert(landing.cards === 4, `V3 landing expected 4 product cards, got ${landing.cards}`);
+  assert(landing.railPills === 4, `V3 landing expected 4 story rail pills, got ${landing.railPills}`);
+  assert(landing.fanCardsCount === 3 && landing.fanCardsOk, `V3 showcase fan invalid: ${landing.fanCardsCount}`);
   assert(landing.emblemOk, 'V3 emblem did not load');
   assert(landing.debugCount === 0 && landing.audioCount === 0, 'V3 purity check failed');
   assert(landing.bannedHits.length === 0, `V3 banned 20/11 hits: ${landing.bannedHits.join(', ')}`);
+  assert(landing.clutterHits.length === 0, `V3 clutter hits: ${landing.clutterHits.join(', ')}`);
+  assert(
+    landing.vfx &&
+      landing.vfx.isPaused === false &&
+      landing.vfx.totalBirds >= 8 &&
+      landing.vfx.flocksCount >= 3 &&
+      landing.vfx.motesCount >= 40,
+    `V3 VFX metrics unexpected: ${JSON.stringify(landing.vfx)}`
+  );
   console.log(`  PASS Stage 0 Landing -> ${await saveShot(page, 'live_v3_landing.png')}`);
 
   // Stage 1: Video (101.4s, fixed thumb, VTT)
@@ -179,18 +221,25 @@ async function verifyV3Site(browser) {
   assert(socialHeadline?.includes('Chuyển đổi số'), `V3 social headline unexpected: ${socialHeadline}`);
   console.log(`  PASS Stage 7 Social Post -> ${await saveShot(page, 'live_v3_social.png')}`);
 
-  // Stage 8: Thuyet minh 4 cards + PDF HTTP 200
+  // Stage 8: Thuyet minh 4 cards + Downloads modal PDF HTTP 200 (closed before screenshot)
   await page.keyboard.press('ArrowRight');
   await waitForStage(page, 8);
   const presCount = await page.locator('#pres-cards-grid .pres-card').count();
   assert(presCount === 4, `V3 expected 4 presentation cards, got ${presCount}`);
+  await page.click('#btn-pres-downloads');
+  await page.waitForSelector('#downloads-modal:not([hidden])');
   const pdfCheck = await page.evaluate(async () => {
-    const href = document.getElementById('btn-download-tm-pdf')?.getAttribute('href') || '';
+    const link = document.querySelector('#downloads-modal a[href*="THUYET_MINH_CUM1_CHUDE1.pdf"]');
+    const href = link?.getAttribute('href') || '';
+    if (!href) return { href: '', status: 0, bytes: 0 };
     const r = await fetch(href);
     const buf = await r.arrayBuffer();
     return { href, status: r.status, bytes: buf.byteLength };
   });
   assert(pdfCheck.status === 200 && pdfCheck.bytes > 50000, `V3 PDF fetch failed: ${JSON.stringify(pdfCheck)}`);
+  await page.keyboard.press('Escape');
+  await page.waitForSelector('#downloads-modal[hidden]', { state: 'attached' });
+  await page.waitForTimeout(200);
   console.log(
     `  PASS Stage 8 Thuyết minh (4 cards + PDF HTTP 200, ${pdfCheck.bytes} B) -> ${await saveShot(page, 'live_v3_thuyet_minh.png')}`
   );

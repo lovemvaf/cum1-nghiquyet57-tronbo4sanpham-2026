@@ -17,6 +17,25 @@ const BANNED_TOKENS = [
   'Sinh viên 5 tốt',
 ];
 
+const CLUTTER_TOKENS = [
+  '101,45s',
+  '≤ 3tr',
+  'Nhịp 04:00',
+  'đã kiểm chứng dữ liệu',
+  'DRAFT_PENDING_TEAM_DETAILS',
+  'UNVERIFIED',
+  'CHỜ NHÓM CHỐT',
+  'NQ57-03',
+  'TM-01',
+  '.docx',
+  '.pdf',
+  '.vtt',
+  '.mp4',
+  '.svg',
+  'PDF/DOCX',
+  'thành phố Đồng Nai',
+];
+
 const POSTER_CHECKS = [
   { stage: 2, id: 1, file: '01_dat_cau_hoi_1080x1350.png', alias: '01.png', badge: '01 / 05' },
   { stage: 3, id: 2, file: '02_quan_diem_cot_loi_1080x1350.png', alias: '02.png', badge: '02 / 05' },
@@ -110,15 +129,50 @@ async function waitForStage(page, targetStage) {
 }
 
 async function checkPurityAndEmblem(page, label) {
-  const info = await page.evaluate((banned) => {
+  const info = await page.evaluate(({ banned, clutter }) => {
     const emblem = document.getElementById('header-emblem-img');
     const emblemRect = emblem?.getBoundingClientRect();
+    const stageEmblems = Array.from(
+      document.querySelectorAll('.stage-section.present .emblem-medallion img[src*="huy-hieu-doan-clean.png"]')
+    ).map((img) => {
+      const r = img.getBoundingClientRect();
+      const cs = window.getComputedStyle(img);
+      return {
+        complete: img.complete,
+        naturalWidth: img.naturalWidth,
+        width: r.width,
+        height: r.height,
+        visible: cs.display !== 'none' && cs.visibility !== 'hidden' && r.width > 10 && r.height > 10,
+      };
+    });
+    const visibleStageEmblemOk = stageEmblems.some(
+      (item) => item.complete && item.naturalWidth > 0 && item.visible
+    );
+
+    const closedOverlayIds = [
+      'lightbox-modal',
+      'sources-modal',
+      'downloads-modal',
+      'ppt-modal',
+      'speaker-drawer',
+      'hud-tools-popover',
+    ];
+    const allOverlaysClosed = closedOverlayIds.every((id) => {
+      const el = document.getElementById(id);
+      return !el || el.hidden;
+    });
+
     const audioCount = document.querySelectorAll('audio').length;
     const debugCount = document.querySelectorAll(
       '[id*="vfx"], [id*="debug"], [id*="showcase"], [class*="debug"]'
     ).length;
-    const bodyText = (document.body.innerText || '') + '\n' + (document.title || '');
-    const bannedHits = banned.filter((tok) => bodyText.toLowerCase().includes(tok.toLowerCase()));
+    const visibleBodyText = document.body.innerText || '';
+    const fullText = visibleBodyText + '\n' + (document.title || '');
+    const bannedHits = banned.filter((tok) => fullText.toLowerCase().includes(tok.toLowerCase()));
+    const clutterHits = allOverlaysClosed
+      ? clutter.filter((tok) => visibleBodyText.toLowerCase().includes(tok.toLowerCase()))
+      : [];
+
     return {
       emblemSrc: emblem?.getAttribute('src') || '',
       emblemComplete: Boolean(emblem && emblem.complete && emblem.naturalWidth > 0),
@@ -129,15 +183,22 @@ async function checkPurityAndEmblem(page, label) {
           emblemRect.top >= 0 &&
           emblemRect.left >= 0
       ),
+      stageEmblemsCount: stageEmblems.length,
+      visibleStageEmblemOk,
+      allOverlaysClosed,
       audioCount,
       debugCount,
       bannedHits,
+      clutterHits,
     };
-  }, BANNED_TOKENS);
+  }, { banned: BANNED_TOKENS, clutter: CLUTTER_TOKENS });
 
   expect(info.emblemSrc, `${label} emblem src`).toContain('huy-hieu-doan-clean.png');
   expect(info.emblemComplete, `${label} emblem naturalWidth > 0`).toBe(true);
   expect(info.emblemVisible, `${label} emblem visible`).toBe(true);
+  expect(info.visibleStageEmblemOk, `${label} stage-level .emblem-medallion img loaded & visible`).toBe(true);
+  expect(info.allOverlaysClosed, `${label} overlays closed before clutter gate`).toBe(true);
+  expect(info.clutterHits, `${label} zero technical/checklist clutter`).toEqual([]);
   expect(info.audioCount, `${label} zero <audio>`).toBe(0);
   expect(info.debugCount, `${label} zero debug/vfx/showcase elements`).toBe(0);
   expect(info.bannedHits, `${label} zero banned 20/11 or DNTU tokens`).toEqual([]);
@@ -157,7 +218,22 @@ test.describe('Cum 1 NQ57 — Integrated 04-Product Showcase E2E', () => {
     // Stage 0: Landing
     await checkPurityAndEmblem(page, 'Stage 0 Landing');
     await expect(page.locator('#landing-title')).toContainText('NGHỊ QUYẾT 57 ĐẾN GẦN THANH NIÊN');
-    await expect(page.locator('#landing-products-grid .product-overview-card')).toHaveCount(4);
+    await expect(page.locator('.landing-story-rail .story-rail-pill')).toHaveCount(4);
+    await expect(page.locator('.landing-showcase-fan .landing-showcase-card')).toHaveCount(3);
+    const fanImagesOk = await page.evaluate(() => {
+      const imgs = Array.from(document.querySelectorAll('.landing-showcase-fan .landing-showcase-card img'));
+      return imgs.length === 3 && imgs.every((img) => img.complete && img.naturalWidth > 0);
+    });
+    expect(fanImagesOk, 'Landing showcase fan 3 images loaded').toBe(true);
+
+    const vfxStage0 = await page.evaluate(() => window.__LHS_DECK__.getVfxMetrics());
+    expect(vfxStage0.isPaused, 'Stage 0 VFX active').toBe(false);
+    expect(vfxStage0.flocksCount, 'Stage 0 flocksCount >= 3').toBeGreaterThanOrEqual(3);
+    expect(vfxStage0.totalBirds, 'Stage 0 totalBirds >= 8').toBeGreaterThanOrEqual(8);
+    expect(vfxStage0.motesCount, 'Stage 0 motesCount >= 40').toBeGreaterThanOrEqual(40);
+    expect(vfxStage0.leavesCount, 'Stage 0 leavesCount >= 16').toBeGreaterThanOrEqual(16);
+    expect(vfxStage0.grandWavesTriggered, 'Stage 0 grandWavesTriggered >= 1').toBeGreaterThanOrEqual(1);
+
     await page.screenshot({ path: path.join(SCREENSHOT_DIR, 'landing.png') });
 
     // Verify all 18 downloadable deliverables return HTTP 200 and non-empty bytes in browser context
@@ -184,6 +260,10 @@ test.describe('Cum 1 NQ57 — Integrated 04-Product Showcase E2E', () => {
     await page.click('#btn-start');
     await waitForStage(page, 1);
     await checkPurityAndEmblem(page, 'Stage 1 Video');
+
+    const vfxStage1 = await page.evaluate(() => window.__LHS_DECK__.getVfxMetrics());
+    expect(vfxStage1.totalBirds, 'Stage 1 Video pauses sky birds').toBe(0);
+    expect(vfxStage1.leavesCount, 'Stage 1 Video pauses outer leaves').toBe(0);
 
     await page.waitForFunction(() => {
       const v = document.getElementById('campaign-video');
@@ -302,6 +382,14 @@ test.describe('Cum 1 NQ57 — Integrated 04-Product Showcase E2E', () => {
       await page.screenshot({ path: path.join(SCREENSHOT_DIR, `poster_0${pCheck.id}.png`) });
 
       if (pCheck.stage === 4) {
+        const vfxStage4 = await page.evaluate(() => window.__LHS_DECK__.getVfxMetrics());
+        expect(vfxStage4.isPaused, 'Stage 4 VFX active').toBe(false);
+        expect(vfxStage4.flocksCount, 'Stage 4 flocksCount >= 3').toBeGreaterThanOrEqual(3);
+        expect(vfxStage4.totalBirds, 'Stage 4 totalBirds >= 8').toBeGreaterThanOrEqual(8);
+        expect(vfxStage4.motesCount, 'Stage 4 motesCount >= 40').toBeGreaterThanOrEqual(40);
+        expect(vfxStage4.leavesCount, 'Stage 4 leavesCount >= 16').toBeGreaterThanOrEqual(16);
+        expect(vfxStage4.grandWavesTriggered, 'Stage 4 grandWavesTriggered >= 1').toBeGreaterThanOrEqual(1);
+
         expect(posterState.policyVisible, 'Stage 4 Poster 03 policy highlights visible').toBe(true);
         for (const tok of [
           '2030',
@@ -416,7 +504,7 @@ test.describe('Cum 1 NQ57 — Integrated 04-Product Showcase E2E', () => {
     // Controls: KeyN Speaker Drawer + Timing Mode toggle (04:00 / 06:00)
     await page.keyboard.press('KeyN');
     await expect(page.locator('#speaker-drawer')).toBeVisible();
-    await expect(page.locator('#speaker-drawer-title')).toContainText('Lời nói 4p');
+    await expect(page.locator('#speaker-drawer-title')).toContainText('Lời nói ·');
     await expect(page.locator('#speaker-drawer-extended')).toBeHidden();
     await page.click('#btn-timing-mode');
     await expect(page.locator('#timing-mode-label')).toContainText('06:00');
@@ -434,7 +522,7 @@ test.describe('Cum 1 NQ57 — Integrated 04-Product Showcase E2E', () => {
     await page.keyboard.press('Escape');
     await page.waitForSelector('#sources-modal[hidden]', { state: 'attached' });
 
-    // Controls: KeyL Lite Mode, KeyB Motion Off, Auto Demo toggle, ArrowLeft
+    // Controls: KeyL Lite Mode, KeyB Motion Off, HUD Popover (#btn-lite, #btn-motion-off, #btn-auto-demo), ArrowLeft
     await page.keyboard.press('KeyL');
     expect(await page.evaluate(() => document.body.classList.contains('lite-mode'))).toBe(true);
     await page.keyboard.press('KeyB');
@@ -442,10 +530,27 @@ test.describe('Cum 1 NQ57 — Integrated 04-Product Showcase E2E', () => {
     await page.keyboard.press('KeyB');
     await page.keyboard.press('KeyL');
 
+    await page.click('#btn-hud-menu');
+    await expect(page.locator('#hud-tools-popover')).toBeVisible();
+    await page.click('#btn-lite');
+    expect(await page.evaluate(() => document.body.classList.contains('lite-mode'))).toBe(true);
+    await page.click('#btn-hud-menu');
+    await page.click('#btn-lite');
+    expect(await page.evaluate(() => document.body.classList.contains('lite-mode'))).toBe(false);
+
+    await page.click('#btn-hud-menu');
+    await page.click('#btn-motion-off');
+    expect(await page.evaluate(() => document.body.classList.contains('motion-off'))).toBe(true);
+    await page.click('#btn-hud-menu');
+    await page.click('#btn-motion-off');
+    expect(await page.evaluate(() => document.body.classList.contains('motion-off'))).toBe(false);
+
     await page.keyboard.press('ArrowLeft');
     await waitForStage(page, 8);
+    await page.click('#btn-hud-menu');
     await page.click('#btn-auto-demo');
     expect(await page.evaluate(() => window.__LHS_DECK__.getState().isAutoDemo)).toBe(true);
+    await page.click('#btn-hud-menu');
     await page.click('#btn-auto-demo');
     expect(await page.evaluate(() => window.__LHS_DECK__.getState().isAutoDemo)).toBe(false);
 
@@ -466,6 +571,8 @@ test.describe('Cum 1 NQ57 — Integrated 04-Product Showcase E2E', () => {
 
     const isLiteOnReduced = await page.evaluate(() => document.body.classList.contains('lite-mode'));
     expect(isLiteOnReduced, 'prefers-reduced-motion: reduce enables lite-mode').toBe(true);
+    const vfxReduced = await page.evaluate(() => window.__LHS_DECK__.getVfxMetrics());
+    expect(vfxReduced.isPaused, 'prefers-reduced-motion: reduce pauses VFX canvas').toBe(true);
 
     // Check stages 0, 1, 4, 7, 8, 9 fit cleanly without horizontal page overflow
     for (const target of [0, 1, 4, 7, 8, 9]) {

@@ -1,51 +1,51 @@
 {
-  "measuredAt": "2026-11-27T00:00:31.371Z",
+  "measuredAt": "2026-11-27T00:51:22.249Z",
   "previewUrl": "http://127.0.0.1:4175/cum1-nghiquyet57-tronbo4sanpham-2026/",
   "loadTimingNormal": {
-    "domContentLoadedMs": 1497.7,
-    "loadEventMs": 1609.1,
-    "domInteractiveMs": 1453.2,
-    "responseEndMs": 6.5,
-    "firstContentfulPaintMs": 1492,
-    "transferSizeBytes": 8913
+    "domContentLoadedMs": 115.2,
+    "loadEventMs": 242.2,
+    "domInteractiveMs": 34,
+    "responseEndMs": 5.6,
+    "firstContentfulPaintMs": 108,
+    "transferSizeBytes": 8344
   },
   "loadTimingReduced": {
-    "domContentLoadedMs": 109.5,
-    "loadEventMs": 230.8,
-    "domInteractiveMs": 11.8,
-    "responseEndMs": 4.6,
+    "domContentLoadedMs": 110.5,
+    "loadEventMs": 249.2,
+    "domInteractiveMs": 11.7,
+    "responseEndMs": 4.4,
     "firstContentfulPaintMs": 104,
-    "transferSizeBytes": 8913
+    "transferSizeBytes": 8344
   },
   "fps": {
     "normalStage0Landing": {
-      "frames": 83,
-      "elapsedMs": 2030.8,
-      "fps": 40.87,
-      "maxFrameDeltaMs": 33.4
+      "frames": 65,
+      "elapsedMs": 2016,
+      "fps": 32.24,
+      "maxFrameDeltaMs": 50.1
     },
     "normalStage4Poster03": {
-      "frames": 95,
-      "elapsedMs": 2009.8,
-      "fps": 47.27,
+      "frames": 71,
+      "elapsedMs": 2016.1,
+      "fps": 35.22,
       "maxFrameDeltaMs": 33.4
     },
     "liteModeStage4Poster03": {
-      "frames": 121,
-      "elapsedMs": 2014.7,
-      "fps": 60.06,
+      "frames": 122,
+      "elapsedMs": 2000.8,
+      "fps": 60.98,
       "maxFrameDeltaMs": 16.8
     },
     "motionOffStage4Poster03": {
       "frames": 121,
-      "elapsedMs": 2012.1,
-      "fps": 60.14,
+      "elapsedMs": 2015.1,
+      "fps": 60.05,
       "maxFrameDeltaMs": 16.8
     },
     "reducedMotionStage0Landing": {
       "frames": 122,
-      "elapsedMs": 2001.7,
-      "fps": 60.95,
+      "elapsedMs": 2002.3,
+      "fps": 60.93,
       "maxFrameDeltaMs": 16.8
     }
   }
