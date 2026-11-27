@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "3.0.0",
+  "project": "cum1-nghiquyet57-tronbo4sanpham-2026",
+  "title": "LẠC HỒNG SỐ – Nghị quyết 57 đến gần thanh niên Cụm 1 (Trọn bộ 04 sản phẩm)",
+  "status": "DRAFT_PENDING_TEAM_DETAILS",
+  "generatedAt": "2026-11-27T00:05:00Z",
+  "archiveBuildDate": "27/11/2026",
+  "examDeadlineNote": "Hạn nộp ghi trên Đề thi: 21:00 ngày 26/11/2026; trình bày sáng 27/11/2026. Bản dựng ngày 27/11/2026 là hồ sơ hoàn thiện hậu kỳ & chuẩn bị trình bày/lưu trữ trung thực.",
+  "git": {
+    "repositoryUrl": "https://github.com/lovemvaf/cum1-nghiquyet57-tronbo4sanpham-2026",
+    "branch": "main",
+    "verifiedAppCommitSha": "e8ea6e2",
+    "deployWorkflowRunId": 45914410880
+  },
+  "liveUrls": {
+    "v3IntegratedShowcase": "https://lovemvaf.github.io/cum1-nghiquyet57-tronbo4sanpham-2026/",
+    "legacyV2Posters": {
+      "url": "https://lovemvaf.github.io/lac-hong-so-nghiquyet57-cum1/",
+      "commitSha": "9271d6798af80382307082578b9a961289499ebb",
+      "verifiedStatus": "HTTP 200 INTACT"
+    },
+    "legacyV10NetVeTriAn": {
+      "url": "https://lovemvaf.github.io/net-ve-tri-an-dntu-2026/",
+      "commitSha": "f0138b6fec60f6f48761fccb2778be2a5d3c153d",
+      "verifiedStatus": "HTTP 200 INTACT"
+    }
+  },
+  "qaSummary": {
+    "qaMediaPosters": "72 passed, 0 failed",
+    "playwrightE2E": "3 passed (1920x1080, 1366x768 reduced-motion, 390x844, 360x800)",
+    "fpsNormalLanding": 40.87,
+    "fpsNormalPoster03": 47.27,
+    "fpsLiteMode": 60.06,
+    "fpsMotionOff": 60.14,
+    "fpsReducedMotion": 60.95,
+    "walkthroughWebmBytes": 7544533,
+    "threeSiteLiveVerification": "PASS 3/3"
+  },
+  "deliverables": {
+    "deliverables/01_Video/1_Doi1_ChuDe1_GOC.mp4": {
+      "bytes": 139948379,
+      "sha256": "7aebbe9ada70390a7aeda905013639c71db6869007e992d10a7d1013864246a6",
+      "gitTracked": false,
+      "note": "Kept locally & gitignored (> 90 MB GitHub limit)"
+    },
+    "deliverables/01_Video/video-web-optimized.mp4": {
+      "bytes": 27188713,
+      "sha256": "ad95fb50a19115c684bf01d220b8cdb4914278badd78a937489aad51091337f7",
+      "gitTracked": true
+    },
+    "deliverables/01_Video/subtitles_vi.vtt": {
+      "bytes": 2692,
+      "sha256": "97d7d94bec004f6ffd1188de39027c3a6b1b65421dacf4374d7c1a95fe996b70",
+      "gitTracked": true
+    },
+    "deliverables/01_Video/thumbnail-chu-dung.png": {
+      "bytes": 2112692,
+      "sha256": "fd787070c208fce61c466b6c04356e22e0b3dbed11cd50966560cdd75bc592ee",
+      "gitTracked": true
+    },
+    "deliverables/01_Video/thumbnail-chu-dung-1080x1920.png": {
+      "bytes": 2771827,
+      "sha256": "daca708347ff8fa1358a0029098fd5d5338f952aa50cbecd902658f31e53a645",
+      "gitTracked": true
+    },
+    "deliverables/02_ThietKe/01_dat_cau_hoi_1080x1350.png": {
+      "bytes": 1476053,
+      "sha256": "6dbef7893e239b377c8184ed6cf4415b57ac8ffb2d8bf86426b89f1239e35da3",
+      "gitTracked": true
+    },
+    "deliverables/02_ThietKe/02_quan_diem_cot_loi_1080x1350.png": {
+      "bytes": 768628,
+      "sha256": "d1240fd167504394498279e9d73748e6847172323774ee2748b7e614887eb997",
+      "gitTracked": true
+    },
+    "deliverables/02_ThietKe/03_muc_tieu_2030_tam_nhin_2045_1080x1350.png": {
+      "bytes": 1147569,
+      "sha256": "a37508c94dbe4d4787fe543832f333bad90ae530fedec284944beee98d69b550",
+      "gitTracked": true
+    },
+    "deliverables/02_ThietKe/04_thanh_nien_cum1_hanh_dong_1080x1350.png": {
+      "bytes": 1396667,
+      "sha256": "92e8e8c21b6acc20fdc2432c14c15d89e8e6de77e3bdcadb8ce9491b4f4bb153",
+      "gitTracked": true
+    },
+    "deliverables/02_ThietKe/05_lan_toa_1080x1350.png": {
+      "bytes": 1385642,
+      "sha256": "17ca798c9c9c62de555b87f451fd5603929083cd45f28d5959bc6ce40e19b65e",
+      "gitTracked": true
+    },
+    "deliverables/02_ThietKe/CONTACT_SHEET.png": {
+      "bytes": 841738,
+      "sha256": "b1b238a3dd16a3f499fcb2b922c1c53838c0fae44b5e0ad2b93ea8cd696be6ae",
+      "gitTracked": true
+    },
+    "deliverables/02_ThietKe/identity/derived/huy-hieu-doan-clean.png": {
+      "bytes": 598535,
+      "sha256": "a6f768702ee40feda5ace6360cfcf036523a2708b972c9cfa3138a86c1d92078",
+      "gitTracked": true
+    },
+    "deliverables/03_BaiDang/BAI_DANG_CUM1_HOAN_CHINH.docx": {
+      "bytes": 639228,
+      "sha256": "4797d070a7f5e9ddb7dee515ebe043bb6334d8f1f4e10bbfca40f6a91ddcd7df",
+      "gitTracked": true
+    },
+    "deliverables/03_BaiDang/MOCKUP_BAI_DANG.png": {
+      "bytes": 943326,
+      "sha256": "fbf6577c350f138b4f0af50e486bbe04b58f3f7b899eeb6f4c2f9975c0942e0e",
+      "gitTracked": true
+    },
+    "deliverables/04_ThuyetMinh/THUYET_MINH_CUM1_CHUDE1.docx": {
+      "bytes": 641185,
+      "sha256": "3a4e9d3e37a8901b0c67f45295e3fa6fb1916273b40a3910401d8212cff7f186",
+      "gitTracked": true
+    },
+    "deliverables/04_ThuyetMinh/THUYET_MINH_CUM1_CHUDE1.pdf": {
+      "bytes": 249307,
+      "sha256": "fa45bf51b252efe0833d6f0a05ad92657532824e22be165e2341135ed85facd0",
+      "gitTracked": true
+    },
+    "deliverables/05_LoiNoi_HoTro/LOI_THUYET_TRINH_04_PHUT_CUM1_NQ57.docx": {
+      "bytes": 641565,
+      "sha256": "705d42e8f8250dd60e07ff9bef25b52eac037fef96ca38a0d4ea5cae253696dc",
+      "gitTracked": true
+    },
+    "qa/VIDEO_SCREEN_RECORDINGS/cum1_4sanpham_walkthrough.webm": {
+      "bytes": 7544533,
+      "sha256": "69a788f71bf8cdf691084a902d30b8684e7c8eab3788f793cc988501eb8578e9",
+      "gitTracked": true
+    }
+  }
+}
