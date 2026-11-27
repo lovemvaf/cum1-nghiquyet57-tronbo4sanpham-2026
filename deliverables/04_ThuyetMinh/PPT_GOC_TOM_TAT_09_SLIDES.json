@@ -1,0 +1,210 @@
+{
+  "schemaVersion": "1.0.0",
+  "sourceFile": "deliverables/04_ThuyetMinh/PPT_GOC_THAM_KHAO.pptx",
+  "fileSizeBytes": 172646484,
+  "sha256": "b421ad89b51f5eb3395eb14d34e22a80b2a90b512f3e8f074b193061bff52a61",
+  "slideDimensionsInches": {
+    "width": 13.33,
+    "height": 7.5
+  },
+  "slideCount": 9,
+  "officialSubmissionEligibility": {
+    "replacesOfficialThreePageThuyetMinh": false,
+    "reason": "Đề thi Mục II.4 quy định bản Thuyết minh chính thức tối đa 03 trang Word hoặc PDF. Tệp PPTX gốc có 9 slide, dung lượng 172,6 MB do nhúng trực tiếp 02 video (media1.mp4 139,9 MB và media2.mp4 6,44 MB), đánh số trang không nhất quán (01/05, 04/05, thiếu nhãn, 02/05, 03/05, 04/05, 05/06, thiếu nhãn, 06/06) và Slide 6 dùng lời thoại khẳng định kết quả đã làm chưa có minh chứng. Chỉ lưu giữ làm tài liệu tham khảo tùy chọn trên website."
+  },
+  "embeddedMedia": [
+    {
+      "archivePath": "ppt/media/media1.mp4",
+      "sizeBytes": 139948379,
+      "sha256": "7aebbe9ada70390a7aeda905013639c71db6869007e992d10a7d1013864246a6",
+      "durationSeconds": 101.448005,
+      "resolution": "1080x1920",
+      "fps": "30/1",
+      "matchesOriginalVideo": true
+    },
+    {
+      "archivePath": "ppt/media/media2.mp4",
+      "sizeBytes": 6443188,
+      "sha256": "e62014380a0b6fa1a377569d6c5a931210336eab62baf9d5ff676dd7f733201b",
+      "durationSeconds": 24.036667,
+      "resolution": "720x1280",
+      "fps": "27/1",
+      "auditNote": "Video ghép ảnh tại Slide 6 với lời đọc cho rằng đoàn viên Cụm 1 'đã tích cực ứng dụng chuyển đổi số...'; chưa có hồ sơ kiểm chứng các bức ảnh ghép là minh chứng chính thức."
+    }
+  ],
+  "slides": [
+    {
+      "slideNumber": 1,
+      "displayedPageLabel": "01 / 05",
+      "topic": "Trang bìa — Thanh Niên Tiên Phong Trong Kỷ Nguyên Chuyển Đổi Số",
+      "texts": [
+        "TRẠI THANH NIÊN SỐ • NGHỊ QUYẾT 57",
+        "01 / 05",
+        "Thanh Niên Tiên Phong / Trong Kỷ Nguyên Chuyển Đổi Số",
+        "Tinh thần Nghị quyết 57-NQ/TW • 22/12/2024"
+      ],
+      "pictureCount": 3,
+      "notes": null,
+      "auditFlags": [
+        "Nhãn số trang 01/05 lệch với tổng số 9 slide thực tế."
+      ]
+    },
+    {
+      "slideNumber": 2,
+      "displayedPageLabel": "04 / 05",
+      "topic": "Video tình huống về thực hiện Nghị quyết 57 (nhúng media1.mp4)",
+      "texts": [
+        "VV",
+        "TRẠI THANH NIÊN SỐ",
+        "04 / 05",
+        "VIDEO TÌNH HUỐNG VỀ THỰC HIỆN NQ 57"
+      ],
+      "pictureCount": 1,
+      "notes": null,
+      "auditFlags": [
+        "Nhãn 04/05 đặt ngay tại Slide 2 (trùng nhãn 04/05 của Slide 6) và còn sót ký tự thừa 'VV'.",
+        "Nhúng trực tiếp video 139,9 MB làm phình dung lượng PPTX."
+      ]
+    },
+    {
+      "slideNumber": 3,
+      "displayedPageLabel": null,
+      "topic": "Chuyển đổi số — Nội dung cốt lõi (4 thẻ: Động lực, Trọng tâm chiến lược, Ứng dụng, An ninh & Chủ quyền)",
+      "texts": [
+        "CHUYỂN ĐỔI SỐ",
+        "NỘI DUNG CỐT LÕI",
+        "TRỌNG TÂM: Người dân và doanh nghiệp là trung tâm của quá trình chuyển đổi số.",
+        "01 ĐỘNG LỰC: Khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số là động lực phát triển đất nước.",
+        "02 TRỌNG TÂM CHIẾN LƯỢC: Lấy thể chế, nhân lực, hạ tầng, dữ liệu và công nghệ chiến lược làm trọng tâm.",
+        "03 ỨNG DỤNG: Đẩy mạnh ứng dụng công nghệ số trong quản lý, sản xuất và đời sống.",
+        "04 AN NINH & CHỦ QUYỀN: Bảo đảm an ninh mạng, an toàn thông tin và chủ quyền dữ liệu quốc gia."
+      ],
+      "pictureCount": 0,
+      "notes": "Nội dung lấy từ ảnh bảng do người dùng cung cấp. Các tiêu đề nhóm được biên tập để thuận tiện thuyết trình.",
+      "auditFlags": [
+        "Thiếu nhãn số trang.",
+        "Tóm tắt từ bảng SCRIPT!F10:K10 nhưng chưa trích dẫn đủ 5 quan điểm Mục I (thiếu ý tự chủ công nghệ Mục I.4)."
+      ]
+    },
+    {
+      "slideNumber": 4,
+      "displayedPageLabel": "02 / 05",
+      "topic": "01 / Tầm nhìn chiến lược — Nghị quyết 57: Động lực phát triển",
+      "texts": [
+        "TRẠI THANH NIÊN SỐ • NGHỊ QUYẾT 57",
+        "02 / 05",
+        "01 / TẦM NHÌN CHIẾN LƯỢC",
+        "Nghị quyết 57: Động lực phát triển",
+        "Khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số quốc gia là đột phá quan trọng hàng đầu.",
+        "KHOA HỌC & CÔNG NGHỆ: Đưa tri thức và công nghệ vào giải quyết những vấn đề thực tiễn.",
+        "ĐỔI MỚI SÁNG TẠO: Thúc đẩy tư duy mới, cách làm mới và mô hình phát triển mới.",
+        "CHUYỂN ĐỔI SỐ: Lấy người dân và doanh nghiệp làm trung tâm; phát triển trên nền tảng dữ liệu và hạ tầng số.",
+        "Nền tảng: thể chế • nhân lực • hạ tầng • dữ liệu • an toàn thông tin"
+      ],
+      "pictureCount": 3,
+      "notes": null,
+      "auditFlags": [
+        "Nhãn số trang 02/05 xuất hiện ở Slide 4."
+      ]
+    },
+    {
+      "slideNumber": 5,
+      "displayedPageLabel": "03 / 05",
+      "topic": "02 / Mục tiêu quốc gia — Từ mục tiêu 2030 đến tầm nhìn 2045",
+      "texts": [
+        "TRẠI THANH NIÊN SỐ • NGHỊ QUYẾT 57",
+        "03 / 05",
+        "02 / MỤC TIÊU QUỐC GIA",
+        "Từ mục tiêu 2030 đến tầm nhìn 2045",
+        "Những cột mốc định hướng cho Việt Nam trong kỷ nguyên số.",
+        "ĐẾN NĂM 2030: >= 30% GDP từ kinh tế số; > 80% người dân, doanh nghiệp dùng dịch vụ công trực tuyến",
+        "TẦM NHÌN 2045: >= 50% GDP từ kinh tế số; Hướng tới quốc gia phát triển, thu nhập cao và thuộc nhóm 30 thế giới về đổi mới sáng tạo, chuyển đổi số."
+      ],
+      "pictureCount": 0,
+      "notes": null,
+      "auditFlags": [
+        "Nhãn số trang 03/05 xuất hiện ở Slide 5.",
+        "Chưa ghi nhãn phân biệt đây là mục tiêu định hướng (không phải kết quả hiện tại) và còn thiếu chỉ tiêu Top 3 ĐNA, Top 50 thế giới, 2% GDP R&D, Top 3 ĐNA AI R&D."
+      ]
+    },
+    {
+      "slideNumber": 6,
+      "displayedPageLabel": "04 / 05",
+      "topic": "Đoàn Thanh niên Cụm 1 đã thực hiện như nào? (nhúng media2.mp4)",
+      "texts": [
+        "TRẠI THANH NIÊN SỐ",
+        "04 / 05",
+        "ĐOÀN THANH NIÊN CỤM 1 ĐÃ THỰC HIỆN NHƯ NÀO?"
+      ],
+      "pictureCount": 3,
+      "notes": null,
+      "auditFlags": [
+        "Trùng nhãn số trang 04/05 với Slide 2.",
+        "Tiêu đề và audio media2.mp4 (24,04s) khẳng định hoạt động đã triển khai tại Cụm 1 nhưng thiếu văn bản minh chứng xác thực kèm theo."
+      ]
+    },
+    {
+      "slideNumber": 7,
+      "displayedPageLabel": "05/ 06",
+      "topic": "03 / Vai trò đoàn viên — Thanh niên là lực lượng tiên phong",
+      "texts": [
+        "TRẠI THANH NIÊN SỐ • NGHỊ QUYẾT 57",
+        "05/ 06",
+        "03 / VAI TRÒ ĐOÀN VIÊN",
+        "Thanh niên là lực lượng tiên phong",
+        "Chuyển đổi số bắt đầu từ hành động thiết thực, gần gũi mỗi ngày.",
+        "01 TUYÊN TRUYỀN: Lan tỏa kiến thức số đến cộng đồng.",
+        "02 HỌC KỸ NĂNG SỐ: Chủ động ứng dụng AI và công nghệ vào học tập, công việc.",
+        "03 HỖ TRỢ NGƯỜI DÂN: Hướng dẫn dịch vụ công trực tuyến, định danh điện tử.",
+        "04 ĐỔI MỚI HOẠT ĐỘNG ĐOÀN: Số hóa điểm danh, báo cáo và kết nối đoàn viên."
+      ],
+      "pictureCount": 0,
+      "notes": null,
+      "auditFlags": [
+        "Đổi mẫu số sang /06 (05/ 06) không đồng bộ với các slide 01/05..04/05 trước đó.",
+        "Thiếu trụ An toàn thông tin so với bảng 5 hành động hoàn chỉnh trên Poster 04."
+      ]
+    },
+    {
+      "slideNumber": 8,
+      "displayedPageLabel": null,
+      "topic": "An ninh mạng – Vững chủ quyền số",
+      "texts": [
+        "NGHỊ QUYẾT 57-NQ/TW | TRẠI THANH NIÊN SỐ",
+        "AN NINH MẠNG – VỮNG CHỦ QUYỀN SỐ",
+        "Làm chủ công nghệ đi đôi với trách nhiệm bảo vệ không gian số.",
+        "01 BẢO MẬT: Bảo vệ thông tin và dữ liệu cá nhân.",
+        "02 KIỂM CHỨNG: Không chia sẻ tin giả, thông tin sai lệch.",
+        "03 CẢNH GIÁC: Chủ động phòng tránh lừa đảo trực tuyến.",
+        "04 TRÁCH NHIỆM: Góp phần bảo vệ an ninh mạng và chủ quyền dữ liệu quốc gia.",
+        "THANH NIÊN BẢN LĨNH SỐ — VỮNG KỸ NĂNG • AN TOÀN DỮ LIỆU • GIỮ VỮNG CHỦ QUYỀN"
+      ],
+      "pictureCount": 1,
+      "notes": "Chuyển đổi số không chỉ là làm chủ công nghệ, mà còn là biết bảo vệ chính mình, bảo vệ cộng đồng và góp phần giữ vững chủ quyền quốc gia trên không gian mạng. Mỗi đoàn viên thanh niên hãy trở thành công dân số có kiến thức, kỹ năng và trách nhiệm. [Sources] Nội dung Nghị quyết 57-NQ/TW theo ảnh tư liệu do người dùng cung cấp; hình nền và hình hologram tạo bằng AI trong cuộc trò chuyện.",
+      "auditFlags": [
+        "Thiếu nhãn số trang.",
+        "Ghi nhận minh bạch AI trong speaker notes nhưng ghi nguồn theo 'ảnh tư liệu' thay vì dẫn URL chính thức."
+      ]
+    },
+    {
+      "slideNumber": 9,
+      "displayedPageLabel": "06 / 06",
+      "topic": "Kết thúc — Là đoàn viên thanh niên không chỉ chứng kiến sự thay đổi. Hãy tạo nên sự thay đổi!",
+      "texts": [
+        "06 / 06",
+        "LÀ ĐOÀN VIÊN THANH NIÊN KHÔNG CHỈ CHỨNG KIẾN SỰ THAY ĐỔI.",
+        "HÃY TẠO NÊN SỰ THAY ĐỔI!",
+        "TIÊN PHONG",
+        "LÀM CHỦ CÔNG NGHỆ",
+        "KIẾN TẠO TƯƠNG LAI",
+        "Thanh niên tiên phong – Làm chủ công nghệ – Kiến tạo tương lai!"
+      ],
+      "pictureCount": 3,
+      "notes": null,
+      "auditFlags": [
+        "Nhãn 06/06 ở Slide 9.",
+        "Đây là khẩu hiệu sáng tạo của đội (trùng SCRIPT!C10), cần tách bạch với câu chữ trong văn kiện Nghị quyết 57-NQ/TW."
+      ]
+    }
+  ]
+}

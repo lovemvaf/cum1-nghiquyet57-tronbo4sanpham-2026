@@ -1,0 +1,12 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+__pycache__/
+*.pyc
+.vscode/
+deliverables/01_Video/1_Doi1_ChuDe1_GOC.mp4
+deliverables/04_ThuyetMinh/PPT_GOC_THAM_KHAO.pptx
+qa/doc_previews/
+tmp_*.png
+tmp_*.mp3

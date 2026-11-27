@@ -1,0 +1,626 @@
+{
+  "schemaVersion": "3.0.0",
+  "status": "DRAFT_PENDING_TEAM_DETAILS",
+  "metadata": {
+    "doiSo": null,
+    "cumDonVi": "Cụm 1",
+    "diaBanCuThe": null,
+    "doiTruong": null,
+    "hanNopDeThi": "21:00 ngày 26/11/2026",
+    "presentationSchedule": "Sáng 27/11/2026 (tổng tối đa 10 phút: trình bày tối đa 06 phút, phản biện 04 phút)",
+    "archiveBuildDate": "27/11/2026",
+    "editorialArchiveNote": "Đã xác nhận phạm vi Cụm 1. Các trường doiSo, diaBanCuThe, doiTruong không có trong Đề thi hay Excel nên giữ null (CHƯA XÁC NHẬN). Bản dựng ngày 27/11/2026 là hồ sơ hoàn thiện hậu kỳ & chuẩn bị trình bày/lưu trữ biên tập trung thực sau mốc hạn 21:00 ngày 26/11/2026."
+  },
+  "conceptTitle": "LẠC HỒNG SỐ",
+  "seriesTitle": "Nghị quyết 57 đến gần thanh niên Cụm 1 — Trọn bộ 04 sản phẩm",
+  "centralMessage": "Hiểu đúng – Làm thật – Lan tỏa",
+  "conceptNotice": "Tên gọi 'Lạc Hồng số' và thông điệp 'Hiểu đúng – Làm thật – Lan tỏa' (cùng biến thể 'Hiểu đúng. Làm thật. Lan tỏa.') là sáng tạo truyền thông của nhóm Cụm 1 cho Chủ đề 1, KHÔNG phải trích dẫn nguyên văn từ Nghị quyết 57-NQ/TW của Bộ Chính trị.",
+  "competition": {
+    "name": "Trại Thanh niên số thành phố Đồng Nai năm 2026",
+    "round": "Vòng thực chiến",
+    "generalTheme": "Cán bộ Đoàn tuyên truyền trên môi trường số",
+    "selectedTopic": "Chủ đề 1 – Nghị quyết đến gần thanh niên (Tuyên truyền nghị quyết)",
+    "targetAudience": "Đoàn viên, thanh niên, học sinh, sinh viên trên địa bàn Cụm 1 (thành phố Đồng Nai) và người dân cơ sở tiếp cận dịch vụ công trực tuyến",
+    "deliverablesSummary": [
+      "Mục 1 – Video tuyên truyền dọc 9:16 (101,45 giây, kèm phụ đề subtitles_vi.vtt & thumbnail đã sửa lỗi chính tả)",
+      "Mục 2 – Bộ 05 ấn phẩm truyền thông Lạc Hồng Số (1080 × 1350 px, PNG & SVG có thể chỉnh sửa)",
+      "Mục 3 – Bài đăng mạng xã hội hoàn chỉnh (DOCX + ảnh xem trước Mockup)",
+      "Mục 4 – Bản thuyết minh tối đa 03 trang (DOCX/PDF) + Kịch bản 04 phút & Website trình chiếu bổ trợ"
+    ]
+  },
+  "resolution": {
+    "code": "57-NQ/TW",
+    "issuedBy": "Bộ Chính trị",
+    "issuedDate": "22/12/2024",
+    "fullTitle": "Nghị quyết về đột phá phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số quốc gia"
+  },
+  "officialResolutionUrl": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-119241224180048642.htm",
+  "secondaryOfficialUrl": "https://mst.gov.vn/toan-van-nghi-quyet-57-nq-tw-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-197250813164610621.htm",
+  "relatedImplementationDocs": [
+    {
+      "code": "03/NQ-CP",
+      "issuedBy": "Chính phủ",
+      "issuedDate": "09/01/2025",
+      "title": "Nghị quyết số 03/NQ-CP của Chính phủ: Ban hành Chương trình hành động của Chính phủ thực hiện Nghị quyết số 57-NQ/TW ngày 22 tháng 12 năm 2024 của Bộ Chính trị",
+      "url": "https://vanban.chinhphu.vn/?docid=212350&pageid=27160",
+      "separationNote": "Văn bản triển khai cấp Chính phủ, tách biệt hoàn toàn khỏi văn kiện gốc Nghị quyết 57-NQ/TW của Bộ Chính trị."
+    },
+    {
+      "code": "71/NQ-CP",
+      "issuedBy": "Chính phủ",
+      "issuedDate": "01/04/2025",
+      "title": "Nghị quyết số 71/NQ-CP của Chính phủ: Sửa đổi, bổ sung cập nhật Chương trình hành động của Chính phủ thực hiện Nghị quyết số 57-NQ/TW",
+      "url": "https://chinhphu.vn/?classid=0&docid=213308&pageid=27160",
+      "separationNote": "Văn bản cập nhật Chương trình hành động của Chính phủ, tách biệt hoàn toàn khỏi 57-NQ/TW."
+    }
+  ],
+  "palette": {
+    "youthBlue": "#1464B4",
+    "deepNavy": "#0D2B52",
+    "redAccent": "#D62828",
+    "warmGold": "#F0C14B",
+    "warmCream": "#F7F3E8",
+    "deepGreen": "#0E5A38"
+  },
+  "typography": {
+    "primaryFamily": "Be Vietnam Pro",
+    "package": "@fontsource/be-vietnam-pro",
+    "license": "OFL-1.1",
+    "formalDocFont": "Times New Roman"
+  },
+  "emblem": {
+    "sourceOriginal": "deliverables/02_ThietKe/identity/original/huy-hieu-doan-original.jpg",
+    "sourceUserPng": "deliverables/02_ThietKe/identity/original/huy-hieu-doan-user-png.png",
+    "derivedClean": "deliverables/02_ThietKe/identity/derived/huy-hieu-doan-clean.png",
+    "publicDerivedClean": "/assets/identity/derived/huy-hieu-doan-clean.png",
+    "hoiSinhVienLogoAvailable": false,
+    "hoiSinhVienLogoNote": "Chưa có tệp gốc Logo Hội Sinh viên Việt Nam trong tài liệu cung cấp, do đó chỉ dùng Huy hiệu Đoàn TNCS Hồ Chí Minh (941 × 1042 px) và tuyệt đối không tự bịa logo khác."
+  },
+  "landing": {
+    "eyebrow": "CỤM 1 · TRẠI THANH NIÊN SỐ THÀNH PHỐ ĐỒNG NAI 2026",
+    "badge": "CHỦ ĐỀ 1 · NGHỊ QUYẾT 57-NQ/TW · TRỌN BỘ 04 SẢN PHẨM",
+    "conceptTitle": "LẠC HỒNG SỐ",
+    "seriesTitle": "Nghị quyết 57 đến gần thanh niên Cụm 1",
+    "tagline": "Hiểu đúng – Làm thật – Lan tỏa",
+    "introSummary": "Không gian trình diễn trọn bộ 04 sản phẩm dự thi của Cụm 1 trong nhịp 04 phút chuẩn: Video tuyên truyền 9:16 (101,45 giây có phụ đề), Bộ 05 ấn phẩm Lạc Hồng Số (1080 × 1350 px), Bài đăng mạng xã hội đã kiểm chứng dữ liệu và Bản thuyết minh tối đa 03 trang.",
+    "startButtonLabel": "Bắt đầu trình chiếu 04 phút",
+    "emblemAlt": "Huy hiệu Đoàn Thanh niên Cộng sản Hồ Chí Minh",
+    "aiDisclosure": "Minh họa 2D bán hiện thực trên bộ 05 ấn phẩm được thực hiện với sự hỗ trợ của công cụ AI (giả lập truyền thông, không phải sự kiện đã thống kê); ảnh người thật trên thumbnail video giữ nguyên 100%.",
+    "fourProducts": [
+      {
+        "code": "01",
+        "name": "Video tuyên truyền",
+        "meta": "9:16 · 101,45 giây · Phụ đề .vtt"
+      },
+      {
+        "code": "02",
+        "name": "Bộ 05 ấn phẩm",
+        "meta": "1080 × 1350 px · PNG & SVG"
+      },
+      {
+        "code": "03",
+        "name": "Bài đăng mạng xã hội",
+        "meta": "Word + Mockup đã rà soát"
+      },
+      {
+        "code": "04",
+        "name": "Thuyết minh & Web",
+        "meta": "<= 03 trang A4 · Kịch bản 04 phút"
+      }
+    ]
+  },
+  "video": {
+    "title": "Video tuyên truyền: Chuyển đổi số – Bắt đầu từ thanh niên Cụm 1",
+    "originalFile": "deliverables/01_Video/1_Doi1_ChuDe1_GOC.mp4",
+    "deliverableOptimizedPath": "deliverables/01_Video/video-web-optimized.mp4",
+    "webOptimizedPath": "/assets/video/video-web-optimized.mp4",
+    "durationSeconds": 101.448,
+    "durationDisplay": "1 phút 41 giây (101,45 giây)",
+    "withinExamRule60To120s": true,
+    "resolutionOriginal": "1080x1920",
+    "resolutionWeb": "720x1280",
+    "fps": 30,
+    "aspectRatio": "9:16",
+    "originalHardSubtitlesCount": 0,
+    "subtitlesVttPath": "/assets/video/subtitles_vi.vtt",
+    "deliverableVttPath": "deliverables/01_Video/subtitles_vi.vtt",
+    "originalThumbPath": "deliverables/01_Video/1.1_Doi1_ChuDe1_THUMB_GOC.png",
+    "fixedThumbPath": "/assets/video/thumbnail-chu-dung.png",
+    "fixedThumb1080Path": "/assets/video/thumbnail-chu-dung-1080x1920.png",
+    "deliverableFixedThumbPath": "deliverables/01_Video/thumbnail-chu-dung.png",
+    "deliverableFixedThumb1080Path": "deliverables/01_Video/thumbnail-chu-dung-1080x1920.png",
+    "thumbFixNote": "Đã sửa lỗi dấu kép NGỒ̀I -> NGỒI thành 'TƯỞNG NGỒI CHƠI ĐIỆN THOẠI? / NHƯNG ĐANG LÀM CHUYỂN ĐỔI SỐ!' bằng Unicode thuần Be Vietnam Pro; giữ nguyên 100% ảnh chụp thật hai nữ đoàn viên.",
+    "speechAuditNote": "Tại mốc 00:36, người nói dùng cụm 'Nghị quyết số 57 của Đảng và Nhà nước' và không đọc số liệu 2030/2045. Nhóm giữ nguyên video gốc và đính chính chuẩn xác trên Poster 01–03, Thuyết minh & callout web: Bộ Chính trị ban hành ngày 22/12/2024 cùng đầy đủ chỉ tiêu 2030–2045.",
+    "speechLog": [
+      {
+        "timeRange": "00:00 – 00:35",
+        "segment": "Mở đầu tình huống (2 nữ đoàn viên áo xanh tại ghế đá)",
+        "summary": "Bạn 1 than nhập app đoàn viên rắc rối; Bạn 2 hướng dẫn thao tác nhanh và quét mã QR qua Zalo / Google Camera."
+      },
+      {
+        "timeRange": "00:35 – 01:15",
+        "segment": "Phát biểu tinh thần Nghị quyết 57 & vai trò thanh niên (nữ áo đen)",
+        "summary": "Nhấn mạnh đẩy mạnh số hóa, đồng bộ cơ sở dữ liệu quốc gia, đơn giản hóa thủ tục hành chính, nâng cao đời sống Nhân dân và tinh thần xung kích làm chủ công nghệ số của đoàn viên."
+      },
+      {
+        "timeRange": "01:15 – 01:20",
+        "segment": "Chuyển tiếp nhạc nền có ca từ ('Là lúc có chúng tôi...')",
+        "summary": "Đoạn chuyển cảnh âm nhạc trước khẩu hiệu tập thể (đang chờ nhóm xác nhận nguồn cấp phép sử dụng)."
+      },
+      {
+        "timeRange": "01:20 – 01:33",
+        "segment": "Khẩu hiệu tập thể (4 bạn trước backdrop Trại Thanh niên số)",
+        "summary": "'Trong thời đại hiện đại ngày nay, chúng ta không nên chỉ là người chứng kiến sự thay đổi, mà phải là người kiến tạo sự thay đổi đó. Thanh niên tiên phong – Làm chủ công nghệ – Kiến tạo tương lai!'"
+      },
+      {
+        "timeRange": "01:33 – 01:41.45",
+        "segment": "Outro minh họa AI & lời kết giọng nam",
+        "summary": "Hiển thị cảnh minh họa tạo bằng Gemini AI (có biểu tượng ngôi sao góc dưới phải) và lời kết 'Tuổi trẻ Việt Nam, tiên phong chuyển đổi số. Kết nối công nghệ, giữ gìn truyền thống, hướng tới tương lai.'"
+      }
+    ],
+    "musicAndAiLicensing": {
+      "status": "CHO_NHOM_XAC_NHAN",
+      "backgroundSongTimestamp": "01:15 – 01:20",
+      "aiOutroTimestamp": "01:33 – 01:41.45",
+      "note": "Chờ nhóm xác nhận nguồn bản quyền đoạn nhạc nền có ca từ (01:15–01:20) và clip minh họa Gemini AI (01:33–01:41.45) trước khi đăng tải công khai theo quy định Đề thi."
+    }
+  },
+  "posters": [
+    {
+      "id": 1,
+      "posterId": "NQ57-01",
+      "index": "01/05",
+      "webPath": "/assets/posters/01_dat_cau_hoi_1080x1350.png",
+      "canonicalAlias": "/assets/posters/01.png",
+      "deliverablePath": "deliverables/02_ThietKe/01.png",
+      "editableSvg": "deliverables/02_ThietKe/editable/01.svg",
+      "chapterTitle": "Đặt vấn đề",
+      "title": "NGHỊ QUYẾT 57 GẦN BẠN THẾ NÀO?",
+      "subtitle": "Từ một câu hỏi nhỏ, mở ra cách nhìn mới.",
+      "microNote": null,
+      "cta": null,
+      "ctaSecondary": null,
+      "hasQr": false,
+      "displayFacts": [
+        {
+          "label": "Thông tin văn kiện gốc",
+          "summary": "Nghị quyết số 57-NQ/TW do Bộ Chính trị ban hành ngày 22/12/2024 về đột phá phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số quốc gia.",
+          "sourceSection": "Phần Mở đầu"
+        },
+        {
+          "label": "Thực trạng nhận thức nêu trong Nghị quyết",
+          "summary": "Văn kiện chỉ rõ nhận thức của nhiều cấp, nhiều ngành, cán bộ, công chức và Nhân dân về chuyển đổi số chưa đầy đủ và sâu sắc.",
+          "sourceSection": "Phần Mở đầu"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "posterId": "NQ57-02",
+      "index": "02/05",
+      "webPath": "/assets/posters/02_quan_diem_cot_loi_1080x1350.png",
+      "canonicalAlias": "/assets/posters/02.png",
+      "deliverablePath": "deliverables/02_ThietKe/02.png",
+      "editableSvg": "deliverables/02_ThietKe/editable/02.svg",
+      "chapterTitle": "Quan điểm cốt lõi",
+      "title": "HIỂU ĐÚNG ĐỊNH HƯỚNG",
+      "subtitle": "Công nghệ vì con người, đổi mới để phát triển.",
+      "microNote": "Quan điểm chỉ đạo · Nghị quyết 57-NQ/TW (Mục I)",
+      "cta": null,
+      "ctaSecondary": null,
+      "hasQr": false,
+      "fourPillBadges": [
+        {
+          "badgeTitle": "ĐỘNG LỰC PHÁT TRIỂN",
+          "shortLabel": "KH, CN, ĐMST và CĐS là đột phá quan trọng hàng đầu",
+          "sourceSection": "Mục I.1"
+        },
+        {
+          "badgeTitle": "CON NGƯỜI LÀ TRUNG TÂM",
+          "shortLabel": "Người dân, doanh nghiệp là trung tâm; nhà khoa học là nhân tố then chốt",
+          "sourceSection": "Mục I.2"
+        },
+        {
+          "badgeTitle": "5 NỀN TẢNG CỐT LÕI",
+          "shortLabel": "Thể chế · Nhân lực · Hạ tầng · Dữ liệu · Công nghệ chiến lược",
+          "sourceSection": "Mục I.3"
+        },
+        {
+          "badgeTitle": "AN TOÀN SỐ",
+          "shortLabel": "Chủ quyền không gian mạng, an ninh mạng và an ninh dữ liệu",
+          "sourceSection": "Mục I.5"
+        }
+      ],
+      "pillar4Note": "Bổ sung đầy đủ Quan điểm 4 (Mục I.4 — Phát triển nhanh, bền vững, từng bước tự chủ về công nghệ chiến lược) trong Thuyết minh và Lời thuyết trình."
+    },
+    {
+      "id": 3,
+      "posterId": "NQ57-03",
+      "index": "03/05",
+      "webPath": "/assets/posters/03_muc_tieu_2030_tam_nhin_2045_1080x1350.png",
+      "canonicalAlias": "/assets/posters/03.png",
+      "deliverablePath": "deliverables/02_ThietKe/03.png",
+      "editableSvg": "deliverables/02_ThietKe/editable/03.svg",
+      "chapterTitle": "Mục tiêu & tầm nhìn",
+      "title": "2030 → 2045: TẦM NHÌN SỐ",
+      "subtitle": "Mục tiêu rõ ràng, khát vọng dài hạn.",
+      "microNote": "MỤC TIÊU / TẦM NHÌN THEO NGHỊ QUYẾT 57 (KHÔNG PHẢI KẾT QUẢ HIỆN TẠI)",
+      "cta": null,
+      "ctaSecondary": null,
+      "hasQr": false,
+      "targets2030": [
+        {
+          "metric": ">= 30% GDP",
+          "label": "Quy mô kinh tế số",
+          "sourceSection": "Mục II.1"
+        },
+        {
+          "metric": "> 80%",
+          "label": "Người dân & doanh nghiệp dùng dịch vụ công trực tuyến (tách bạch với giao dịch không dùng tiền mặt đạt 80%)",
+          "sourceSection": "Mục II.1"
+        },
+        {
+          "metric": "TOP 3 ĐNA · TOP 50 THẾ GIỚI",
+          "label": "Năng lực cạnh tranh số, Chính phủ điện tử; cùng Top 3 ĐNA về nghiên cứu và phát triển AI và tối thiểu 5 doanh nghiệp công nghệ số ngang tầm tiên tiến",
+          "sourceSection": "Mục II.1"
+        },
+        {
+          "metric": "2% GDP",
+          "label": "Kinh phí chi R&D (trong đó xã hội > 60%); ít nhất 3% tổng chi ngân sách hằng năm",
+          "sourceSection": "Mục II.1"
+        }
+      ],
+      "vision2045": [
+        {
+          "metric": ">= 50% GDP",
+          "label": "Quy mô kinh tế số",
+          "sourceSection": "Mục II.2"
+        },
+        {
+          "metric": "TOP 30 THẾ GIỚI",
+          "label": "Đổi mới sáng tạo và chuyển đổi số",
+          "sourceSection": "Mục II.2"
+        },
+        {
+          "metric": "NƯỚC PHÁT TRIỂN, THU NHẬP CAO",
+          "label": "Định hướng quốc gia đến năm 2045",
+          "sourceSection": "Mục II.2"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "posterId": "NQ57-04",
+      "index": "04/05",
+      "webPath": "/assets/posters/04_thanh_nien_cum1_hanh_dong_1080x1350.png",
+      "canonicalAlias": "/assets/posters/04.png",
+      "deliverablePath": "deliverables/02_ThietKe/04.png",
+      "editableSvg": "deliverables/02_ThietKe/editable/04.svg",
+      "chapterTitle": "Thanh niên hành động",
+      "title": "THANH NIÊN CỤM 1 HÀNH ĐỘNG",
+      "subtitle": "Học kỹ năng số · Hỗ trợ cộng đồng · Sáng tạo.",
+      "microNote": "Đề xuất phần việc thanh niên Cụm 1 (chưa phải thống kê hoạt động đã diễn ra)",
+      "cta": null,
+      "ctaSecondary": null,
+      "hasQr": false,
+      "fiveYouthActions": [
+        {
+          "badgeTitle": "HỌC KỸ NĂNG SỐ",
+          "shortLabel": "Tham gia phong trào 'học tập số', rèn kỹ năng AI và tin học",
+          "sourceSection": "Mục III.1, III.4"
+        },
+        {
+          "badgeTitle": "HỖ TRỢ NGƯỜI DÂN",
+          "shortLabel": "Hướng dẫn dịch vụ công trực tuyến, định danh điện tử",
+          "sourceSection": "Mục III.5, IV.4"
+        },
+        {
+          "badgeTitle": "ỨNG DỤNG TRONG CÔNG TÁC ĐOÀN",
+          "shortLabel": "Số hóa quản lý đoàn viên, điểm danh QR, truyền thông chi đoàn",
+          "sourceSection": "Mục III.5"
+        },
+        {
+          "badgeTitle": "SÁNG TẠO GIẢI PHÁP",
+          "shortLabel": "Đề xuất sáng kiến công nghệ nhỏ phục vụ cơ sở Cụm 1",
+          "sourceSection": "Mục III.1"
+        },
+        {
+          "badgeTitle": "AN TOÀN THÔNG TIN",
+          "shortLabel": "Kiểm chứng tin giả, bảo vệ dữ liệu cá nhân, phòng chống lừa đảo mạng",
+          "sourceSection": "Mục I.5, III.5"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "posterId": "NQ57-05",
+      "index": "05/05",
+      "webPath": "/assets/posters/05_lan_toa_1080x1350.png",
+      "canonicalAlias": "/assets/posters/05.png",
+      "deliverablePath": "deliverables/02_ThietKe/05.png",
+      "editableSvg": "deliverables/02_ThietKe/editable/05.svg",
+      "chapterTitle": "Lan tỏa",
+      "title": "HIỂU ĐÚNG. LÀM THẬT. LAN TỎA.",
+      "subtitle": "Bắt đầu từ một việc nhỏ hôm nay.",
+      "microNote": null,
+      "cta": "ĐỌC NGHỊ QUYẾT GỐC",
+      "ctaSecondary": "CHỌN MỘT HÀNH ĐỘNG SỐ HỮU ÍCH",
+      "hasQr": true,
+      "qrTargetUrl": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-119241224180048642.htm"
+    }
+  ],
+  "socialPost": {
+    "title": "Chuyển đổi số – Bắt đầu từ chính mình",
+    "originalFile": "deliverables/03_BaiDang/3_BAI_DANG_GOC_DOI1.docx",
+    "revisedDocxPath": "deliverables/03_BaiDang/BAI_DANG_CUM1_HOAN_CHINH.docx",
+    "downloadPath": "/assets/downloads/BAI_DANG_CUM1_HOAN_CHINH.docx",
+    "mockupDeliverablePath": "deliverables/03_BaiDang/MOCKUP_BAI_DANG.png",
+    "mockupImagePath": "/assets/downloads/MOCKUP_BAI_DANG.png",
+    "originalExcerpt": {
+      "text": "Tại Cụm 1, các công trình, phần việc thanh niên gắn với thực hiện Nghị quyết 57 đã và đang được triển khai, tiêu biểu là số hóa các địa chỉ đỏ trên địa bàn.",
+      "classification": "UNVERIFIED",
+      "reason": "Chưa có minh chứng thực địa xác nhận hoạt động số hóa địa chỉ đỏ đã diễn ra tại Cụm 1."
+    },
+    "revisedSafeProposal": {
+      "text": "Cụm 1 đề xuất lồng ghép các phần việc thanh niên, như hỗ trợ kỹ năng số cho người dân và nghiên cứu phương án số hóa thông tin về các địa chỉ đỏ tại địa phương, trên cơ sở có tư liệu và quyền sử dụng phù hợp.",
+      "classification": "TEAM_PROPOSAL",
+      "approvalStatus": "CHO_NHOM_DUYET"
+    },
+    "fullPostParagraphs": [
+      "Chuyển đổi số – Bắt đầu từ chính mình",
+      "Bạn có thể sử dụng điện thoại mỗi ngày, nhưng đã bao giờ tự hỏi mình thực sự làm chủ công nghệ chưa?",
+      "Từ việc thực hiện dịch vụ công trực tuyến, sử dụng trí tuệ nhân tạo trong học tập và công việc đến nhận diện tin giả, bảo vệ dữ liệu cá nhân, chuyển đổi số hiện diện ngay trong những hoạt động thường ngày của chúng ta.",
+      "Hưởng ứng Nghị quyết 57-NQ/TW (ban hành ngày 22/12/2024 bởi Bộ Chính trị) về đột phá phát triển khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số quốc gia, mỗi đoàn viên, thanh niên cần chủ động nâng cao kỹ năng số, ứng dụng công nghệ hiệu quả, an toàn và lan tỏa những tiện ích số đến cộng đồng.",
+      "Cụm 1 đề xuất lồng ghép các phần việc thanh niên, như hỗ trợ kỹ năng số cho người dân và nghiên cứu phương án số hóa thông tin về các địa chỉ đỏ tại địa phương, trên cơ sở có tư liệu và quyền sử dụng phù hợp. Qua đó, công nghệ trở thành cầu nối thiết thực giúp thế hệ trẻ tiếp cận, tìm hiểu và gìn giữ những giá trị lịch sử địa phương.",
+      "Hãy bắt đầu từ một việc nhỏ: học thêm một kỹ năng số, kiểm chứng thông tin trước khi chia sẻ hoặc hướng dẫn người thân sử dụng dịch vụ công trực tuyến. Cùng xem trọn bộ video, bộ 05 ấn phẩm truyền thông và chia sẻ một việc làm chuyển đổi số mà bạn có thể thực hiện ngay hôm nay!",
+      "Đọc toàn văn Nghị quyết 57-NQ/TW trên Cổng TTĐT Chính phủ: xaydungchinhsach.chinhphu.vn (bản đối chiếu: mst.gov.vn).",
+      "THANH NIÊN TIÊN PHONG – LÀM CHỦ CÔNG NGHỆ – KIẾN TẠO TƯƠNG LAI"
+    ],
+    "hashtags": [
+      "#TraiThanhNienSo",
+      "#NghiQuyet57",
+      "#ChuyenDoiSo",
+      "#TuoiTreTienPhong",
+      "#ThanhNienSo",
+      "#Cum1"
+    ],
+    "hashtagFixNote": "Đã gỡ dấu chấm thừa ở cuối #Cum1. trong bản gốc.",
+    "scheduledTimeNote": "17h30, ngày công bố sản phẩm truyền thông (ngày cụ thể chờ nhóm chốt theo lịch Đoàn cơ sở)",
+    "channelPendingNote": "Kênh mạng xã hội chính thức của Đoàn cơ sở tại Cụm 1 (chờ nhóm xác nhận tên kênh cụ thể)",
+    "attachedDeliverablesNote": "01 video tuyên truyền dọc 9:16 (1 phút 41 giây, kèm phụ đề .vtt) và bộ 05 ấn phẩm truyền thông (1080 × 1350 px)"
+  },
+  "presentationDoc": {
+    "docxPath": "deliverables/04_ThuyetMinh/THUYET_MINH_CUM1_CHUDE1.docx",
+    "pdfPath": "deliverables/04_ThuyetMinh/THUYET_MINH_CUM1_CHUDE1.pdf",
+    "downloadDocxPath": "/assets/downloads/THUYET_MINH_CUM1_CHUDE1.docx",
+    "downloadPdfPath": "/assets/downloads/THUYET_MINH_CUM1_CHUDE1.pdf",
+    "speechDocxPath": "deliverables/05_LoiNoi_HoTro/LOI_THUYET_TRINH_04_PHUT_CUM1_NQ57.docx",
+    "speechDownloadPath": "/assets/downloads/LOI_THUYET_TRINH_04_PHUT_CUM1_NQ57.docx",
+    "maxPagesRule": 3,
+    "cards": [
+      {
+        "cardId": "TM-01",
+        "title": "1. Vấn đề thực tiễn & Đối tượng Cụm 1",
+        "summary": "Đoàn viên, sinh viên Cụm 1 dùng smartphone, mạng xã hội và AI mỗi ngày nhưng còn lúng túng dịch vụ công trực tuyến, kiểm chứng tin giả, bảo vệ dữ liệu cá nhân và ít đọc văn kiện dài — khớp nhận định Phần Mở đầu NQ 57-NQ/TW (22/12/2024, Bộ Chính trị). Thông điệp truyền thông nhóm chọn là 'Hiểu đúng – Làm thật – Lan tỏa'."
+      },
+      {
+        "cardId": "TM-02",
+        "title": "2. Giải pháp trọn bộ 04 sản phẩm",
+        "summary": "Video dọc 9:16 dài 101,45 giây (bổ sung phụ đề .vtt & sửa lỗi dấu thumbnail); Bộ 05 ấn phẩm 1080 × 1350 px (đủ 4 quan điểm cốt lõi, mục tiêu 2030/tầm nhìn 2045 kèm nhãn không phải kết quả hiện tại, 5 hành động Cụm 1 và QR thật); Bài đăng MXH đã rà soát; Thuyết minh <= 03 trang + Web trình chiếu."
+      },
+      {
+        "cardId": "TM-03",
+        "title": "3. Phương án triển khai Cụm 1 & Chỉ số đề xuất",
+        "summary": "Đề xuất 05 hướng việc vừa sức trong chuỗi 5 tuần tại chi đoàn (học tập số, điểm hướng dẫn dịch vụ công, số hóa nghiệp vụ Đoàn, sáng kiến nhỏ gồm nghiên cứu số hóa địa chỉ đỏ khi có tư liệu/quyền sử dụng hợp lệ, an toàn mạng). Phân công nhân sự ghi rõ chờ nhóm điền tên; đo lường bằng lượt quét QR, tỉ lệ xem hết video và lượt thực hành sau đăng tải."
+      },
+      {
+        "cardId": "TM-04",
+        "title": "4. Minh bạch AI, Bản quyền & Nguồn chính thống",
+        "summary": "Tranh 2D bán hiện thực dùng AI hỗ trợ là giả lập truyền thông; Huy hiệu Đoàn dùng nguyên mẫu huy-hieu-doan-clean.png (không bịa Logo Hội Sinh viên); font Unicode Be Vietnam Pro (OFL-1.1) & thư viện mở (Reveal.js, Vite, qrcode, jsQR); gắn cờ chờ xác nhận nguồn nhạc nền & clip AI outro video; tách bạch 57-NQ/TW với 03/NQ-CP & 71/NQ-CP."
+      }
+    ],
+    "pptReference": {
+      "sourceFile": "deliverables/04_ThuyetMinh/PPT_GOC_THAM_KHAO.pptx",
+      "summaryJsonPath": "deliverables/04_ThuyetMinh/PPT_GOC_TOM_TAT_09_SLIDES.json",
+      "slideCount": 9,
+      "fileSizeBytes": 172646484,
+      "replacesOfficialThuyetMinh": false,
+      "auditSummary": "PPT gốc 9 slide (172,6 MB do nhúng media1.mp4 139,9 MB và media2.mp4 24,04s) đánh số trang không nhất quán (01/05, 04/05, thiếu, 02/05, 03/05, 04/05, 05/06, thiếu, 06/06) và Slide 6 dùng lời bình chưa có minh chứng. Chỉ dùng làm tư liệu tham khảo tùy chọn, không thay thế Thuyết minh Word/PDF <= 03 trang.",
+      "slides": [
+        { "slideNumber": 1, "displayedPageLabel": "01 / 05", "topic": "Trang bìa — Thanh Niên Tiên Phong Trong Kỷ Nguyên Chuyển Đổi Số" },
+        { "slideNumber": 2, "displayedPageLabel": "04 / 05", "topic": "Video tình huống về thực hiện NQ 57 (nhúng media1.mp4)" },
+        { "slideNumber": 3, "displayedPageLabel": null, "topic": "Nội dung cốt lõi (4 thẻ: Động lực, Trọng tâm chiến lược, Ứng dụng, An ninh & Chủ quyền)" },
+        { "slideNumber": 4, "displayedPageLabel": "02 / 05", "topic": "01 / Tầm nhìn chiến lược — Nghị quyết 57: Động lực phát triển" },
+        { "slideNumber": 5, "displayedPageLabel": "03 / 05", "topic": "02 / Mục tiêu quốc gia — Từ mục tiêu 2030 đến tầm nhìn 2045" },
+        { "slideNumber": 6, "displayedPageLabel": "04 / 05", "topic": "Đoàn Thanh niên Cụm 1 đã thực hiện như nào? (nhúng media2.mp4 24,04s — gắn cờ UNVERIFIED)" },
+        { "slideNumber": 7, "displayedPageLabel": "05/ 06", "topic": "03 / Vai trò đoàn viên — Thanh niên là lực lượng tiên phong (4 mục)" },
+        { "slideNumber": 8, "displayedPageLabel": null, "topic": "An ninh mạng – Vững chủ quyền số" },
+        { "slideNumber": 9, "displayedPageLabel": "06 / 06", "topic": "Kết thúc — Thanh niên tiên phong – Làm chủ công nghệ – Kiến tạo tương lai!" }
+      ]
+    }
+  },
+  "runOfShow": {
+    "targetTotalSeconds": 240,
+    "videoPlaybackSeconds": 101.448,
+    "bufferSecondsMin": 5,
+    "beats": [
+      {
+        "timeRange": "00:00 – 00:08",
+        "durationSeconds": 8,
+        "stage": "Landing",
+        "action": "Giữ màn hình Lạc Hồng Số; bấm Space hoặc mở khu vực Video ở giây 00:08.",
+        "talkingFocus": "Chào BGK, giới thiệu Cụm 1, Chủ đề 1 – Nghị quyết 57-NQ/TW, trọn bộ 04 sản phẩm và mời xem video 1 phút 41 giây."
+      },
+      {
+        "timeRange": "00:08 – 01:50",
+        "durationSeconds": 101.45,
+        "stage": "Video",
+        "action": "Phát trọn video 9:16 (101,45 giây) kèm phụ đề subtitles_vi.vtt; diễn giả im lặng.",
+        "talkingFocus": "Để BGK theo dõi trọn tình huống 2 đoàn viên quét QR, thông điệp NQ 57 và khẩu hiệu tập thể."
+      },
+      {
+        "timeRange": "01:50 – 02:50",
+        "durationSeconds": 58,
+        "stage": "05 Posters (01/05 -> 05/05)",
+        "action": "Nhấn ArrowRight qua tuần tự 5 ấn phẩm.",
+        "talkingFocus": "Khẳng định Bộ Chính trị ban hành 22/12/2024; 4 quan điểm Mục I; mục tiêu 2030 (>=30% GDP, >80% DVC, Top 3 ĐNA/Top 50 TG, Top 3 ĐNA AI, 2% GDP R&D) & 2045 (>=50% GDP, Top 30 TG, thu nhập cao) + 7 nhiệm vụ; 5 phần việc Cụm 1; thông điệp Hiểu đúng – Làm thật – Lan tỏa + QR."
+      },
+      {
+        "timeRange": "02:50 – 03:08",
+        "durationSeconds": 16,
+        "stage": "Social Post & Mockup",
+        "action": "Mở thẻ Bài đăng mạng xã hội & ảnh xem trước Mockup.",
+        "talkingFocus": "Nêu tiêu đề Chuyển đổi số – Bắt đầu từ chính mình, chỉnh câu đề xuất số hóa địa chỉ đỏ có điều kiện tư liệu, bỏ dấu chấm thừa #Cum1, hẹn 17h30."
+      },
+      {
+        "timeRange": "03:08 – 03:46",
+        "durationSeconds": 35,
+        "stage": "Thuyết minh & Kế hoạch Cụm 1",
+        "action": "Mở thẻ Bản thuyết minh <= 03 trang.",
+        "talkingFocus": "Kế hoạch 5 tuần tại chi đoàn Cụm 1, chỉ số đo lường đề xuất, minh bạch tranh 2D AI giả lập, Huy hiệu Đoàn chuẩn và 2 nguồn chính thống."
+      },
+      {
+        "timeRange": "03:46 – 03:55",
+        "durationSeconds": 8,
+        "stage": "Finale",
+        "action": "Nhấn ArrowRight tới Màn hình tổng kết.",
+        "talkingFocus": "Chốt thông điệp Hiểu đúng – Làm thật – Lan tỏa, cảm ơn BGK và sẵn sàng phản biện."
+      },
+      {
+        "timeRange": "03:55 – 04:00",
+        "durationSeconds": 5,
+        "stage": "Buffer",
+        "action": "Giữ màn hình Tổng kết + mã QR.",
+        "talkingFocus": "Khoảng đệm >= 5 giây chuyển giao sang 04 phút phản biện."
+      }
+    ],
+    "extendedSixMinMode": {
+      "enabled": true,
+      "maxSeconds": 360,
+      "keepsOriginalVideoDuration": true,
+      "extraPoints": [
+        "Tại Poster 03/05 (+25s): trình bày 4 trụ cột của 7 nhiệm vụ trọng tâm (Mục III.1–III.7) và tách bạch > 80% DVC với 80% không dùng tiền mặt.",
+        "Tại Thuyết minh (+25s): giải trình lý do chuyển câu 'số hóa địa chỉ đỏ' sang đề xuất có điều kiện tư liệu/quyền sử dụng hợp lệ.",
+        "Tại Minh bạch kỹ thuật (+20s): nêu việc sửa lỗi dấu 'NGỒI' trên thumbnail giữ nguyên người thật và bổ sung subtitles_vi.vtt."
+      ]
+    }
+  },
+  "sevenTasksGrouped": [
+    {
+      "pillarId": "pillar-1",
+      "pillarTitle": "Nhận thức & Thể chế",
+      "tasks": [
+        {
+          "taskNumber": 1,
+          "nq57Section": "Mục III.1",
+          "excelCell": "SCRIPT!G6",
+          "summary": "Nâng cao nhận thức, đột phá tư duy, triển khai phong trào 'học tập số', trân trọng mọi sáng kiến dù nhỏ nhất."
+        },
+        {
+          "taskNumber": 2,
+          "nq57Section": "Mục III.2",
+          "excelCell": "SCRIPT!H6",
+          "summary": "Hoàn thiện thể chế, xóa bỏ rào cản, đưa thể chế thành lợi thế cạnh tranh."
+        }
+      ]
+    },
+    {
+      "pillarId": "pillar-2",
+      "pillarTitle": "Nhân lực, Hạ tầng & Dữ liệu",
+      "tasks": [
+        {
+          "taskNumber": 3,
+          "nq57Section": "Mục III.3",
+          "excelCell": "SCRIPT!I6",
+          "summary": "Tăng cường đầu tư hạ tầng số, trung tâm dữ liệu, dữ liệu và công nghệ chiến lược."
+        },
+        {
+          "taskNumber": 4,
+          "nq57Section": "Mục III.4",
+          "excelCell": "SCRIPT!J6",
+          "summary": "Phát triển, trọng dụng nhân lực chất lượng cao, nhân tài; nâng cao năng lực số."
+        }
+      ]
+    },
+    {
+      "pillarId": "pillar-3",
+      "pillarTitle": "Chuyển đổi số cơ quan & Doanh nghiệp",
+      "tasks": [
+        {
+          "taskNumber": 5,
+          "nq57Section": "Mục III.5",
+          "excelCell": "SCRIPT!K6",
+          "summary": "Đẩy mạnh chuyển đổi số trong các cơ quan trong hệ thống chính trị, bảo đảm quốc phòng, an ninh, chống lừa đảo trực tuyến."
+        },
+        {
+          "taskNumber": 6,
+          "nq57Section": "Mục III.6",
+          "excelCell": "SCRIPT!L6",
+          "summary": "Thúc đẩy mạnh mẽ khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số trong doanh nghiệp."
+        }
+      ]
+    },
+    {
+      "pillarId": "pillar-4",
+      "pillarTitle": "Hợp tác quốc tế & An toàn số",
+      "tasks": [
+        {
+          "taskNumber": 7,
+          "nq57Section": "Mục III.7 (+ Mục I.5 & III.5)",
+          "excelCell": "SCRIPT!M6",
+          "summary": "Tăng cường hợp tác quốc tế bảo đảm an toàn, cùng có lợi; giữ vững chủ quyền không gian mạng và an ninh dữ liệu."
+        }
+      ]
+    }
+  ],
+  "evaluationQuestions": [
+    {
+      "id": 1,
+      "question": "Nghị quyết 57-NQ/TW ra đời vì mục tiêu gì?",
+      "excelRef": "THUYẾT TRÌNH!C2 (ý 1)",
+      "nq57Anchor": "Phần Mở đầu",
+      "answerSummary": "Ban hành ngày 22/12/2024 bởi Bộ Chính trị nhằm tạo xung lực mới về khoa học, công nghệ, đổi mới sáng tạo và chuyển đổi số; khắc phục hạn chế nhận thức, thể chế, hạ tầng, nhân lực và an toàn thông tin để đưa đất nước bứt phá tới năm 2030 và tầm nhìn 2045."
+    },
+    {
+      "id": 2,
+      "question": "Quan điểm chỉ đạo của Nghị quyết 57-NQ/TW ra sao?",
+      "excelRef": "THUYẾT TRÌNH!C2 (ý 2) · SCRIPT!F2:L2",
+      "nq57Anchor": "Mục I (1–5)",
+      "answerSummary": "Gồm 5 quan điểm: (1) Đột phá quan trọng hàng đầu, động lực phát triển; (2) Người dân, doanh nghiệp là trung tâm, nhà khoa học là nhân tố then chốt, Nhà nước dẫn dắt; (3) Thể chế, nhân lực, hạ tầng, dữ liệu, công nghệ chiến lược là trọng tâm cốt lõi; (4) Phát triển nhanh, bền vững, từng bước tự chủ công nghệ; (5) Bảo đảm chủ quyền không gian mạng, an ninh mạng, an ninh dữ liệu xuyên suốt."
+    },
+    {
+      "id": 3,
+      "question": "Nghị quyết 57-NQ/TW đặt ra những mục tiêu nào?",
+      "excelRef": "THUYẾT TRÌNH!C2 (ý 3) · SCRIPT!F4:J5",
+      "nq57Anchor": "Mục II.1 & II.2",
+      "answerSummary": "Đến 2030: kinh tế số >= 30% GDP; > 80% dùng dịch vụ công trực tuyến (giao dịch không dùng tiền mặt đạt 80%); Top 3 ĐNA & Top 50 thế giới về năng lực cạnh tranh số, Chính phủ điện tử; Top 3 ĐNA về AI R&D; tối thiểu 5 doanh nghiệp công nghệ số ngang tầm tiên tiến; chi R&D đạt 2% GDP (xã hội hóa > 60%). Tầm nhìn 2045: nước phát triển thu nhập cao; kinh tế số >= 50% GDP; Top 30 thế giới về ĐMST và CĐS."
+    },
+    {
+      "id": 4,
+      "question": "Cần thực hiện những nhiệm vụ, giải pháp gì?",
+      "excelRef": "THUYẾT TRÌNH!C2 (ý 4) · SCRIPT!F6:M6",
+      "nq57Anchor": "Mục III (1–7)",
+      "answerSummary": "Triển khai đồng bộ 7 nhóm nhiệm vụ (gom 4 trụ trực quan): Nhận thức, phong trào 'học tập số' & Thể chế; Hạ tầng số, Dữ liệu & Nhân lực chất lượng cao; CĐS cơ quan hệ thống chính trị, an ninh mạng & Doanh nghiệp; Hợp tác quốc tế & An toàn số."
+    },
+    {
+      "id": 5,
+      "question": "Thanh niên có thể đóng góp như thế nào?",
+      "excelRef": "THUYẾT TRÌNH!C2 (ý 5) · SCRIPT!F8:K8",
+      "nq57Anchor": "Mục III.1, III.4, III.5, IV.4",
+      "answerSummary": "Đề xuất 5 phần việc vừa sức tại Cụm 1: Học kỹ năng số; Hỗ trợ người dân dùng dịch vụ công trực tuyến & định danh điện tử; Ứng dụng nền tảng số trong công tác Đoàn; Sáng tạo giải pháp nhỏ phục vụ cơ sở; Giữ vững an toàn thông tin, phòng chống lừa đảo mạng."
+    }
+  ],
+  "finale": {
+    "eyebrow": "TỔNG KẾT TRỌN BỘ 04 SẢN PHẨM · CỤM 1",
+    "heading": "HIỂU ĐÚNG – LÀM THẬT – LAN TỎA",
+    "summary": "Trọn bộ 04 sản phẩm Cụm 1 đồng bộ Video 9:16 (101,45s + phụ đề VTT), Bộ 05 ấn phẩm Lạc Hồng Số (1080 × 1350 px), Bài đăng mạng xã hội đã kiểm chứng dữ liệu và Bản thuyết minh <= 03 trang.",
+    "officialButtonLabel": "Đọc toàn văn Nghị quyết 57-NQ/TW (chinhphu.vn)",
+    "officialUrl": "https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-119241224180048642.htm",
+    "secondaryOfficialButtonLabel": "Bản đối chiếu Bộ KH&CN (mst.gov.vn)",
+    "secondaryOfficialUrl": "https://mst.gov.vn/toan-van-nghi-quyet-57-nq-tw-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-197250813164610621.htm",
+    "replayButtonLabel": "Trình chiếu lại từ đầu",
+    "sourceCredit": "Nguồn văn kiện: Nghị quyết số 57-NQ/TW ngày 22/12/2024 của Bộ Chính trị.",
+    "aiDisclosure": "Minh họa 2D trên ấn phẩm và đoạn outro cuối video là giả lập truyền thông có hỗ trợ AI; toàn bộ số liệu đối chiếu Cổng TTĐT Chính phủ và Bộ KH&CN.",
+    "teamMetadataNotice": "Trạng thái: DRAFT_PENDING_TEAM_DETAILS (đã xác nhận Cụm 1; Đội số, địa bàn cụ thể, Đội trưởng, Fanpage đăng tải và xác nhận bản quyền nhạc nền/outro video chờ nhóm chốt)."
+  }
+}

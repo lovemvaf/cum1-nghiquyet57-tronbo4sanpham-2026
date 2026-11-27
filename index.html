@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LẠC HỒNG SỐ – Nghị quyết 57 đến gần thanh niên Cụm 1 | Trọn bộ 04 sản phẩm · Trại Thanh niên số thành phố Đồng Nai 2026"
+    />
+    <title>LẠC HỒNG SỐ – Nghị quyết 57 đến gần thanh niên Cụm 1 (Trọn bộ 04 sản phẩm)</title>
+    <link rel="icon" type="image/png" href="./assets/identity/derived/huy-hieu-doan-clean.png" />
+  </head>
+  <body>
+    <canvas id="heritage-sky-canvas" aria-hidden="true"></canvas>
+    <div class="heritage-vignette" aria-hidden="true"></div>
+
+    <!-- PERSISTENT TOP HEADER BAR ON ALL 10 SCREENS -->
+    <header id="top-header-bar" class="top-header-bar" aria-label="Định danh và điều hướng 04 sản phẩm">
+      <div class="top-header-left">
+        <span class="emblem-pill emblem-pill-header">
+          <img
+            id="header-emblem-img"
+            src="./assets/identity/derived/huy-hieu-doan-clean.png"
+            alt="Huy hiệu Đoàn Thanh niên Cộng sản Hồ Chí Minh"
+          />
+        </span>
+        <div class="header-identity-text">
+          <span class="header-cluster-title">CỤM 1 · CHỦ ĐỀ 1</span>
+          <span class="header-resolution-sub">Nghị quyết 57-NQ/TW (22/12/2024)</span>
+        </div>
+      </div>
+
+      <nav id="product-breadcrumb" class="product-breadcrumb" aria-label="Điều hướng 04 sản phẩm">
+        <button type="button" class="crumb-btn" data-crumb-product="video" data-jump-stage="1">
+          <span class="crumb-num">1</span>
+          <span class="crumb-label">Video</span>
+        </button>
+        <span class="crumb-sep" aria-hidden="true">·</span>
+        <button type="button" class="crumb-btn" data-crumb-product="posters" data-jump-stage="2">
+          <span class="crumb-num">2</span>
+          <span class="crumb-label">Thiết kế <span id="crumb-poster-sub">(01–05)</span></span>
+        </button>
+        <span class="crumb-sep" aria-hidden="true">·</span>
+        <button type="button" class="crumb-btn" data-crumb-product="social" data-jump-stage="7">
+          <span class="crumb-num">3</span>
+          <span class="crumb-label">Bài đăng</span>
+        </button>
+        <span class="crumb-sep" aria-hidden="true">·</span>
+        <button type="button" class="crumb-btn" data-crumb-product="presentation" data-jump-stage="8">
+          <span class="crumb-num">4</span>
+          <span class="crumb-label">Thuyết minh</span>
+        </button>
+      </nav>
+
+      <div class="top-header-right">
+        <button
+          type="button"
+          id="btn-timing-mode"
+          class="timing-mode-chip"
+          aria-pressed="false"
+          title="Chuyển đổi ghi chú giữa nhịp 04:00 chuẩn và chế độ mở rộng 06:00"
+        >
+          <span class="timing-dot" aria-hidden="true"></span>
+          <span id="timing-mode-label">Nhịp 04:00</span>
+        </button>
+        <span class="header-concept-tag">Lạc Hồng Số</span>
+      </div>
+    </header>
+
+    <main class="reveal" id="lhs-reveal">
+      <div class="slides">
+        <!-- STAGE 0: LANDING (00:00–00:08) -->
+        <section id="stage-landing" class="stage-section" data-stage="0" aria-label="Mở đầu trình chiếu 04 sản phẩm">
+          <div class="dong-son-backdrop" aria-hidden="true">
+            <svg
+              id="landing-dong-son-svg"
+              class="dong-son-svg"
+              viewBox="0 0 800 800"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            ></svg>
+          </div>
+
+          <div class="landing-card">
+            <div class="landing-hero-copy">
+              <p id="landing-eyebrow" class="landing-eyebrow">
+                CỤM 1 · TRẠI THANH NIÊN SỐ THÀNH PHỐ ĐỒNG NAI 2026
+              </p>
+              <h1 id="landing-title" class="landing-title">NGHỊ QUYẾT 57 ĐẾN GẦN THANH NIÊN</h1>
+              <div class="landing-badges-row">
+                <span id="landing-concept-pill" class="landing-concept-pill">LẠC HỒNG SỐ</span>
+                <span class="landing-tagline">
+                  <span class="tagline-dot" aria-hidden="true"></span>
+                  <span id="landing-tagline-text">HIỂU ĐÚNG – LÀM THẬT – LAN TỎA</span>
+                </span>
+              </div>
+              <p id="landing-intro" class="landing-intro"></p>
+            </div>
+
+            <div id="landing-products-grid" class="landing-products-grid" role="list" aria-label="Tổng quan 04 sản phẩm dự thi">
+              <button type="button" class="product-overview-card" data-jump-stage="1" role="listitem">
+                <span class="overview-code">01</span>
+                <strong class="overview-title">Video 101,45s</strong>
+                <span class="overview-meta">9:16 dọc · Phụ đề .vtt · Thumbnail đã sửa</span>
+              </button>
+              <button type="button" class="product-overview-card" data-jump-stage="2" role="listitem">
+                <span class="overview-code">02</span>
+                <strong class="overview-title">05 Ấn phẩm</strong>
+                <span class="overview-meta">1080 × 1350 px · PNG &amp; SVG Lạc Hồng Số</span>
+              </button>
+              <button type="button" class="product-overview-card" data-jump-stage="7" role="listitem">
+                <span class="overview-code">03</span>
+                <strong class="overview-title">Bài đăng</strong>
+                <span class="overview-meta">Word + Mockup đã kiểm chứng dữ liệu</span>
+              </button>
+              <button type="button" class="product-overview-card" data-jump-stage="8" role="listitem">
+                <span class="overview-code">04</span>
+                <strong class="overview-title">Thuyết minh ≤ 3tr</strong>
+                <span class="overview-meta">PDF/DOCX · Kế hoạch 5 tuần &amp; Lời nói 4p</span>
+              </button>
+            </div>
+
+            <div class="landing-actions">
+              <button type="button" id="btn-start" class="btn-primary-gold">
+                <span id="btn-start-label">Bắt đầu trình chiếu 04 phút</span>
+                <span aria-hidden="true">→</span>
+              </button>
+              <button type="button" id="btn-landing-downloads" class="btn-secondary-cream" data-open-downloads="true">
+                Kho tải trọn bộ 04 sản phẩm (D)
+              </button>
+            </div>
+
+            <div class="landing-footer-note">
+              <p id="landing-source-line">
+                Nguồn văn kiện gốc: Nghị quyết số 57-NQ/TW ngày 22/12/2024 của Bộ Chính trị · xaydungchinhsach.chinhphu.vn
+              </p>
+              <p id="landing-ai-disclosure"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- STAGE 1: PRODUCT 1 — VIDEO 9:16 (00:08–01:50) -->
+        <section id="stage-video" class="stage-section" data-stage="1" aria-label="Sản phẩm 1: Video tuyên truyền 9:16">
+          <div class="video-split-shell">
+            <div class="video-stage-col">
+              <div class="video-frame-shell">
+                <video
+                  id="campaign-video"
+                  controls
+                  preload="metadata"
+                  playsinline
+                  poster="./assets/video/thumbnail-chu-dung-1080x1920.png"
+                >
+                  <source src="./assets/video/video-web-optimized.mp4" type="video/mp4" />
+                  <track
+                    id="video-vtt-track"
+                    kind="subtitles"
+                    srclang="vi"
+                    label="Tiếng Việt"
+                    src="./assets/video/subtitles_vi.vtt"
+                    default
+                  />
+                  Trình duyệt chưa hỗ trợ phát trực tiếp; vui lòng tải tệp MP4 bên dưới.
+                </video>
+                <button
+                  type="button"
+                  id="btn-video-overlay-play"
+                  class="video-overlay-play"
+                  aria-label="Phát Video tuyên truyền 101,45 giây"
+                >
+                  <span class="play-icon-circle" aria-hidden="true">▶</span>
+                  <span class="play-label-text">Phát Video (101,45s)</span>
+                </button>
+              </div>
+
+              <div class="video-controls-caption">
+                <button type="button" id="btn-video-captions" class="inline-zoom-chip is-active" aria-pressed="true">
+                  Phụ đề VTT: Bật
+                </button>
+                <button type="button" id="btn-view-fixed-thumb" class="inline-zoom-chip">
+                  Xem Thumbnail đã sửa
+                </button>
+                <a
+                  id="btn-download-video"
+                  class="inline-download-chip"
+                  href="./assets/video/video-web-optimized.mp4"
+                  download="video-web-optimized.mp4"
+                >
+                  Tải MP4
+                </a>
+                <a
+                  id="btn-download-vtt"
+                  class="inline-download-chip"
+                  href="./assets/video/subtitles_vi.vtt"
+                  download="subtitles_vi.vtt"
+                >
+                  Tải VTT
+                </a>
+              </div>
+            </div>
+
+            <aside class="editorial-panel video-insight-card" aria-label="Thông tin kiểm chứng Video">
+              <div class="panel-header-row">
+                <span class="panel-role-tag">SẢN PHẨM 1 · VIDEO TUYÊN TRUYỀN 9:16</span>
+                <span class="stage-badge stage-badge-green">Đạt chuẩn 60–120s</span>
+              </div>
+
+              <h2 id="video-title" class="panel-title">
+                Video tuyên truyền: Chuyển đổi số – Bắt đầu từ thanh niên Cụm 1
+              </h2>
+
+              <div class="video-metrics-strip">
+                <span class="video-metric-pill">Thời lượng: <strong id="video-duration-val">101,45 giây</strong> (1p41s)</span>
+                <span class="video-metric-pill">Khung hình: <strong>9:16 (720×1280) · 30 fps</strong></span>
+                <span class="video-metric-pill">Space: <strong>Phát / Tạm dừng</strong></span>
+              </div>
+
+              <div class="video-audit-box">
+                <strong class="audit-box-title">Sửa chính tả Thumbnail (giữ nguyên ảnh thật 100%)</strong>
+                <p id="video-thumb-fix-note" class="audit-box-text"></p>
+              </div>
+
+              <div class="video-audit-box video-audit-box-info">
+                <strong class="audit-box-title">Ghi chú mạch thoại tại mốc 00:36</strong>
+                <p id="video-speech-audit-note" class="audit-box-text"></p>
+              </div>
+
+              <div class="video-audit-box video-audit-box-warn">
+                <div class="audit-warn-head">
+                  <span class="pending-badge">CHỜ NHÓM XÁC NHẬN</span>
+                  <strong class="audit-box-title">Bản quyền nhạc nền &amp; Outro AI</strong>
+                </div>
+                <p id="video-licensing-note" class="audit-box-text"></p>
+              </div>
+
+              <div class="video-speech-log-wrap">
+                <strong class="speech-log-heading">5 chặng nội dung trong Video (101,45 giây):</strong>
+                <ul id="video-speech-log" class="video-speech-log"></ul>
+              </div>
+
+              <div class="video-next-cta-row">
+                <button type="button" id="btn-video-next-posters" class="btn-primary-gold btn-compact-gold">
+                  <span>Tiếp: Bộ 05 ấn phẩm</span>
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- STAGES 2–6: PRODUCT 2 — 05 POSTERS EXHIBITION SPLIT VIEW (01:50–02:50) -->
+        <section id="stage-posters" class="stage-section" data-stage="2" aria-label="Sản phẩm 2: Bộ 05 ấn phẩm Lạc Hồng Số">
+          <div class="poster-split-shell">
+            <div class="poster-media-col">
+              <button
+                type="button"
+                id="poster-frame-btn"
+                class="poster-frame-btn"
+                aria-label="Phóng to ấn phẩm hiện tại (phím Z)"
+              >
+                <img
+                  id="poster-stage-img"
+                  src="./assets/posters/01_dat_cau_hoi_1080x1350.png"
+                  alt="Ấn phẩm 01/05 – NGHỊ QUYẾT 57 GẦN BẠN THẾ NÀO?"
+                />
+              </button>
+              <div class="poster-frame-caption">
+                <span id="poster-filename-chip">01_dat_cau_hoi_1080x1350.png</span>
+                <button type="button" id="btn-inline-zoom" class="inline-zoom-chip">
+                  Phóng to (Z)
+                </button>
+                <a
+                  id="btn-download-poster"
+                  class="inline-download-chip"
+                  href="./assets/posters/01_dat_cau_hoi_1080x1350.png"
+                  download="01_dat_cau_hoi_1080x1350.png"
+                >
+                  Tải PNG
+                </a>
+              </div>
+            </div>
+
+            <aside class="editorial-panel" aria-label="Bảng thuyết minh ấn phẩm">
+              <div class="panel-header-row">
+                <span class="panel-role-tag">SẢN PHẨM 2 · BỘ 05 ẤN PHẨM (1080×1350)</span>
+                <span id="stage-badge" class="stage-badge">01 / 05</span>
+              </div>
+
+              <nav id="poster-mini-pills" class="poster-mini-pills" aria-label="Chọn nhanh ấn phẩm 01 đến 05"></nav>
+
+              <div class="panel-story-head">
+                <div class="panel-role-row">
+                  <span id="panel-role" class="panel-chapter-tag">ĐẶT VẤN ĐỀ</span>
+                  <span id="panel-poster-id" class="panel-video-chip">NQ57-01</span>
+                </div>
+                <h2 id="panel-title" class="panel-title">NGHỊ QUYẾT 57 GẦN BẠN THẾ NÀO?</h2>
+                <p id="panel-subtitle" class="panel-subtitle">
+                  Từ một câu hỏi nhỏ, mở ra cách nhìn mới.
+                </p>
+                <p id="panel-micro-note" class="panel-micro-note" hidden></p>
+              </div>
+
+              <p id="panel-summary" class="panel-summary"></p>
+
+              <!-- STAGE 4 (03/05) HIGH-CONTRAST STATIC 2030 & 2045 KPI BLOCK -->
+              <div id="panel-policy-highlights" class="panel-policy-highlights" hidden></div>
+
+              <!-- POSTER 01, 02, 04 VERIFIED CONTENT BLOCKS -->
+              <div id="panel-fact-chips" class="panel-fact-chips" hidden></div>
+
+              <div class="motif-card" aria-label="Minh họa gợi nhớ chủ đề">
+                <div class="motif-card-head">
+                  <span id="motif-title" class="motif-title">Sổ tay tri thức &amp; câu hỏi mở</span>
+                </div>
+                <div id="motif-art" class="motif-art"></div>
+                <ul id="motif-pills" class="motif-pills"></ul>
+              </div>
+
+              <div id="panel-official-wrap" class="panel-official-wrap" hidden>
+                <a
+                  id="btn-official-link"
+                  class="btn-official-cta"
+                  href="https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-119241224180048642.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Đọc Nghị quyết gốc (chinhphu.vn)</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <a
+                  id="btn-official-mirror"
+                  class="panel-official-mirror"
+                  href="https://mst.gov.vn/toan-van-nghi-quyet-57-nq-tw-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-197250813164610621.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span>Bản đối chiếu Bộ KH&amp;CN (mst.gov.vn)</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+
+              <div class="panel-tools-row">
+                <button type="button" id="btn-sources-modal" class="panel-sources-btn" data-open-sources="true">
+                  <span>Nguồn, 7 nhiệm vụ &amp; 5 câu hỏi phản biện (I)</span>
+                  <span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- STAGE 7: PRODUCT 3 — SOCIAL POST & MOCKUP (02:50–03:08) -->
+        <section id="stage-social" class="stage-section" data-stage="7" aria-label="Sản phẩm 3: Bài đăng mạng xã hội">
+          <div class="social-split-shell">
+            <div class="social-card-shell">
+              <div class="social-toolbar">
+                <div class="social-toolbar-title">
+                  <span class="panel-role-tag">SẢN PHẨM 3 · BÀI ĐĂNG MẠNG XÃ HỘI</span>
+                  <h2 id="social-headline" class="panel-title">Chuyển đổi số – Bắt đầu từ chính mình</h2>
+                </div>
+                <div class="social-mode-switch" role="tablist" aria-label="Chế độ xem bài đăng">
+                  <button
+                    type="button"
+                    id="btn-social-visual"
+                    class="mode-tab-btn is-active"
+                    role="tab"
+                    aria-selected="true"
+                  >
+                    Xem trực quan
+                  </button>
+                  <button
+                    type="button"
+                    id="btn-social-raw"
+                    class="mode-tab-btn"
+                    role="tab"
+                    aria-selected="false"
+                  >
+                    Xem nguyên văn
+                  </button>
+                </div>
+              </div>
+
+              <!-- VISUAL EDITORIAL PREVIEW (NO FAKE SOCIAL ICONS OR METRICS) -->
+              <div id="social-visual-view" class="social-visual-view">
+                <div class="editorial-post-card">
+                  <div class="editorial-post-head">
+                    <span class="emblem-pill emblem-pill-sm">
+                      <img
+                        src="./assets/identity/derived/huy-hieu-doan-clean.png"
+                        alt="Huy hiệu Đoàn TNCS Hồ Chí Minh"
+                      />
+                    </span>
+                    <div class="editorial-post-meta">
+                      <strong id="social-channel-note" class="editorial-channel"></strong>
+                      <span id="social-schedule-note" class="editorial-schedule"></span>
+                    </div>
+                    <span class="pending-badge">CHỜ NHÓM CHỐT KÊNH</span>
+                  </div>
+
+                  <div class="editorial-post-media-strip">
+                    <button type="button" id="btn-social-preview-thumb" class="media-strip-main" aria-label="Xem ảnh bìa video đã sửa chính tả">
+                      <img src="./assets/video/thumbnail-chu-dung-1080x1920.png" alt="Ảnh bìa Video 9:16 đã sửa dấu NGỒI" />
+                      <span class="media-strip-tag">Video 9:16 · 101,45s</span>
+                    </button>
+                    <div class="media-strip-posters">
+                      <button type="button" class="media-strip-mini" data-zoom-poster="1" aria-label="Xem trước Ấn phẩm 01/05">
+                        <img src="./assets/posters/01_dat_cau_hoi_1080x1350.png" alt="Poster 01/05" />
+                      </button>
+                      <button type="button" class="media-strip-mini" data-zoom-poster="3" aria-label="Xem trước Ấn phẩm 03/05">
+                        <img src="./assets/posters/03_muc_tieu_2030_tam_nhin_2045_1080x1350.png" alt="Poster 03/05" />
+                      </button>
+                      <button type="button" class="media-strip-mini" data-zoom-poster="5" aria-label="Xem trước Ấn phẩm 05/05">
+                        <img src="./assets/posters/05_lan_toa_1080x1350.png" alt="Poster 05/05" />
+                      </button>
+                    </div>
+                  </div>
+
+                  <div id="social-visual-paragraphs" class="editorial-post-body"></div>
+
+                  <div id="social-hashtags-row" class="editorial-hashtags-row"></div>
+                </div>
+              </div>
+
+              <!-- PLAIN TEXT / RAW COMPARISON VIEW -->
+              <div id="social-raw-view" class="social-raw-view" hidden>
+                <div class="raw-copy-bar">
+                  <span class="raw-copy-label">Văn bản chuẩn đã hiệu đính (sẵn sàng sao chép đăng tải)</span>
+                  <button type="button" id="btn-copy-social-text" class="inline-zoom-chip">Sao chép nguyên văn</button>
+                </div>
+                <pre id="social-raw-pre" class="social-raw-pre"></pre>
+              </div>
+            </div>
+
+            <aside class="editorial-panel social-side-panel" aria-label="Đối chiếu hiệu đính và tải bài đăng">
+              <div class="panel-header-row">
+                <span class="panel-role-tag">ĐỐI CHIẾU KIỂM CHỨNG DỮ LIỆU</span>
+                <span class="stage-badge">Mục 3</span>
+              </div>
+
+              <div class="audit-diff-card audit-diff-old">
+                <div class="audit-diff-head">
+                  <span class="diff-badge-red">BẢN GỐC · UNVERIFIED</span>
+                  <span class="diff-file-name">3_BAI_DANG_GOC_DOI1.docx</span>
+                </div>
+                <p id="social-original-excerpt" class="audit-diff-text"></p>
+                <p id="social-original-reason" class="audit-diff-note"></p>
+              </div>
+
+              <div class="audit-diff-card audit-diff-new">
+                <div class="audit-diff-head">
+                  <span class="diff-badge-green">BẢN HOÀN CHỈNH · ĐỀ XUẤT NHÓM</span>
+                  <span class="diff-badge-warn">CHỜ NHÓM DUYỆT</span>
+                </div>
+                <p id="social-revised-proposal" class="audit-diff-text"></p>
+              </div>
+
+              <div class="video-audit-box">
+                <strong class="audit-box-title">Chuẩn hóa kỹ thuật so với bản gốc</strong>
+                <p id="social-fix-summary" class="audit-box-text"></p>
+              </div>
+
+              <div class="social-downloads-stack">
+                <a
+                  id="btn-download-social-docx"
+                  class="btn-official-cta"
+                  href="./assets/downloads/BAI_DANG_CUM1_HOAN_CHINH.docx"
+                  download="BAI_DANG_CUM1_HOAN_CHINH.docx"
+                >
+                  <span>Tải Bài đăng Word (.docx)</span>
+                  <span aria-hidden="true">↓</span>
+                </a>
+                <button type="button" id="btn-open-mockup" class="btn-secondary-cream">
+                  Xem ảnh Mockup PNG
+                </button>
+                <a
+                  id="btn-download-mockup"
+                  class="panel-official-mirror"
+                  href="./assets/downloads/MOCKUP_BAI_DANG.png"
+                  download="MOCKUP_BAI_DANG.png"
+                >
+                  <span>Tải trực tiếp MOCKUP_BAI_DANG.png</span>
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <!-- STAGE 8: PRODUCT 4 — PRESENTATION DOC & 5-WEEK PLAN (03:08–03:46) -->
+        <section id="stage-presentation" class="stage-section" data-stage="8" aria-label="Sản phẩm 4: Thuyết minh và phương án triển khai">
+          <div class="pres-shell">
+            <div class="pres-header-card">
+              <div class="pres-header-left">
+                <span class="panel-role-tag">SẢN PHẨM 4 · THUYẾT MINH SẢN PHẨM (TỐI ĐA 03 TRANG A4)</span>
+                <h2 class="pres-title">Thuyết minh &amp; Phương án triển khai tại Cụm 1</h2>
+              </div>
+              <div class="pres-header-badges">
+                <span class="stage-badge stage-badge-green">Đạt chuẩn ≤ 03 trang</span>
+                <span class="pending-badge">NHÂN SỰ CHI TIẾT CHỜ NHÓM ĐIỀN</span>
+              </div>
+            </div>
+
+            <div id="pres-cards-grid" class="pres-cards-grid"></div>
+
+            <div class="pres-actions-bar">
+              <div class="pres-downloads-group">
+                <a
+                  id="btn-download-tm-pdf"
+                  class="btn-official-cta pres-btn-item"
+                  href="./assets/downloads/THUYET_MINH_CUM1_CHUDE1.pdf"
+                  download="THUYET_MINH_CUM1_CHUDE1.pdf"
+                >
+                  <span>Tải Thuyết minh PDF (≤ 3 trang)</span>
+                  <span aria-hidden="true">↓</span>
+                </a>
+                <a
+                  id="btn-download-tm-docx"
+                  class="btn-secondary-cream pres-btn-item"
+                  href="./assets/downloads/THUYET_MINH_CUM1_CHUDE1.docx"
+                  download="THUYET_MINH_CUM1_CHUDE1.docx"
+                >
+                  <span>Tải Thuyết minh Word (.docx)</span>
+                  <span aria-hidden="true">↓</span>
+                </a>
+                <a
+                  id="btn-download-speech-docx"
+                  class="btn-secondary-cream pres-btn-item"
+                  href="./assets/downloads/LOI_THUYET_TRINH_04_PHUT_CUM1_NQ57.docx"
+                  download="LOI_THUYET_TRINH_04_PHUT_CUM1_NQ57.docx"
+                >
+                  <span>Tải Lời nói 04 phút (.docx)</span>
+                  <span aria-hidden="true">↓</span>
+                </a>
+              </div>
+              <button type="button" id="btn-open-ppt-ref" class="btn-secondary-ghost">
+                Công cụ số / AI &amp; Xem tóm tắt 09 slide PPT gốc ↗
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- STAGE 9: FINALE / CTA (03:46–04:00) -->
+        <section id="stage-finale" class="stage-section" data-stage="9" aria-label="Tổng kết trọn bộ 04 sản phẩm">
+          <div class="dong-son-backdrop dong-son-backdrop-finale" aria-hidden="true">
+            <svg
+              id="finale-dong-son-svg"
+              class="dong-son-svg"
+              viewBox="0 0 800 800"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            ></svg>
+          </div>
+
+          <div class="finale-card">
+            <div class="finale-top-row">
+              <span id="finale-badge" class="finale-badge">TỔNG KẾT TRỌN BỘ 04 SẢN PHẨM · CỤM 1</span>
+            </div>
+
+            <h2 id="finale-heading" class="finale-heading">HIỂU ĐÚNG – LÀM THẬT – LAN TỎA</h2>
+            <p id="finale-summary" class="finale-summary"></p>
+
+            <div class="finale-products-quick" aria-label="Chuyển nhanh 04 sản phẩm">
+              <button type="button" class="finale-product-chip" data-jump-stage="1">01 · Video 9:16 (101,45s)</button>
+              <button type="button" class="finale-product-chip" data-jump-stage="2">02 · Bộ 05 ấn phẩm</button>
+              <button type="button" class="finale-product-chip" data-jump-stage="7">03 · Bài đăng MXH</button>
+              <button type="button" class="finale-product-chip" data-jump-stage="8">04 · Thuyết minh ≤ 3 trang</button>
+            </div>
+
+            <div id="finale-gallery" class="finale-gallery" aria-label="Thư viện 05 ấn phẩm bấm để phóng to"></div>
+
+            <div class="finale-action-panel">
+              <div class="finale-qr-card">
+                <div id="finale-qr-box" class="finale-qr-box" aria-label="Mã QR toàn văn Nghị quyết 57-NQ/TW"></div>
+                <div class="finale-qr-meta">
+                  <span class="finale-qr-title">QUÉT MÃ ĐỌC NGHỊ QUYẾT GỐC</span>
+                  <p id="finale-qr-desc" class="finale-qr-desc">
+                    Cổng Thông tin điện tử Chính phủ (xaydungchinhsach.chinhphu.vn)
+                  </p>
+                  <a
+                    id="btn-finale-secondary-official"
+                    class="finale-mirror-link"
+                    href="https://mst.gov.vn/toan-van-nghi-quyet-57-nq-tw-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-197250813164610621.htm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span>Bản đối chiếu Bộ KH&amp;CN (mst.gov.vn)</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="finale-cta-stack">
+                <a
+                  id="btn-finale-official"
+                  class="btn-official-cta btn-official-cta-lg"
+                  href="https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-quyet-ve-dot-pha-phat-trien-khoa-hoc-cong-nghe-doi-moi-sang-tao-va-chuyen-doi-so-quoc-gia-119241224180048642.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span id="btn-finale-official-label">Đọc toàn văn Nghị quyết 57-NQ/TW (chinhphu.vn)</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <div class="finale-secondary-actions">
+                  <button type="button" id="btn-finale-downloads" class="btn-secondary-cream" data-open-downloads="true">
+                    Mở kho tải tệp (D)
+                  </button>
+                  <button type="button" id="btn-finale-sources" class="btn-secondary-ghost" data-open-sources="true">
+                    7NV, 5 câu hỏi &amp; Nguồn (I)
+                  </button>
+                  <button type="button" id="btn-replay" class="btn-secondary-ghost">
+                    Trình chiếu lại từ đầu
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="finale-credits">
+              <p id="finale-source-credit"></p>
+              <p id="finale-ai-disclosure"></p>
+              <p id="finale-team-notice"></p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- NON-STROBING TRANSITION OVERLAY -->
+    <div id="scene-transition-overlay" aria-hidden="true">
+      <div id="transition-veil" class="transition-veil"></div>
+      <div id="transition-light-sweep" class="transition-light-sweep"></div>
+      <svg id="transition-dongson-ripple" class="transition-dongson-ripple" viewBox="0 0 360 360" fill="none">
+        <circle cx="180" cy="180" r="68" stroke="#F0C14B" stroke-width="2" opacity="0.65" />
+        <circle cx="180" cy="180" r="112" stroke="#F7F3E8" stroke-width="1.4" stroke-dasharray="6 5" opacity="0.55" />
+        <circle cx="180" cy="180" r="158" stroke="#1464B4" stroke-width="2" opacity="0.5" />
+      </svg>
+      <svg id="transition-chimlac-flight" class="transition-chimlac-flight" viewBox="0 0 260 120" fill="none">
+        <path
+          d="M28 74 C56 44, 96 42, 124 64 C96 58, 66 64, 38 82 Z"
+          fill="#F0C14B"
+          fill-opacity="0.88"
+          stroke="#F7F3E8"
+          stroke-width="1.6"
+        />
+        <path
+          d="M92 52 C122 22, 166 20, 196 44 C166 37, 134 44, 102 62 Z"
+          fill="#F7F3E8"
+          fill-opacity="0.92"
+          stroke="#F0C14B"
+          stroke-width="1.6"
+        />
+      </svg>
+    </div>
+
+    <!-- SYNCHRONIZED SPEAKER CUE DRAWER (N) -->
+    <div id="speaker-drawer" class="speaker-drawer" hidden role="region" aria-label="Lời nói 04 phút đồng bộ theo chặng">
+      <div class="speaker-drawer-head">
+        <div class="speaker-drawer-meta">
+          <span id="speaker-drawer-time" class="drawer-time-pill">00:00 – 00:08</span>
+          <span id="speaker-drawer-title">Lời nói 4p · Mở đầu</span>
+        </div>
+        <button type="button" id="btn-drawer-close" class="drawer-close-btn" aria-label="Đóng lời nói">✕</button>
+      </div>
+      <p id="speaker-drawer-cue" class="speaker-drawer-cue"></p>
+      <p id="speaker-drawer-text" class="speaker-drawer-spoken"></p>
+      <p id="speaker-drawer-extended" class="speaker-drawer-extended" hidden></p>
+    </div>
+
+    <!-- BOTTOM HUD BAR -->
+    <nav id="hud-bar" class="hud-bar" aria-label="Bảng điều khiển trình chiếu">
+      <div class="hud-group hud-nav-group">
+        <button type="button" id="btn-prev" class="hud-btn hud-btn-nav">‹ Lùi</button>
+        <span id="hud-progress" class="hud-progress" aria-live="polite">Mở đầu</span>
+        <button type="button" id="btn-next" class="hud-btn hud-btn-nav">Tiếp ›</button>
+      </div>
+      <span class="hud-divider" aria-hidden="true"></span>
+      <div class="hud-group hud-tools-group">
+        <button type="button" id="btn-notes" class="hud-btn" aria-pressed="false">Lời nói 4p (N)</button>
+        <button type="button" id="btn-hud-sources" class="hud-btn" data-open-sources="true" aria-pressed="false">
+          Nguồn &amp; 7NV (I)
+        </button>
+        <button type="button" id="btn-downloads" class="hud-btn" data-open-downloads="true" aria-pressed="false">
+          Tải file (D)
+        </button>
+        <button type="button" id="btn-auto-demo" class="hud-btn" aria-pressed="false">Auto Demo</button>
+        <button type="button" id="btn-lite" class="hud-btn" aria-pressed="false">Nhẹ (L)</button>
+        <button type="button" id="btn-motion-off" class="hud-btn" aria-pressed="false">Nền tắt (B)</button>
+        <button type="button" id="btn-fullscreen" class="hud-btn" aria-pressed="false">Toàn màn hình (F)</button>
+      </div>
+    </nav>
+
+    <!-- HIGH-RES ZOOM LIGHTBOX MODAL -->
+    <div
+      id="lightbox-modal"
+      class="lightbox-modal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="lightbox-title"
+    >
+      <div class="lightbox-backdrop" data-close-lightbox="true"></div>
+      <div class="lightbox-dialog">
+        <div class="lightbox-toolbar">
+          <div class="lightbox-heading">
+            <span id="lightbox-index" class="lightbox-index">01 / 05</span>
+            <h3 id="lightbox-title" class="lightbox-title">NGHỊ QUYẾT 57 GẦN BẠN THẾ NÀO?</h3>
+          </div>
+          <div class="lightbox-controls">
+            <a
+              id="btn-lightbox-download"
+              class="lightbox-download-btn"
+              href="./assets/posters/01_dat_cau_hoi_1080x1350.png"
+              download="01_dat_cau_hoi_1080x1350.png"
+            >
+              Tải PNG
+            </a>
+            <button type="button" id="btn-lightbox-prev" class="lightbox-nav-btn" aria-label="Ảnh trước">‹</button>
+            <button type="button" id="btn-lightbox-next" class="lightbox-nav-btn" aria-label="Ảnh tiếp">›</button>
+            <button type="button" id="btn-lightbox-close" class="lightbox-close-btn" aria-label="Đóng phóng to (Esc)">
+              Đóng (Esc)
+            </button>
+          </div>
+        </div>
+        <div class="lightbox-stage">
+          <img
+            id="lightbox-img"
+            src="./assets/posters/01_dat_cau_hoi_1080x1350.png"
+            alt="Phóng to ấn phẩm Lạc Hồng Số"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- SOURCES, 7 TASKS & 5 Q&A MODAL (I) -->
+    <div
+      id="sources-modal"
+      class="sources-modal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="sources-modal-title"
+    >
+      <div class="sources-backdrop" data-close-sources="true"></div>
+      <div class="sources-dialog">
+        <div class="sources-toolbar">
+          <div class="sources-heading">
+            <span class="sources-kicker">CỤM 1 · NGHỊ QUYẾT 57-NQ/TW (22/12/2024)</span>
+            <h3 id="sources-modal-title" class="sources-modal-title">
+              7 nhiệm vụ, 5 câu hỏi phản biện &amp; Nguồn chính thống
+            </h3>
+          </div>
+          <button type="button" id="btn-sources-close" class="lightbox-close-btn" aria-label="Đóng hộp thoại nguồn (Esc)">
+            Đóng (Esc)
+          </button>
+        </div>
+        <div id="sources-modal-body" class="sources-modal-body"></div>
+      </div>
+    </div>
+
+    <!-- FULL 04-PRODUCT RESOURCE HUB / DOWNLOAD DRAWER MODAL (D) -->
+    <div
+      id="downloads-modal"
+      class="sources-modal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="downloads-modal-title"
+    >
+      <div class="sources-backdrop" data-close-downloads="true"></div>
+      <div class="sources-dialog">
+        <div class="sources-toolbar">
+          <div class="sources-heading">
+            <span class="sources-kicker">KHO TẢI TRỌN BỘ 04 SẢN PHẨM · CỤM 1</span>
+            <h3 id="downloads-modal-title" class="sources-modal-title">
+              Tải tệp Video, 05 Ấn phẩm, Bài đăng, Thuyết minh &amp; Lời nói 04 phút
+            </h3>
+          </div>
+          <button type="button" id="btn-downloads-close" class="lightbox-close-btn" aria-label="Đóng kho tải tệp (Esc)">
+            Đóng (Esc)
+          </button>
+        </div>
+        <div id="downloads-modal-body" class="sources-modal-body"></div>
+      </div>
+    </div>
+
+    <!-- OPTIONAL PPT 9-SLIDE REFERENCE & AI TOOLS MODAL -->
+    <div
+      id="ppt-modal"
+      class="sources-modal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="ppt-modal-title"
+    >
+      <div class="sources-backdrop" data-close-ppt="true"></div>
+      <div class="sources-dialog">
+        <div class="sources-toolbar">
+          <div class="sources-heading">
+            <span class="sources-kicker">TƯ LIỆU THAM KHẢO TÙY CHỌN &amp; MINH BẠCH AI</span>
+            <h3 id="ppt-modal-title" class="sources-modal-title">
+              Công cụ số / AI &amp; Tóm tắt 09 slide PPT gốc tham khảo
+            </h3>
+          </div>
+          <button type="button" id="btn-ppt-close" class="lightbox-close-btn" aria-label="Đóng tóm tắt PPT (Esc)">
+            Đóng (Esc)
+          </button>
+        </div>
+        <div id="ppt-modal-body" class="sources-modal-body"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
